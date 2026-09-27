@@ -91,6 +91,11 @@ export const homeFaqs: SiteFaq[] = [
       "Landing pages start at UGX 200,000, multi-page Launchpad sites at UGX 3,500,000, full custom Signature sites at UGX 7,000,000, and Authority builds at UGX 13,000,000. You get a fixed written quote before we start — the price never moves without your approval.",
   },
   {
+    question: "How do you keep prices low without cutting quality?",
+    answer:
+      "We stay small and senior: the person who designs your site is the person you talk to, so you are not paying for account-manager layers or handoffs. We build on our own tested components instead of rebuilding every element from scratch, quote a fixed scope so you only pay for the pages you need, and invoice in UGX so the exchange rate never pads the price. The standard never changes — a UGX 200,000 landing page passes the same 60-point checklist as a UGX 13,000,000 build.",
+  },
+  {
     question: "How long does it take?",
     answer:
       "Landing pages ship in 3–5 days, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every project gets a launch date in writing, not a season.",

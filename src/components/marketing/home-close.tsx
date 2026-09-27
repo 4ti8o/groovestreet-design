@@ -17,7 +17,7 @@ export function HomePricing() {
         <SectionHeading
           eyebrow="Pricing"
           title="Fixed prices, stated up front"
-          lede="No hourly meters, no surprise invoices. The price is in writing before we start."
+          lede="Premium quality at a rate that fits your business. No hourly meters, no surprise invoices — the price is in writing before we start."
         />
         <Reveal>
           <article className="card border-ink">

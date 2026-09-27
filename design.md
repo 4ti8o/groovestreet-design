@@ -32,6 +32,7 @@ reference sites' *structure*, never their logos, fonts, artwork or hex values.
 | Minimum clear space | Clear space = height of the `G` on all sides. |
 | Forbidden | Arbitrary recolor, drop shadows, outlines, rotation, gradient fills, re-typesetting in Inter. |
 | Tagline | `Digitizing Your Business` — header tooltip, footer and OG metadata only. |
+| Promise | **Premium design and build at rates that fit a growing business.** Fixed quotes written in UGX and launch dates in writing. |
 
 **Voice.** Plain, second-person, outcome-led. Sentences ≤ 20 words in hero and CTA blocks.
 Use "you" more than "we". Banned words: solutions, synergy, leverage, elevate, unleash,

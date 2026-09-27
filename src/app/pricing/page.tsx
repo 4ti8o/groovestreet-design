@@ -46,7 +46,7 @@ export default function PricingPage() {
         <SectionHeading
           eyebrow="Pricing"
           title="Fixed prices, stated up front"
-          lede="Every package ends with a written quote listing exact pages, revision count and launch date. No hourly meters, no surprise invoices."
+          lede="Premium design and build at honest UGX rates. Every package ends with a written quote listing exact pages, revision count and launch date. No hourly meters, no surprise invoices."
         />
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           {packages.map((pkg, index) => (

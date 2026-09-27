@@ -31,6 +31,11 @@ const values = [
       "Most of your visitors arrive on a mid-range Android over mobile data. We design and test for that reality first.",
   },
   {
+    title: "Premium standard on every budget",
+    detail:
+      "A UGX 200,000 landing page gets the same senior designer and the same 60-point checklist as a UGX 13,000,000 build. We stay small on purpose, so the budget goes into your website.",
+  },
+  {
     title: "You own everything",
     detail:
       "Files, logins, domains and content transfer to you at launch. No hostage situations, ever.",
@@ -84,7 +89,7 @@ export default function AboutPage() {
       <Section tone="surface" ariaLabel="What we believe">
         <SectionHeading
           eyebrow="What we believe"
-          title="Four rules behind every build"
+          title="Five rules behind every build"
         />
         <ul className="mt-12 grid gap-4 md:grid-cols-2">
           {values.map((value, index) => (

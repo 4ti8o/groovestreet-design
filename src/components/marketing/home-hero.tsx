@@ -24,6 +24,9 @@ export function HomeHero() {
             We craft clean, affordable, professional and intuitive websites to bring your business online.
             Get ranked by search engines, convert website traffic and grow. 
           </p>
+          <p className="mt-4 max-w-[52ch] text-base font-medium text-ink">
+            Premium design and build at a price that fits your business — fixed in writing before we start.
+          </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href="/book" variant="primary">
               <CalendarIcon size={18} />

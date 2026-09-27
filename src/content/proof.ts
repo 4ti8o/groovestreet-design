@@ -131,7 +131,7 @@ export const processSteps = [
 
 export const guarantees = [
   {
-    title: "Affordable prices you can TRUST",
+    title: "Premium quality at a price you can trust",
     detail: "The quote you approve is the price you pay. Scope changes are priced before work starts — never after.",
   },
   {
