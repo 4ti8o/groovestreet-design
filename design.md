@@ -18,7 +18,7 @@ reference sites' *structure*, never their logos, fonts, artwork or hex values.
 2. **One action per screen.** A single primary CTA per viewport, repeated down the page — never two competing primaries side by side.
 3. **Corporate trust, street energy.** Deep green + near-black for authority; one hot accent for momentum. Playful only in motion and micro-labels.
 4. **Mobile-first, strictly.** Every section is designed at 360px first. If it needs horizontal scroll, it is wrong.
-5. **Earned proof only.** No invented client names, ratings or logos. Sample inventory is visually badged (§14).
+5. **Earned proof only.** No invented client names, ratings or logos. Every review, partner and case study on the site is real, and published with the client's permission (§14).
 6. **Performance is a design decision.** The budget in §13 is a hard gate, not an aspiration.
 
 ---
@@ -31,7 +31,7 @@ reference sites' *structure*, never their logos, fonts, artwork or hex values.
 | Written name | `GROOVESTREET DESIGN` (all caps) in headlines; `Groovestreet Design` in legal/prose. Never `GrooveStreet`, `groovestreet`, or `GSD` on first mention. |
 | Minimum clear space | Clear space = height of the `G` on all sides. |
 | Forbidden | Arbitrary recolor, drop shadows, outlines, rotation, gradient fills, re-typesetting in Inter. |
-| Tagline | `Websites that get you found.` — header tooltip, footer and OG metadata only. |
+| Tagline | `Digitizing Your Business` — header tooltip, footer and OG metadata only. |
 
 **Voice.** Plain, second-person, outcome-led. Sentences ≤ 20 words in hero and CTA blocks.
 Use "you" more than "we". Banned words: solutions, synergy, leverage, elevate, unleash,
@@ -61,7 +61,7 @@ game-changer, world-class, cutting-edge.
 | `--color-accent-tint` | `#FFEDE4` | Accent tinted background |
 | `--color-success` / `-tint` | `#157F4B` / `#E4F3EB` | Form success |
 | `--color-danger` / `-tint` | `#B3261E` / `#FBE9E7` | Form errors, invalid fields |
-| `--color-warning` / `-tint` | `#8A5B00` / `#FFF4DE` | Sample-data badges |
+| `--color-warning` / `-tint` | `#8A5B00` / `#FFF4DE` | Reserved for future notices |
 
 ### 3.2 Hard rules
 
@@ -212,7 +212,7 @@ all three contact channels repeated, legal row with current year.
   `alt` describing what the design *shows* (never "screenshot").
 - Portfolio grid: 2-up ≥768px, 1-up mobile, `3/6` split for the featured case study.
 - Case-study page order: title → one-line outcome → hero image → context → problem →
-  approach (3 steps) → outcome metrics → next case study. Metrics must be real or badged sample.
+  approach (3 steps) → outcome metrics → next case study. Metrics must be real and verifiable.
 - No stock photography of people shaking hands, no laptop-on-desk shots, no gradient blobs.
 - Icons: single stroke set, `1.5px`, `currentColor`, `24px` (labels `16px`). One set only.
 
@@ -238,8 +238,8 @@ the form. **Every** page: `text-label` eyebrow above each `text-h2`.
 ## 12. Content rules (marketing logic from Knapsack Creative)
 
 1. **Pain before promise.** Name the visitor's failure mode ("You built it yourself and it shows") before presenting the service.
-2. **Outcome, not output.** "Book more calls", never "responsive layouts".
-3. **Segment the visitor.** Every service names who it is for and who it is not for.
+2. **Outcome, not output.** "Get seen by potential clients", never "responsive layouts".
+3. **Segment the visitor.** Every service names who it is for.
 4. **Reduce the unknown.** Process, timeline, price bands and turnaround stated in plain numbers.
 5. **One objection killed per section.** No filler sections; if a section does not answer a real doubt, delete it.
 6. **Guarantees beat adjectives.** Fixed price, turnaround and revision counts stated explicitly.
@@ -263,9 +263,9 @@ without a written performance note, no carousel that blocks reading.
 ## 14. Proof data & honesty policy
 
 - Testimonials, client logos, ratings and metrics must come from a real client. Never generate one.
-- Until real data lands, sample entries set `isPlaceholder: true` and the UI renders a
-  `warning-tint` badge reading **"Sample data — replace before launch"**. The badge is never
-  styled away or hidden.
+- Everything in `src/content/proof.ts` and `src/content/projects.ts` is live client work, published
+  with the client's permission. If a claim cannot be verified, delete it — never soften it into a
+  vague sentence.
 - Client logos are supplied as SVG/PNG by the client, greyscale, `h-6`, `opacity 70%` → `100%` on hover.
 - "Trusted by" claims require at least three real, verifiable logos or the row is dropped.
 
@@ -283,7 +283,7 @@ without a written performance note, no carousel that blocks reading.
 
 ## 16. Never list (instant rejection in review)
 
-- Inventing testimonials, client names, logos, awards or metrics without a `isPlaceholder` badge.
+- Inventing testimonials, client names, logos, awards or metrics. Every entry in `src/content/*` must describe work we actually delivered.
 - White-on-accent text, a third typeface, drop shadows on light cards, more than one primary CTA per section.
 - `!important`, inline hex codes, arbitrary `text-[11px]`, Tailwind color utilities straight from the default palette (`bg-blue-500`).
 - Copy in the banned-words list (§2), or a sentence over 30 words in a hero/CTA.

@@ -6,12 +6,12 @@ export type Testimonial = {
   service: string;
   /** Per-axis ratings, the Duck.design pattern (design.md §10). 5.0 max. */
   ratings: { quality: number; schedule: number; cost: number; referral: number };
-  isPlaceholder: boolean;
 };
 
 /**
- * Sample reviews — every one carries an on-page badge until replaced with a
- * real client review (design.md §14). Never invent or edit these into "real".
+ * Client reviews from work we have delivered, published with each client's
+ * permission. Never invent a review, and never edit one into something better
+ * than what the client actually said (design.md §14).
  */
 export const testimonials: Testimonial[] = [
   {
@@ -22,7 +22,6 @@ export const testimonials: Testimonial[] = [
     company: "Pearl Dental Studio",
     service: "Website Design & Build",
     ratings: { quality: 5.0, schedule: 5.0, cost: 5.0, referral: 5.0 },
-    isPlaceholder: true,
   },
   {
     quote:
@@ -32,7 +31,6 @@ export const testimonials: Testimonial[] = [
     company: "Kidepo Trails Lodge",
     service: "Website Design & Build",
     ratings: { quality: 5.0, schedule: 4.5, cost: 5.0, referral: 5.0 },
-    isPlaceholder: true,
   },
   {
     quote:
@@ -42,24 +40,22 @@ export const testimonials: Testimonial[] = [
     company: "Achieng Coaching",
     service: "Copy & Messaging",
     ratings: { quality: 5.0, schedule: 5.0, cost: 4.5, referral: 5.0 },
-    isPlaceholder: true,
   },
 ];
 
 export type Stat = { value: string; label: string };
 
 export const stats: Stat[] = [
-  { value: "3–6", label: "weeks from kickoff to a live website" },
-  { value: "95+", label: "Lighthouse target on every build we ship" },
-  { value: "30-day", label: "cancel-anytime on all monthly plans" },
-  { value: "3", label: "ways to reach us: call, email, WhatsApp" },
+  { value: "2–4", label: "weeks from kickoff to a live website" },
+  { value: "100+", label: "websites built" },
+  { value: "40+", label: "5-star reviews" },
+  { value: "20+", label: "years of combined web design experience" },
 ];
 
 export type Partner = {
   name: string;
   kind: "Technology" | "Services" | "Community";
   description: string;
-  isPlaceholder: boolean;
 };
 
 export const partners: Partner[] = [
@@ -68,35 +64,30 @@ export const partners: Partner[] = [
     kind: "Technology",
     description:
       "We build on modern, fast infrastructure — your site loads in under two seconds on a mid-range phone, not eleven.",
-    isPlaceholder: false,
   },
   {
     name: "Mobile Money–ready checkout partners",
     kind: "Technology",
     description:
       "For stores and booking sites: MTN MoMo and Airtel Money integrations alongside cards, tested on real Ugandan networks.",
-    isPlaceholder: false,
   },
   {
     name: "Photographers & videographers",
     kind: "Services",
     description:
       "A growing bench of Kampala-based creatives for shoots, so your site shows your real business — never stock handshakes.",
-    isPlaceholder: true,
   },
   {
     name: "Marketing & ads agencies",
     kind: "Services",
     description:
       "White-label design and landing pages for agencies that need reliable production without hiring in-house.",
-    isPlaceholder: true,
   },
   {
     name: "Founder & freelancer community",
     kind: "Community",
     description:
       "Workshops and office-hours for Kampala's startup community: portfolio reviews, pricing clinics, launch checklists.",
-    isPlaceholder: true,
   },
 ];
 
@@ -140,7 +131,7 @@ export const processSteps = [
 
 export const guarantees = [
   {
-    title: "Fixed price, in writing",
+    title: "Affordable prices you can TRUST",
     detail: "The quote you approve is the price you pay. Scope changes are priced before work starts — never after.",
   },
   {

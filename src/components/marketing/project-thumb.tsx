@@ -8,8 +8,8 @@ const palettes: Record<Project["palette"], { bg: string; fg: string; hi: string 
 };
 
 /**
- * Generated placeholder artwork for case studies (§9). Replaced by real
- * screenshots when the project ships real photography — the API stays the same.
+ * Concept artwork for case studies (§9): a stylized layout drawn from the
+ * project's accent palette, so cards stay on-brand before real screenshots land.
  */
 export function ProjectThumb({ project, className }: { project: Project; className?: string }) {
   const palette = palettes[project.palette];

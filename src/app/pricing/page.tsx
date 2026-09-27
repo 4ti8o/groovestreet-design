@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export const metadata = pageMetadata({
   title: "Pricing",
   description:
-    "Fixed website pricing: Launchpad from $950, Signature from $1,900, Authority from $3,500, and care plans from $95/mo. The quote you approve is the price you pay.",
+    "Fixed website pricing: Landing pages from UGX 200,000, Launchpad from $950, Signature from $1,900, Authority from $3,500, and care plans from $95/mo. The quote you approve is the price you pay.",
   path: "/pricing",
 });
 

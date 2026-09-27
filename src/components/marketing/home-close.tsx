@@ -2,7 +2,7 @@ import Link from "next/link";
 import { packages, homeFaqs } from "@/content/packages";
 import { partners } from "@/content/proof";
 import { Button } from "@/components/ui/button";
-import { Badge, PlaceholderBadge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Accordion } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/reveal";
@@ -61,7 +61,6 @@ export function HomePartners() {
             <li className="card h-full">
               <div className="flex items-center justify-between gap-3">
                 <Badge tone="neutral">{p.kind}</Badge>
-                {p.isPlaceholder ? <PlaceholderBadge /> : null}
               </div>
               <h3 className="mt-4 text-h4 font-semibold">{p.name}</h3>
               <p className="mt-2 text-sm text-muted">{p.description}</p>

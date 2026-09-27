@@ -7,11 +7,11 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 const painPoints = [
   {
     pain: "\u201cYou built it yourself and it shows.\u201d",
-    fix: "A DIY site tells prospects you cut corners before they meet you. We replace it with design that looks like the business you are becoming.",
+    fix: "A DIY website tells visitors that you cut corners before they meet you. We transform it into a professional design that looks like the business you are becoming.",
   },
   {
     pain: "\u201cNobody finds us on Google.\u201d",
-    fix: "Page four is invisible. We fix technical SEO, speed and your Google Business Profile so the right searches land on you.",
+    fix: "We fix technical SEO, speed and your Google Business Profile so the right searches land on you instantly.",
   },
   {
     pain: "\u201cVisitors look, then leave.\u201d",
@@ -19,7 +19,7 @@ const painPoints = [
   },
   {
     pain: "\u201cOur last designer disappeared.\u201d",
-    fix: "Fixed price in writing, a launch date in the agreement, handover where you own everything. No hostage situations.",
+    fix: "We offer standard pricing, a clear timeline to launch and handover everything you own. No hostage situations.",
   },
 ];
 

@@ -1,7 +1,7 @@
 import { pageMetadata } from "@/lib/seo";
 import { partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { Badge, PlaceholderBadge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
 import { CtaBand } from "@/components/marketing/cta-band";
 
@@ -23,7 +23,7 @@ export default function PartnersPage() {
         <SectionHeading
           eyebrow="Partners"
           title="Stronger with the right people"
-          lede="Technology we trust, services we recommend, and a community we show up for. Relationships marked as samples until confirmed."
+          lede="Technology we trust, services we recommend, and a community we show up for."
         />
         {groups.map((group) => (
           <div key={group.kind} className="mt-12">
@@ -34,7 +34,6 @@ export default function PartnersPage() {
                   <li className="card h-full">
                     <div className="flex flex-wrap items-center gap-2">
                       <Badge tone="neutral">{partner.kind}</Badge>
-                      {partner.isPlaceholder ? <PlaceholderBadge /> : null}
                     </div>
                     <h3 className="mt-4 text-h4 font-semibold">{partner.name}</h3>
                     <p className="mt-2 text-sm text-muted">{partner.description}</p>

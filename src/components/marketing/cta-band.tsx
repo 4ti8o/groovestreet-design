@@ -32,7 +32,7 @@ export function CtaBand({
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="/book" variant="accent">
               <CalendarIcon size={18} />
-              Book a discovery call
+              Get in Touch
             </Button>
             <Button href="/contact" variant="invert">
               Send a message

@@ -12,7 +12,6 @@ export type Project = {
   /** Accent keyword for the generated thumbnail artwork. */
   palette: "green" | "orange" | "sand" | "ink";
   year: string;
-  isPlaceholder: boolean;
 };
 
 export const projects: Project[] = [
@@ -40,7 +39,6 @@ export const projects: Project[] = [
     ],
     palette: "green",
     year: "2026",
-    isPlaceholder: true,
   },
   {
     slug: "safari-lodge-bookings",
@@ -66,7 +64,6 @@ export const projects: Project[] = [
     ],
     palette: "orange",
     year: "2026",
-    isPlaceholder: true,
   },
 ];
 

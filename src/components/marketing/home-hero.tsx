@@ -18,11 +18,11 @@ export function HomeHero() {
             Website design studio · {site.location}
           </p>
           <h1 className="mt-5 max-w-[16ch] text-display font-bold">
-            Websites that get you found — and get you calls.
+            Find your next client/customer online - Your Website does the Work.
           </h1>
           <p className="mt-6 max-w-[52ch] text-lg text-muted">
-            We design fast, mobile-first websites for service businesses, then help
-            you rank, convert and grow. Strategy, words, design and build.
+            We craft clean, affordable, professional and intuitive websites to bring your business online.
+            Get ranked by search engines, convert website traffic and grow. 
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href="/book" variant="primary">

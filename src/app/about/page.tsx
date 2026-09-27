@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/seo";
 import { stats, partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { Badge, PlaceholderBadge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { ContactChannels } from "@/components/marketing/contact-channels";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { CheckIcon } from "@/components/ui/icons";
@@ -10,7 +10,7 @@ import { CheckIcon } from "@/components/ui/icons";
 export const metadata = pageMetadata({
   title: "About the Studio",
   description:
-    "GROOVESTREET DESIGN is a website design studio in Kampala, Uganda. Fixed prices, launch dates in writing, and support that actually answers.",
+    "GROOVESTREET DESIGN is a website design studio in Kampala, Uganda. Fixed prices, clear launch timeline, and support that actually answers.",
   path: "/about",
 });
 
@@ -50,20 +50,21 @@ export default function AboutPage() {
             <div className="space-y-5 text-lg leading-[1.7] text-muted">
               <p>
                 GROOVESTREET DESIGN is a website design studio based in Kampala,
-                Uganda. We build fast, mobile-first, search-friendly websites for
-                service businesses — then help them rank, convert and grow.
+                Uganda. We craft clean, affordable, professional and intuitive websites 
+                to bring your business online. Get ranked by search engines, 
+                convert website traffic and grow.
               </p>
               <p>
                 We started the studio after watching the same story repeat: a good
-                business pays for a website, gets something slow and confusing, and
+                business pays for a website, gets something slow, outdated and confusing, and
                 the designer disappears before launch. So we built the studio we
-                wished existed — fixed prices in writing, launch dates in the
-                agreement, words your clients understand, and support that answers.
+                wished existed — fixed prices,  clear launch timeline, 
+                words your clients understand, and support that answers.
               </p>
               <p>
-                We stay deliberately small: every project gets senior attention, and
+                Every project gets senior attention, and
                 every page ships only when it passes our 60-point checklist on real
-                phones.
+                devices.
               </p>
             </div>
           </Reveal>
@@ -112,7 +113,6 @@ export default function AboutPage() {
               <li className="card h-full">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge tone="neutral">{partner.kind}</Badge>
-                  {partner.isPlaceholder ? <PlaceholderBadge /> : null}
                 </div>
                 <h3 className="mt-4 text-h4 font-semibold">{partner.name}</h3>
                 <p className="mt-2 text-sm text-muted">{partner.description}</p>

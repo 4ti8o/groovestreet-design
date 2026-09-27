@@ -36,7 +36,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <h1 className="mt-4 max-w-[18ch] text-display font-bold">{industry.headline}</h1>
         <p className="mt-5 max-w-[56ch] text-xl text-muted">{industry.description}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="/book" variant="primary">Book a discovery call</Button>
+          <Button href="/book" variant="primary">Get in Touch</Button>
           <Button href="/work" variant="outline">See related work</Button>
         </div>
       </Section>

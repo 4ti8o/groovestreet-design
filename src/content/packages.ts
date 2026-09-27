@@ -10,14 +10,28 @@ export type Package = {
 
 export const packages: Package[] = [
   {
+    name: "Landing Page",
+    price: "UGX 200,000",
+    cadence: "fixed price · 3–5 days",
+    tagline: "A fast, single-page site focused on one goal: turning visitors into calls and messages.",
+    features: [
+      "One high-converting single page",
+      "Fast mobile loading for all phones",
+      "One-tap WhatsApp & phone buttons",
+      "Google map and local search setup",
+      "Full handover & ownership from day one",
+    ],
+    cta: "Start with Landing Page",
+  },
+  {
     name: "Launchpad",
     price: "$950",
     cadence: "fixed price · 2–3 weeks",
     tagline: "A sharp one-to-five page site for new businesses that need to look real, fast.",
     features: [
       "Custom design, up to 5 pages",
-      "Mobile-first build + basic SEO",
-      "Copy polish on every page",
+      "Mobile-first build + search setup",
+      "Clear, persuasive copywriting polish",
       "Form + WhatsApp integration",
       "Handover video + 2 weeks support",
     ],
@@ -33,7 +47,7 @@ export const packages: Package[] = [
       "Up to 12 pages + blog setup",
       "From-scratch copywriting option",
       "Brand refresh (logo touch-up + palette)",
-      "Advanced SEO + analytics setup",
+      "Advanced search visibility + analytics setup",
       "Priority support for 30 days",
     ],
     cta: "Start with Signature",
@@ -43,12 +57,12 @@ export const packages: Package[] = [
     name: "Authority",
     price: "$3,500",
     cadence: "fixed price · 6–8 weeks",
-    tagline: "Website plus the engine behind it: SEO, content plan and conversion tracking.",
+    tagline: "Website plus the engine behind it: search growth, content plan and conversion tracking.",
     features: [
       "Everything in Signature",
-      "Full SEO audit + 90-day content plan",
-      "Landing page for your main offer",
-      "Review + referral engine",
+      "Full search audit + 90-day content plan",
+      "Dedicated landing page for your main offer",
+      "Client review + referral engine",
       "Team training session",
     ],
     cta: "Start with Authority",
@@ -59,7 +73,7 @@ export const packages: Package[] = [
     cadence: "monthly · cancel anytime",
     tagline: "Maintenance, backups, security and monthly design hours. Always improving.",
     features: [
-      "Updates, backups & monitoring",
+      "Updates, backups & security monitoring",
       "Same-day response on issues",
       "Monthly design hours included",
       "Quarterly performance report",
@@ -74,12 +88,12 @@ export const homeFaqs: SiteFaq[] = [
   {
     question: "How much does a website cost?",
     answer:
-      "Launchpad sites start at $950, full custom Signature sites at $1,900, and Authority builds with SEO at $3,500. You get a fixed written quote before we start — the price never moves without your approval.",
+      "Landing pages start at UGX 200,000, multi-page Launchpad sites at $950, full custom Signature sites at $1,900, and Authority builds at $3,500. You get a fixed written quote before we start — the price never moves without your approval.",
   },
   {
     question: "How long does it take?",
     answer:
-      "Landing pages ship in 1–2 weeks, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every agreement includes a launch date, not a season.",
+      "Landing pages ship in 3–5 days, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every agreement includes a launch date, not a season.",
   },
   {
     question: "Do you work with clients outside Uganda?",

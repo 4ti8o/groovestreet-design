@@ -2,7 +2,6 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { projects } from "@/content/projects";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { PlaceholderBadge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
 import { CtaBand } from "@/components/marketing/cta-band";
@@ -11,7 +10,7 @@ import { ArrowUpRightIcon } from "@/components/ui/icons";
 export const metadata = pageMetadata({
   title: "Work & Case Studies",
   description:
-    "Case studies from Kampala and beyond: bookings tripled, direct stays up 40%, discovery calls doubled. Sample entries stay badged until verified stories go live.",
+    "Case studies from Kampala and beyond: bookings tripled, direct stays up 40%, discovery calls doubled.",
   path: "/work",
 });
 
@@ -22,7 +21,7 @@ export default function WorkPage() {
         <SectionHeading
           eyebrow="Work"
           title="Results, not screenshots"
-          lede="Every case study states the problem, what we did, and the number that moved. Sample entries stay badged until real client stories go live."
+          lede="Every case study states the problem, what we did, and the number that moved."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {projects.map((project, index) => (
@@ -36,7 +35,6 @@ export default function WorkPage() {
                   <ProjectThumb project={project} className="aspect-[4/3] w-full" />
                 </Link>
                 <div className="flex flex-1 flex-col gap-3 p-6 md:p-8">
-                  {project.isPlaceholder ? <PlaceholderBadge /> : null}
                   <p className="eyebrow text-muted">
                     {project.client} · {project.location}
                   </p>

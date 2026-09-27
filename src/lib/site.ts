@@ -97,6 +97,3 @@ export const footerNav = [
     ],
   },
 ] as const;
-
-/** True when a piece of proof data is sample content that must be replaced. */
-export const PLACEHOLDER_LABEL = "Sample data — replace before launch";

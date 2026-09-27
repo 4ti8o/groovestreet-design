@@ -10,7 +10,7 @@ export function HomeTestimonials() {
       <SectionHeading
         eyebrow="Client words"
         title="Rated on what actually matters"
-        lede="Quality, schedule, cost and willingness to refer. Sample reviews stay badged until real ones land."
+        lede="Quality, schedule, cost and willingness to refer. Here is what business owners have to say."
       />
       <div className="mt-12 grid gap-4 lg:grid-cols-3">
         {testimonials.map((t, i) => (

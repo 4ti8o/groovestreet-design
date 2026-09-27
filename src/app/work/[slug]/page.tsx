@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { pageMetadata } from "@/lib/seo";
 import { getProject, projects } from "@/content/projects";
 import { Section, SectionHeading, Eyebrow } from "@/components/ui/section";
-import { PlaceholderBadge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
 import { CtaBand } from "@/components/marketing/cta-band";
@@ -41,11 +40,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {project.client} — {project.location}
         </p>
         <p className="mt-2 text-lg font-semibold">{project.outcome}</p>
-        {project.isPlaceholder ? (
-          <p className="mt-4">
-            <PlaceholderBadge />
-          </p>
-        ) : null}
         <Reveal className="mt-10">
           <ProjectThumb project={project} className="aspect-[16/10] w-full rounded-lg border border-line" />
         </Reveal>

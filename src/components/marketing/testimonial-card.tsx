@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { PlaceholderBadge } from "@/components/ui/badge";
 import { StarIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/reveal";
 import type { Testimonial } from "@/content/proof";
@@ -29,7 +28,6 @@ export function TestimonialCard({
   return (
     <Reveal delay={delay} className={className}>
       <figure className="card flex h-full flex-col gap-4">
-        {testimonial.isPlaceholder ? <PlaceholderBadge /> : null}
         <blockquote className="text-base leading-[1.65]">
           &ldquo;{testimonial.quote}&rdquo;
         </blockquote>

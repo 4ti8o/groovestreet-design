@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/marketing/cta-band";
 import { CalendarIcon, CheckIcon } from "@/components/ui/icons";
 
 export const metadata = pageMetadata({
-  title: "Book a Discovery Call",
+  title: "Get in Touch",
   description:
     "Book a free 30-minute discovery call with GROOVESTREET DESIGN. No pitch decks — honest advice on your website, whether we build it or not.",
   path: "/book",
@@ -24,7 +24,7 @@ const expectations = [
 export default function BookPage() {
   return (
     <>
-      <Section ariaLabel="Book a discovery call">
+      <Section ariaLabel="Get in Touch">
         <div className="grid gap-10 lg:grid-cols-2">
           <SectionHeading
             eyebrow="Book a call"
@@ -54,7 +54,7 @@ export default function BookPage() {
                   <Button href="/contact">Request a time</Button>
                 )}
                 <Button
-                  href={`https://wa.me/${site.whatsappE164}?text=${encodeURIComponent("Hi Groovestreet Design — I'd like to book a discovery call.")}`}
+                  href={`https://wa.me/${site.whatsappE164}?text=${encodeURIComponent("Hi Groovestreet Design — I'd like to Get in Touch.")}`}
                   variant="outline"
                 >
                   Book via WhatsApp
