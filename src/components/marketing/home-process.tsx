@@ -10,9 +10,9 @@ export function HomeProcess() {
       <SectionHeading
         eyebrow="How it works"
         title="First call to launch in six steps"
-        lede="No black boxes. You always know what happens next, what we need from you, and when your site goes live."
+        lede="The short version of how a project runs. The full detail, timings and what we need from you are on the process page."
       />
-      <ProcessGrid />
+      <ProcessGrid variant="summary" />
       <Reveal className="mt-10">
         <Button href="/process" variant="outline">
           See the full process

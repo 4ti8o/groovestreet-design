@@ -160,6 +160,9 @@ export type ProcessStep = {
   /** Icon key — resolved by ProcessIcon; content files never import components. */
   icon: "call" | "plan" | "design" | "build" | "launch" | "grow";
   title: string;
+  /** One line, used by the summary on the home page. */
+  summary: string;
+  /** The full account, used on the process page. */
   detail: string;
   /** When this step happens on the calendar, e.g. "Days 1–3". */
   duration: string;
@@ -170,6 +173,8 @@ export const processSteps: ProcessStep[] = [
     step: "01",
     icon: "call",
     title: "Discovery call",
+    summary:
+      "Thirty minutes on call or WhatsApp. We learn your business and say straight whether we're the right studio.",
     detail:
       "A 30-minute call or WhatsApp chat. We learn your business, your clients and your goal — and tell you if we are the right studio. Free, no pitch decks.",
     duration: "Day 0",
@@ -178,6 +183,8 @@ export const processSteps: ProcessStep[] = [
     step: "02",
     icon: "plan",
     title: "Strategy & sitemap",
+    summary:
+      "One questionnaire, then a sitemap, a message framework and a fixed price before design starts.",
     detail:
       "You answer one structured questionnaire. We return a sitemap, message framework and fixed quote. You know the price, the pages and the timeline before we design a pixel.",
     duration: "Days 1–3",
@@ -186,6 +193,8 @@ export const processSteps: ProcessStep[] = [
     step: "03",
     icon: "design",
     title: "Design, live with you",
+    summary:
+      "Short live design sessions, real pages early, two revision rounds and no big-reveal surprises.",
     detail:
       "We design in short live sessions, not silent weeks. You see real pages early, comment directly, and approve two revision rounds — no big-reveal surprises.",
     duration: "Weeks 1–3",
@@ -194,6 +203,7 @@ export const processSteps: ProcessStep[] = [
     step: "04",
     icon: "build",
     title: "Build & quality pass",
+    summary: "Development, speed and search setup, then a 60-point check on real devices.",
     detail:
       "Development, speed optimization, SEO setup and a 60-point checklist: every link, form, phone number and WhatsApp button tested on real devices.",
     duration: "Weeks 2–5",
@@ -202,6 +212,7 @@ export const processSteps: ProcessStep[] = [
     step: "05",
     icon: "launch",
     title: "Launch day",
+    summary: "Domains, analytics, forms and payments verified, then everything handed over to you.",
     detail:
       "Domains, analytics, forms and payments verified on real devices, then everything handed over to you. Two weeks of free support start the moment you go live.",
     duration: "Week 6",
@@ -210,6 +221,7 @@ export const processSteps: ProcessStep[] = [
     step: "06",
     icon: "grow",
     title: "Grow from there",
+    summary: "A care plan or SEO keeps it compounding, and we report what it actually did.",
     detail:
       "Then the work that compounds: a care plan for maintenance and reserved design hours, or SEO for search growth. You choose, and we report what it actually did.",
     duration: "Month 2+",

@@ -8,12 +8,17 @@ import { Reveal } from "@/components/ui/reveal";
  * phones, two from sm, three from lg — the template's 550px and 800px breaks —
  * and the wide column/row gaps (55px) that give the layout its air.
  *
+ * `variant="summary"` swaps the full account for the one-line version, which is
+ * what the home page shows so it previews the process page instead of
+ * duplicating it. The process page keeps the full detail.
+ *
  * Palette: strictly three tokens — brand for the icon (via ProcessIcon),
  * brand-tint for the ghost numeral, muted for supporting text. Raw hex is a
  * lint error (eslint.config.mjs, design.md §3.1), so this section cannot drift
  * off-palette.
  */
-export function ProcessGrid() {
+export function ProcessGrid({ variant = "full" }: { variant?: "full" | "summary" }) {
+  const isSummary = variant === "summary";
   return (
     <ol className="mt-10 grid grid-cols-1 gap-x-14 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
       {processSteps.map((step, index) => (
@@ -30,7 +35,7 @@ export function ProcessGrid() {
             </span>
             <div className="relative z-10 mt-4">
               <h3 className="text-h4 font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm text-muted">{step.detail}</p>
+              <p className="mt-2 text-sm text-muted">{isSummary ? step.summary : step.detail}</p>
               <p className="eyebrow mt-3 text-muted">{step.duration}</p>
             </div>
           </li>
