@@ -31,7 +31,7 @@ export const industries: Industry[] = [
     name: "Clinics & Wellness",
     headline: "Reassure before they arrive.",
     description:
-      "Patients choose the clinic that feels safe online. Service pages, doctor profiles, hours, directions and one-tap calling and WhatsApp — all mobile-first.",
+      "Patients choose the clinic that feels safe online. Service pages, doctor profiles, hours, directions and one-tap calling and WhatsApp — plus the words and local search that lead them there.",
     typicalProjects: ["Clinic website", "Practitioner profiles", "Appointment funnel"],
     cta: "Fill your appointment book",
   },

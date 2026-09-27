@@ -13,7 +13,7 @@ import { CtaBand } from "@/components/marketing/cta-band";
 export const metadata = pageMetadata({
   title: "Website Design Studio in Kampala",
   description:
-    "GROOVESTREET DESIGN builds fast, mobile-first, search-friendly websites for service businesses in Kampala, Uganda and worldwide. Fixed prices, clear launch timeline, support that answers.",
+    "Websites designed, written, built and looked after for service businesses in Kampala, Uganda and worldwide. Fixed prices, launch dates in writing, support that answers.",
   path: "/",
 });
 

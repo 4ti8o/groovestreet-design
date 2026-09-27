@@ -30,7 +30,7 @@ export const packages: Package[] = [
     tagline: "A sharp one-to-five page site for new businesses that need to look real, fast.",
     features: [
       "Custom design, up to 5 pages",
-      "Mobile-first build + search setup",
+      "Build + search setup, tested on real phones",
       "Clear, persuasive copywriting polish",
       "Form + WhatsApp integration",
       "Handover video + 2 weeks support",

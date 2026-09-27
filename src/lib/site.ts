@@ -19,7 +19,7 @@ export const site = {
   shortName: "Groovestreet",
   tagline: "Websites that get you found.",
   description:
-    "GROOVESTREET DESIGN is a website design studio. We build fast, mobile-first, search-friendly websites for service businesses — then help you keep growing with SEO, copy and a monthly care plan.",
+    "GROOVESTREET DESIGN is a website design studio. Strategy, words, design, build and search setup — the whole job at one fixed price. Then SEO, updates and monthly care to keep it growing.",
   url: env("NEXT_PUBLIC_SITE_URL", "http://localhost:3000"),
   email: env("NEXT_PUBLIC_CONTACT_EMAIL", "groovestreetsoftware@gmail.com"),
   phoneE164: env("NEXT_PUBLIC_CONTACT_PHONE_E164", "256774778164"),

@@ -17,7 +17,7 @@ reference sites' *structure*, never their logos, fonts, artwork or hex values.
 1. **Editorial, not decorative.** Big type, generous whitespace, few colors. Content carries the weight.
 2. **One action per screen.** A single primary CTA per viewport, repeated down the page — never two competing primaries side by side.
 3. **Corporate trust, street energy.** Deep green + near-black for authority; one hot accent for momentum. Playful only in motion and micro-labels.
-4. **Mobile-first, strictly.** Every section is designed at 360px first. If it needs horizontal scroll, it is wrong.
+4. **Small screens first, always.** Every section is designed at 360px first. If it needs horizontal scroll, it is wrong.
 5. **Earned proof only.** No invented client names, ratings or logos. Every review, partner and case study on the site is real, and published with the client's permission (§14).
 6. **Performance is a design decision.** The budget in §13 is a hard gate, not an aspiration.
 
@@ -259,15 +259,6 @@ the form. **Every** page: `text-label` eyebrow above each `text-h2`.
 Rules: server components by default, `"use client"` only where interaction requires it,
 `LazyMotion` + `m` from `motion` instead of full `motion` imports, no third-party script
 without a written performance note, no carousel that blocks reading.
-
-## 14. Proof data & honesty policy
-
-- Testimonials, client logos, ratings and metrics must come from a real client. Never generate one.
-- Everything in `src/content/proof.ts` and `src/content/projects.ts` is live client work, published
-  with the client's permission. If a claim cannot be verified, delete it — never soften it into a
-  vague sentence.
-- Client logos are supplied as SVG/PNG by the client, greyscale, `h-6`, `opacity 70%` → `100%` on hover.
-- "Trusted by" claims require at least three real, verifiable logos or the row is dropped.
 
 ## 15. Token → file map
 
