@@ -43,6 +43,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  // Next's Viewport type requires a literal colour string, so the token cannot
+  // be referenced here; the value is --color-ink from globals.css §3.1.
+  // eslint-disable-next-line no-restricted-syntax
   themeColor: "#0e1113",
   width: "device-width",
   initialScale: 1,
@@ -62,7 +65,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   // suppressHydrationWarning: browser extensions (Dark Reader) inject attributes
   // into <html>/<body> before hydration — extension markup, not an app bug.
   return (
-    <html lang="en" suppressHydrationWarning className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${spaceGrotesk.variable} ${inter.variable}`}
+    >
       <body suppressHydrationWarning>
         <a
           href="#main"

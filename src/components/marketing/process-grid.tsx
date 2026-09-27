@@ -7,6 +7,11 @@ import { Reveal } from "@/components/ui/reveal";
  * grid with an oversized ghost numeral set behind each icon. One column on
  * phones, two from sm, three from lg — the template's 550px and 800px breaks —
  * and the wide column/row gaps (55px) that give the layout its air.
+ *
+ * Palette: strictly three tokens — brand for the icon (via ProcessIcon),
+ * brand-tint for the ghost numeral, muted for supporting text. Raw hex is a
+ * lint error (eslint.config.mjs, design.md §3.1), so this section cannot drift
+ * off-palette.
  */
 export function ProcessGrid() {
   return (

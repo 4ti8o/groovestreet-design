@@ -122,6 +122,7 @@ family without a written amendment. Mono micro-labels use the system mono stack.
 
 - **Base unit 4px.** Tailwind scale, permitted steps only (`4,8,12,16,20,24,32,40,48,64,80,96,128,144`).
 - **Container:** max-width `1200px`, padding-inline `20px` → `32px` at ≥640px (`<Container />`).
+- **Strict palette:** components paint only with the `@theme` tokens above. Raw hex or `rgb()/hsl()/oklch()` in `src/**` is a lint **error** (`no-restricted-syntax` in `eslint.config.mjs`), whether written as a literal, inside a Tailwind arbitrary value (`text-[#ff5a1f]`) or as a colour string. `globals.css` and `public/**` are exempt (palette definition and assets); the one sanctioned exception is an inline `eslint-disable-next-line` carrying a reason, e.g. `viewport.themeColor`, which Next requires as a literal.
 - **Section rhythm:** `64px` mobile → `80px` ≥768px → `96px` ≥1024px (`<Section />`). Light bands alternate `paper` ↔ `surface` with `ink` as the dark punctuation; never stack two sections with the same background without a hairline or tone shift. On a `surface` band, `.card` takes the `paper` fill (`--card-fill`) so white cards never disappear into the background.
 - **Grid:** 12 columns ≥1024px, gutter 24px (32px for portfolio grids). Mobile: single column, gutter 20px, no negative margins.
 - Standard splits: `7/5` copy-led, `5/7` media-led, `4/4/4` three cards, `3/3/3/3` logo wall & stats.

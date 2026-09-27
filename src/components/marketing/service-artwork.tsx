@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  */
 export function ServiceArtwork({
   src,
-  mask = "linear-gradient(to left, #000 0%, #000 30%, transparent 72%)",
+  mask = "linear-gradient(to left, black 0%, black 30%, transparent 72%)",
   className,
 }: {
   src: string;

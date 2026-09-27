@@ -35,7 +35,7 @@ export default function ServicesPage() {
                 >
                   <ServiceArtwork
                     src={service.artwork}
-                    mask="linear-gradient(to left, #000 0%, #000 20%, transparent 58%)"
+                    mask="linear-gradient(to left, black 0%, black 20%, transparent 58%)"
                   />
                   <span className="relative flex size-14 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
                     <ServiceIcon icon={service.icon} size={24} />
