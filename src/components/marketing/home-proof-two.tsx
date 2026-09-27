@@ -2,7 +2,7 @@ import { testimonials, guarantees } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
-import { TestimonialCard } from "@/components/marketing/testimonial-card";
+import { TestimonialRail } from "@/components/marketing/testimonial-rail";
 import { CheckIcon, StarIcon } from "@/components/ui/icons";
 
 const ratingEntries = testimonials.flatMap((t) => [
@@ -24,7 +24,11 @@ export function HomeTestimonials() {
       />
       <Reveal className="mt-10">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border border-line bg-surface px-6 py-5">
-          <span className="flex items-center gap-1" role="img" aria-label={`${averageRating.toFixed(1)} out of 5 overall`}>
+          <span
+            className="flex items-center gap-1"
+            role="img"
+            aria-label={`${averageRating.toFixed(1)} out of 5 overall`}
+          >
             {[0, 1, 2, 3, 4].map((index) => (
               <StarIcon key={index} size={18} filled={index < rounded} />
             ))}
@@ -35,14 +39,12 @@ export function HomeTestimonials() {
             </span>{" "}
             out of 5 · {ratingEntries.length} ratings across {testimonials.length} reviews
           </p>
-          <p className="text-sm text-muted sm:ml-auto">Published with each client&apos;s permission</p>
+          <p className="text-sm text-muted sm:ml-auto">
+            Published with each client&apos;s permission
+          </p>
         </div>
       </Reveal>
-      <div className="mt-12 grid gap-4 lg:grid-cols-3">
-        {testimonials.map((t, i) => (
-          <TestimonialCard key={t.company} testimonial={t} delay={i * 60} />
-        ))}
-      </div>
+      <TestimonialRail testimonials={testimonials} />
     </Section>
   );
 }
@@ -55,15 +57,17 @@ export function HomeGuarantees() {
         title="Promises you can hold us to"
         lede="Adjectives are cheap. These three promises hold on every project we take on."
       />
-      <ul className="mt-12 grid gap-4 md:grid-cols-3">
+      <ul className="mt-12 max-w-[68ch] space-y-8">
         {guarantees.map((g, i) => (
           <Reveal key={g.title} delay={i * 60}>
-            <li className="card h-full">
-              <span className="flex size-11 items-center justify-center rounded-full bg-success-tint text-success">
-                <CheckIcon size={20} />
+            <li className="flex gap-4 border-t border-line pt-8">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-success-tint text-success">
+                <CheckIcon size={18} aria-hidden="true" />
               </span>
-              <h3 className="mt-4 text-h4 font-semibold">{g.title}</h3>
-              <p className="mt-2 text-sm text-muted">{g.detail}</p>
+              <div>
+                <h3 className="text-h4 font-semibold">{g.title}</h3>
+                <p className="mt-2 text-sm text-muted">{g.detail}</p>
+              </div>
             </li>
           </Reveal>
         ))}

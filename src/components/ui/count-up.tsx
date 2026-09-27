@@ -93,15 +93,12 @@ export function CountUp({
         };
         frame = requestAnimationFrame(tick);
       },
-      { threshold: 0.25 },
+      { threshold: 0.35, rootMargin: "0px 0px -6% 0px" },
     );
     io.observe(node);
-    // Safety net: an element that never intersects still ends on the real value.
-    const safety = window.setTimeout(finish, 6000);
     return () => {
       io.disconnect();
       cancelAnimationFrame(frame);
-      window.clearTimeout(safety);
       finished = true;
     };
   }, [target, decimals, duration]);

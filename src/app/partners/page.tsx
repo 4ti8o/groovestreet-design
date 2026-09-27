@@ -2,6 +2,7 @@ import { pageMetadata } from "@/lib/seo";
 import { partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { Button } from "@/components/ui/button";
 import { PartnerCard } from "@/components/marketing/partner-card";
 import { CtaBand } from "@/components/marketing/cta-band";
 
@@ -33,6 +34,16 @@ export default function PartnersPage() {
           title="Stronger with the right people"
           lede="Uganda's leading brands plus the studios, creatives and communities we build alongside — real relationships, not rented logos."
         />
+        <Reveal className="mt-8">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href="/contact#book" variant="primary">
+              Become a Partner
+            </Button>
+            <Button href="/pricing" variant="outline">
+              See our pricing
+            </Button>
+          </div>
+        </Reveal>
         {groups.map((group) => (
           <div key={group.kind} className="mt-12">
             <h2 className="text-h3 font-semibold">{groupLabels[group.kind]}</h2>

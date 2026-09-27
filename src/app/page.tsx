@@ -8,7 +8,7 @@ import { HomeProof } from "@/components/marketing/home-proof";
 import { HomeServices } from "@/components/marketing/home-services";
 import { HomeIndustries } from "@/components/marketing/home-industries";
 import { HomeTestimonials, HomeGuarantees } from "@/components/marketing/home-proof-two";
-import { HomePricing, HomePartners, HomeFaq } from "@/components/marketing/home-close";
+import { HomePricing, HomeFaq } from "@/components/marketing/home-close";
 import { CtaBand } from "@/components/marketing/cta-band";
 
 export const metadata = pageMetadata({
@@ -32,11 +32,10 @@ export default function HomePage() {
       <HomeProcess />
       <HomeProof />
       <HomeServices />
+      <HomePricing />
       <HomeIndustries />
       <HomeTestimonials />
       <HomeGuarantees />
-      <HomePricing />
-      <HomePartners />
       <HomeFaq />
       <CtaBand />
     </>

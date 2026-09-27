@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { packages, homeFaqs } from "@/content/packages";
-import { partners } from "@/content/proof";
 import { CountUp } from "@/components/ui/count-up";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Accordion } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/reveal";
-import { PartnerCard } from "@/components/marketing/partner-card";
-import { CheckIcon, ArrowRightIcon } from "@/components/ui/icons";
+import { CheckIcon } from "@/components/ui/icons";
 
 export function HomePricing() {
   const featured = packages.find((p) => p.featured) ?? packages[0];
@@ -55,31 +53,6 @@ export function HomePricing() {
           </article>
         </Reveal>
       </div>
-    </Section>
-  );
-}
-
-export function HomePartners() {
-  return (
-    <Section tone="surface" ariaLabel="Partners">
-      <SectionHeading
-        eyebrow="Partners"
-        title="Stronger with the right people"
-        lede="Uganda's leading brands plus the studios, creatives and communities we build alongside — real relationships, not rented logos."
-      />
-      <ul className="mt-12 grid gap-4 md:grid-cols-3">
-        {partners.slice(0, 3).map((p, i) => (
-          <Reveal key={p.name} delay={i * 60}>
-            <PartnerCard partner={p} />
-          </Reveal>
-        ))}
-      </ul>
-      <Reveal className="mt-6">
-        <Button href="/partners" variant="outline">
-          Meet our partners
-          <ArrowRightIcon size={18} />
-        </Button>
-      </Reveal>
     </Section>
   );
 }

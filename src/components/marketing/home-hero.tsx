@@ -75,7 +75,7 @@ export function HomePartnerLogos() {
             return (
               <span
                 key={partner.name}
-                className="flex h-14 w-44 items-center justify-center rounded-md border border-line bg-paper px-5"
+                className="flex h-16 w-40 shrink-0 items-center justify-center px-4"
               >
                 <Image
                   src={logo.src}

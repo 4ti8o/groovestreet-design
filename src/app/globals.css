@@ -77,6 +77,8 @@
   --dur-fast: 150ms;
   --dur-base: 250ms;
   --dur-slow: 450ms;
+  /* §8 — scroll reveals: longer settle reads smoother than a quick fade. */
+  --dur-reveal: 650ms;
   --animate-marquee: marquee 40s linear infinite;
   /* §8 — hero word swap: each word holds ~2.4s, then crossfades. */
   --animate-word-swap: word-swap 5.4s ease-in-out infinite;
