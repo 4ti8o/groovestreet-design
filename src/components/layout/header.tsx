@@ -86,7 +86,7 @@ export function SiteHeader() {
             })}
           </nav>
           <div className="hidden lg:block">
-            <Button href="/book" variant="primary" size="sm">
+            <Button href="/contact" variant="primary" size="sm">
               Get in Touch
             </Button>
           </div>
@@ -132,11 +132,8 @@ export function SiteHeader() {
                 ))}
               </nav>
               <div className="border-t border-line pt-6 pb-[calc(76px+24px)]">
-                <Button href="/book" variant="accent" fullWidth>
+                <Button href="/contact" variant="accent" fullWidth>
                   Get in Touch
-                </Button>
-                <Button href="/contact" variant="ghost" fullWidth className="mt-3">
-                  Or send us a message
                 </Button>
               </div>
             </Container>

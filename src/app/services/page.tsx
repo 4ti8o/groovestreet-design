@@ -10,7 +10,7 @@ import { ArrowRightIcon, ClockIcon } from "@/components/ui/icons";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Web design, landing pages, graphic design and flyers, SEO, copywriting and care plans — fixed prices, launch dates in writing, support that answers.",
+    "Web design, landing pages, graphic design and flyers, SEO and care plans — fixed prices, clear launch dates, support that answers.",
   keywords: ["graphic designer Kampala", "web design Uganda", "website designer Kampala"],
   path: "/services",
 });
@@ -22,7 +22,7 @@ export default function ServicesPage() {
         <SectionHeading
           eyebrow="Services"
           title="One studio for the whole job"
-          lede="Strategy, words, design, build and growth. Hire a single service or hand us everything from message to launch."
+          lede="Strategy, design, build and growth. Hire a single service or hand us everything from message to launch."
         />
         <ul className="mt-12 space-y-4">
           {services.map((service, index) => (

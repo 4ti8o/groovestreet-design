@@ -5,7 +5,6 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ContactTrio } from "@/components/marketing/contact-channels";
-import { CalendarIcon } from "@/components/ui/icons";
 
 /**
  * Closing conversion band (design.md §10): every page ends with a CTA,
@@ -14,7 +13,7 @@ import { CalendarIcon } from "@/components/ui/icons";
 export function CtaBand({
   eyebrow = "Let's work together",
   title = "Know what you want? Great. Got questions? Even better.",
-  lede = "Tell us about your project in one call, one message, or one email — we'll reply within one business day with honest next steps.",
+  lede = "Tell us about your project in one call, one message, or one email — we'll reply within one business day with clear next steps.",
 }: {
   eyebrow?: string;
   title?: ReactNode;
@@ -30,12 +29,8 @@ export function CtaBand({
           <h2 className="mt-4 text-h1 font-bold">{title}</h2>
           <p className="mx-auto mt-5 max-w-[52ch] text-lg text-muted-invert">{lede}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/book" variant="accent">
-              <CalendarIcon size={18} />
+            <Button href="/contact" variant="accent">
               Get in Touch
-            </Button>
-            <Button href="/contact" variant="invert">
-              Send a message
             </Button>
           </div>
           <ContactTrio dark className="mt-8 justify-center" />

@@ -17,7 +17,7 @@ const channels = [
     name: "WhatsApp",
     value: site.whatsappDisplay,
     href: waHref(defaultMessage),
-    note: "Fastest reply — usually same day",
+    note: "Fastest reply",
     Icon: WhatsAppIcon,
     external: true,
   },

@@ -26,7 +26,7 @@ export const projects: Project[] = [
       "Pearl Dental Studio had a five-year-old site that ranked on page four and took eleven seconds to load on a phone. New patients were finding competitors first.",
       "We rebuilt the site around one action — book an appointment — with dentist profiles, treatment pages in plain language, one-tap call and WhatsApp, and local SEO for Kampala searches.",
     ],
-    services: ["Website Design & Build", "Copy & Messaging", "SEO & Performance"],
+    services: ["Website Design & Build", "SEO & Performance"],
     approach: [
       { step: "Clarify", detail: "Patient interviews + search data → one booking-focused sitemap." },
       { step: "Design", detail: "Calm, clinical look with big tap targets and readable type." },
@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "The lodge depended on booking platforms taking up to 20% per stay. Their own site showed tiny photos and a contact form nobody answered.",
       "We built a gallery-led site with room tours, seasonal rates, guest reviews and a WhatsApp-first booking path that the front desk can answer from a phone.",
     ],
-    services: ["Website Design & Build", "Graphic Design", "Copy & Messaging"],
+    services: ["Website Design & Build", "Graphic Design"],
     approach: [
       { step: "Clarify", detail: "Guest survey: photos, price and availability decide everything." },
       { step: "Design", detail: "Full-bleed imagery, simple rates table, instant WhatsApp booking." },

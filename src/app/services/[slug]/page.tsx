@@ -42,7 +42,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <h1 className="mt-4 max-w-[18ch] text-display font-bold">{service.name}</h1>
         <p className="mt-5 max-w-[52ch] text-xl text-muted">{service.tagline}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="/book" variant="primary">Get in Touch</Button>
+          <Button href="/contact" variant="primary">Get in Touch</Button>
           <Button href="/contact" variant="outline">Ask about this service</Button>
         </div>
         <p className="mt-5 inline-flex items-center gap-2 text-sm text-muted">
@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <Section tone="surface" ariaLabel="What you get">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <SectionHeading eyebrow="Deliverables" title="What you get, in writing" />
+            <SectionHeading eyebrow="Deliverables" title="What you get" />
             <ul className="mt-8 space-y-2.5">
               {service.deliverables.map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <CtaBand
         eyebrow={service.name}
         title={`Ready for ${service.name.toLowerCase()} that pays for itself?`}
-        lede="One call or message starts it. Fixed quote, launch date and honest advice — within one business day."
+        lede="One call or message starts it. Fixed quote, launch date and clear advice — within one business day."
       />
     </>
   );

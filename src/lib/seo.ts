@@ -72,7 +72,6 @@ export function servicesJsonLd() {
       "Landing Pages & Campaign Pages",
       "Graphic Design",
       "SEO & Performance",
-      "Copy & Messaging",
       "Care & Growth Plan",
     ].map((name, index) => ({
       "@type": "ListItem",

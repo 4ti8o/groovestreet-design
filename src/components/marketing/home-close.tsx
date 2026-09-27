@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Accordion } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/reveal";
+import { PartnerCard } from "@/components/marketing/partner-card";
 import { CheckIcon, ArrowRightIcon } from "@/components/ui/icons";
 
 export function HomePricing() {
@@ -17,7 +18,7 @@ export function HomePricing() {
         <SectionHeading
           eyebrow="Pricing"
           title="Fixed prices, stated up front"
-          lede="Premium quality at a rate that fits your business. No hourly meters, no surprise invoices — the price is in writing before we start."
+          lede="Premium quality at a rate that fits your business. No hourly meters, no surprise invoices — the price is set before we start."
         />
         <Reveal>
           <article className="card border-ink">
@@ -38,7 +39,7 @@ export function HomePricing() {
             </ul>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button href="/pricing" variant="primary">See all pricing</Button>
-              <Button href="/book" variant="outline">Get a fixed quote</Button>
+              <Button href="/contact" variant="outline">Get a fixed quote</Button>
             </div>
           </article>
         </Reveal>
@@ -58,13 +59,7 @@ export function HomePartners() {
       <ul className="mt-12 grid gap-4 md:grid-cols-3">
         {partners.slice(0, 3).map((p, i) => (
           <Reveal key={p.name} delay={i * 60}>
-            <li className="card h-full">
-              <div className="flex items-center justify-between gap-3">
-                <Badge tone="neutral">{p.kind}</Badge>
-              </div>
-              <h3 className="mt-4 text-h4 font-semibold">{p.name}</h3>
-              <p className="mt-2 text-sm text-muted">{p.description}</p>
-            </li>
+            <PartnerCard partner={p} />
           </Reveal>
         ))}
       </ul>

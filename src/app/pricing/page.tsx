@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export const metadata = pageMetadata({
   title: "Pricing",
   description:
-    "Fixed website pricing: Landing pages from UGX 200,000, Launchpad from UGX 3,500,000, Signature from UGX 7,000,000, Authority from UGX 13,000,000, and care plans from UGX 350,000/mo. The quote you approve is the price you pay.",
+    "Fixed website pricing: Landing pages from UGX 200,000, Launchpad from UGX 500,000, Signature from UGX 7,000,000, Authority from UGX 13,000,000, and care plans from UGX 50,000/mo. The quote you approve is the price you pay.",
   path: "/pricing",
 });
 
@@ -25,7 +25,7 @@ const pricingFaqs = [
   {
     question: "What if I need more pages later?",
     answer:
-      "Extra pages are priced per page before work starts (typically UGX 350,000–550,000 depending on complexity). Care-plan hours can also cover new pages.",
+      "Extra pages are priced per page before work starts (typically UGX 50,000–550,000 depending on complexity). Care-plan hours can also cover new pages.",
   },
   {
     question: "Is hosting included?",
@@ -46,7 +46,7 @@ export default function PricingPage() {
         <SectionHeading
           eyebrow="Pricing"
           title="Fixed prices, stated up front"
-          lede="Premium design and build at honest UGX rates. Every package ends with a written quote listing exact pages, revision count and launch date. No hourly meters, no surprise invoices."
+          lede="Premium design and build at fixed UGX rates. Every package lists exact pages, revision count and launch date. No hourly meters, no surprise invoices."
         />
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           {packages.map((pkg, index) => (
@@ -70,7 +70,7 @@ export default function PricingPage() {
                   ))}
                 </ul>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button href="/book" variant={pkg.featured ? "primary" : "outline"}>
+                  <Button href="/contact" variant={pkg.featured ? "primary" : "outline"}>
                     {pkg.cta}
                   </Button>
                 </div>
@@ -104,7 +104,7 @@ export default function PricingPage() {
       <CtaBand
         eyebrow="Get your fixed quote"
         title="One call. One page. One price."
-        lede="Tell us about your project and we'll return a fixed written quote — pages, revisions and launch date included."
+        lede="Tell us about your project and we'll return a fixed quote — pages, revisions and launch date included."
       />
     </>
   );

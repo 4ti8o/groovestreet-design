@@ -6,16 +6,15 @@ import { Button } from "@/components/ui/button";
 import { CheckIcon } from "@/components/ui/icons";
 
 const services = [
-  "Website Design & Build",
-  "Landing page",
-  "Graphic design & flyers",
-  "SEO & performance",
-  "Copy & messaging",
+  "Website Design",
+  "Landing Page",
+  "Graphic Design",
+  "SEO & Performance",
   "Care plan",
   "Something else",
 ];
 
-const budgets = ["Under UGX 1,000,000", "UGX 1,000,000–4,000,000", "UGX 4,000,000–8,000,000", "UGX 8,000,000+", "Flyers or graphics only", "Monthly plan"];
+const budgets = ["Under UGX 200,000", "UGX 200,000", "UGX 500,000", "UGX 500,000+", "Graphics", "Monthly (UGX 50,000)"];
 
 const inputCls =
   "min-h-[48px] w-full rounded-md border border-line bg-paper px-4 text-base text-ink placeholder:text-muted/70 focus:border-ink focus:outline-none";
@@ -113,7 +112,6 @@ export function ContactForm() {
             Service <span className="font-normal text-muted">(optional)</span>
           </label>
           <select id="cf-service" name="service" defaultValue="" className={inputCls}>
-            <option value="">Not sure yet</option>
             {services.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}

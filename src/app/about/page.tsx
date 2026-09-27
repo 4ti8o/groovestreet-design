@@ -2,8 +2,8 @@ import { pageMetadata } from "@/lib/seo";
 import { stats, partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { Badge } from "@/components/ui/badge";
 import { ContactChannels } from "@/components/marketing/contact-channels";
+import { PartnerCard } from "@/components/marketing/partner-card";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { CheckIcon } from "@/components/ui/icons";
 
@@ -115,13 +115,7 @@ export default function AboutPage() {
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
           {partners.map((partner, index) => (
             <Reveal key={partner.name} delay={Math.min(index, 5) * 60}>
-              <li className="card h-full">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Badge tone="neutral">{partner.kind}</Badge>
-                </div>
-                <h3 className="mt-4 text-h4 font-semibold">{partner.name}</h3>
-                <p className="mt-2 text-sm text-muted">{partner.description}</p>
-              </li>
+              <PartnerCard partner={partner} />
             </Reveal>
           ))}
         </ul>
@@ -131,7 +125,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Talk to us"
           title="Reach a human, not a form queue"
-          lede="Call, WhatsApp or email — a real person replies within one business day."
+          lede="Call, WhatsApp or email."
         />
         <ContactChannels className="mt-10" />
       </Section>

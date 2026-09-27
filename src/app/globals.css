@@ -78,6 +78,9 @@
   --dur-base: 250ms;
   --dur-slow: 450ms;
   --animate-marquee: marquee 40s linear infinite;
+  /* §8 — hero word swap: each word holds ~2.4s, then crossfades. */
+  --animate-word-swap: word-swap 5.4s ease-in-out infinite;
+  --animate-word-swap-alt: word-swap 5.4s ease-in-out -2.7s infinite;
 
   /* --- Elevation: §6 (the only shadow in the product) ------------------- */
   --shadow-header: 0 1px 0 var(--color-line), 0 8px 24px rgb(14 17 19 / 0.06);
@@ -89,6 +92,27 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* §8 — crossfade + tiny rise between two stacked words (opacity/transform only). */
+@keyframes word-swap {
+  0%,
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-0.25em);
+  }
+  95% {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

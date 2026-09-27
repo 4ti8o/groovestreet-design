@@ -60,7 +60,7 @@ export default function WorkPage() {
       <CtaBand
         eyebrow="Your project here"
         title="Become our next case study"
-        lede="Tell us where you are and where you want to be. We'll map the fastest honest route between the two."
+        lede="Tell us where you are and where you want to be. We'll map the fastest route between the two."
       />
     </>
   );

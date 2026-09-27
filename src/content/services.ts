@@ -6,7 +6,7 @@ export type Service = {
   tagline: string;
   description: string[];
   /** Icon key — resolved by ServiceIcon; content files never import components. */
-  icon: "monitor" | "target" | "palette" | "search" | "pen" | "refresh";
+  icon: "monitor" | "target" | "palette" | "search" | "refresh";
   deliverables: string[];
   forWho: string[];
   outcomes: { value: string; label: string }[];
@@ -42,7 +42,7 @@ export const services: Service[] = [
       { value: "2", label: "rounds of changes included" },
     ],
     timeline: "3–6 weeks",
-    priceFrom: "from UGX 3,500,000",
+    priceFrom: "from UGX 500,000",
     keywords: ["website designer Kampala", "website design Uganda", "business website design"],
     faqs: [
       {
@@ -53,7 +53,7 @@ export const services: Service[] = [
       {
         question: "Do you write the words too?",
         answer:
-          "We polish the words on every page as standard. If you want us to write everything from scratch, that is a separate service.",
+          "We polish the words on every page as standard — headlines, buttons and calls to action. You stay the author; we make sure every page reads clearly.",
       },
     ],
   },
@@ -166,45 +166,13 @@ export const services: Service[] = [
       { value: "1", label: "search plan you can keep" },
     ],
     timeline: "Audit in 2 weeks · plans ongoing",
-    priceFrom: "audit from UGX 1,100,000 · plans from UGX 950,000/mo",
+    priceFrom: "audit from UGX 80,000 · plans from UGX 50,000/mo",
     keywords: ["SEO Kampala", "SEO services Uganda", "Google Business Profile setup", "website speed optimization"],
     faqs: [
       {
         question: "How fast will I rank?",
         answer:
-          "Honest answer: local searches usually move within 30–90 days, and tougher ones take longer. We report your positions every month so you see exactly what is happening.",
-      },
-    ],
-  },
-  {
-    slug: "copy-messaging",
-    name: "Copy & Messaging",
-    tagline: "Say it so simply they cannot misunderstand you.",
-    description: [
-      "Most websites fail on words, not pixels. Visitors leave when they cannot tell what you do in five seconds. We rewrite your homepage and service pages around a clear story: the problem, the plan, the proof, the action.",
-      "You answer a structured questionnaire; we do the writing, and you approve every line.",
-    ],
-    icon: "pen",
-    deliverables: [
-      "Homepage rewrite (headline to footer)",
-      "Up to 5 service-page rewrites",
-      "Call-to-action wording throughout",
-      "Tone-of-voice notes for your team",
-    ],
-    forWho: ["Experts who hate writing", "Sites with traffic but no enquiries", "Rebrands and relaunches", "Non-native English teams"],
-    outcomes: [
-      { value: "5-sec", label: "clarity test every headline passes" },
-      { value: "2", label: "review rounds included" },
-      { value: "1", label: "questionnaire — that is all we need" },
-    ],
-    timeline: "1–2 weeks",
-    priceFrom: "from UGX 1,500,000",
-    keywords: ["website copywriting Uganda", "website content writer Kampala", "landing page copy"],
-    faqs: [
-      {
-        question: "What do you need from me?",
-        answer:
-          "One questionnaire about your clients, services and proof — about an hour of your time. Follow-up calls are optional.",
+          "Local searches usually move within 30–90 days, and tougher ones take longer. We report your positions every month so you see exactly what is happening.",
       },
     ],
   },
@@ -214,7 +182,7 @@ export const services: Service[] = [
     tagline: "Your website, maintained and improving monthly.",
     description: [
       "Websites rot: software ages, content goes stale, small breaks go unnoticed. Our monthly care plan keeps your site fast, backed up and secure — and reserves design hours for the improvements that compound.",
-      "One flat monthly fee. Pause or cancel with 30 days' notice. No contracts that outlive their usefulness.",
+      "One flat monthly fee. Pause or cancel with 30 days' notice.",
     ],
     icon: "refresh",
     deliverables: [
@@ -231,7 +199,7 @@ export const services: Service[] = [
       { value: "0", label: "surprise invoices — one flat fee" },
     ],
     timeline: "Starts the day your site launches",
-    priceFrom: "from UGX 350,000/mo",
+    priceFrom: "from UGX 50,000/mo",
     keywords: ["website maintenance Uganda", "website care plan", "website support Kampala"],
     faqs: [
       {

@@ -40,7 +40,7 @@ export default function ProcessPage() {
       <Section tone="surface" ariaLabel="What you can hold us to">
         <SectionHeading
           eyebrow="Guarantees"
-          title="In writing, not just on this page"
+          title="What you can hold us to"
           lede="Three promises that hold on every project we take on."
         />
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
@@ -60,7 +60,7 @@ export default function ProcessPage() {
 
       <CtaBand
         eyebrow="Start at step one"
-        title="The discovery call is free and honest"
+        title="The discovery call is free"
         lede="Thirty minutes on call or WhatsApp. We'll tell you if we're the right studio — and if we're not, we'll say who is."
       />
     </>

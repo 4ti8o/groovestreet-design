@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
     name: "Grace Achieng",
     role: "Executive Coach",
     company: "Achieng Coaching",
-    service: "Copy & Messaging",
+    service: "Website Design & Build",
     ratings: { quality: 5.0, schedule: 5.0, cost: 4.5, referral: 5.0 },
   },
 ];
@@ -96,7 +96,7 @@ export const processSteps = [
     step: "01",
     title: "Discovery call",
     detail:
-      "A 30-minute call or WhatsApp chat. We learn your business, your clients and your goal — and tell you honestly if we are the right studio. Free, no pitch decks.",
+      "A 30-minute call or WhatsApp chat. We learn your business, your clients and your goal — and tell you if we are the right studio. Free, no pitch decks.",
     duration: "Day 0",
   },
   {
@@ -136,7 +136,7 @@ export const guarantees = [
   },
   {
     title: "A date, not a season",
-    detail: "Every project ships with a launch date in writing. If we miss it through our fault, the final 10% is on us.",
+    detail: "Every project ships with a launch date. If we miss it through our fault, the final 10% is on us.",
   },
   {
     title: "You own everything",

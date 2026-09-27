@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { GaugeIcon, MonitorIcon, PaletteIcon, PenIcon, RefreshIcon, SearchIcon, TargetIcon } from "@/components/ui/icons";
+import { GaugeIcon, MonitorIcon, PaletteIcon, RefreshIcon, SearchIcon, TargetIcon } from "@/components/ui/icons";
 import type { Service } from "@/content/services";
 
 const iconMap: Record<Service["icon"], ComponentType<{ size?: number; className?: string }>> = {
@@ -7,7 +7,6 @@ const iconMap: Record<Service["icon"], ComponentType<{ size?: number; className?
   target: TargetIcon,
   palette: PaletteIcon,
   search: SearchIcon,
-  pen: PenIcon,
   refresh: RefreshIcon,
 };
 

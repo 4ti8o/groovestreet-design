@@ -25,13 +25,13 @@ export const packages: Package[] = [
   },
   {
     name: "Launchpad",
-    price: "UGX 3,500,000",
+    price: "UGX 500,000",
     cadence: "fixed price · 2–3 weeks",
     tagline: "A sharp one-to-five page site for new businesses that need to look real, fast.",
     features: [
       "Custom design, up to 5 pages",
       "Build + search setup, tested on real devices",
-      "Clear, persuasive copywriting polish",
+      "Clear headlines and calls to action",
       "Form + WhatsApp integration",
       "Handover video + 2 weeks support",
     ],
@@ -41,11 +41,10 @@ export const packages: Package[] = [
     name: "Signature",
     price: "UGX 7,000,000",
     cadence: "fixed price · 3–6 weeks",
-    tagline: "The full custom website: strategy, copy, design and build for growing businesses.",
+    tagline: "The full custom website: strategy, design and build for growing businesses.",
     features: [
       "Everything in Launchpad",
       "Up to 12 pages + blog setup",
-      "From-scratch copywriting option",
       "Brand refresh (logo touch-up + palette)",
       "Advanced search visibility + analytics setup",
       "Priority support for 30 days",
@@ -69,7 +68,7 @@ export const packages: Package[] = [
   },
   {
     name: "Care plan",
-    price: "UGX 350,000/mo",
+    price: "UGX 50,000/mo",
     cadence: "monthly · cancel anytime",
     tagline: "Maintenance, backups, security and monthly design hours. Always improving.",
     features: [
@@ -88,7 +87,7 @@ export const homeFaqs: SiteFaq[] = [
   {
     question: "How much does a website cost?",
     answer:
-      "Landing pages start at UGX 200,000, multi-page Launchpad sites at UGX 3,500,000, full custom Signature sites at UGX 7,000,000, and Authority builds at UGX 13,000,000. You get a fixed written quote before we start — the price never moves without your approval.",
+      "Landing pages start at UGX 200,000, multi-page Launchpad sites at UGX 500,000, full custom Signature sites at UGX 7,000,000, and Authority builds at UGX 13,000,000. You get a fixed quote before we start — the price never moves without your approval.",
   },
   {
     question: "How do you keep prices low without cutting quality?",
@@ -98,7 +97,7 @@ export const homeFaqs: SiteFaq[] = [
   {
     question: "How long does it take?",
     answer:
-      "Landing pages ship in 3–5 days, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every project gets a launch date in writing, not a season.",
+      "Landing pages ship in 3–5 days, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every project gets a launch date, not a season.",
   },
   {
     question: "Do you design flyers and posters?",

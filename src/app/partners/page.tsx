@@ -1,8 +1,8 @@
 import { pageMetadata } from "@/lib/seo";
 import { partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
+import { PartnerCard } from "@/components/marketing/partner-card";
 import { CtaBand } from "@/components/marketing/cta-band";
 
 export const metadata = pageMetadata({
@@ -31,13 +31,7 @@ export default function PartnersPage() {
             <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {group.items.map((partner, index) => (
                 <Reveal key={partner.name} delay={Math.min(index, 3) * 60}>
-                  <li className="card h-full">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <Badge tone="neutral">{partner.kind}</Badge>
-                    </div>
-                    <h3 className="mt-4 text-h4 font-semibold">{partner.name}</h3>
-                    <p className="mt-2 text-sm text-muted">{partner.description}</p>
-                  </li>
+                  <PartnerCard partner={partner} />
                 </Reveal>
               ))}
             </ul>

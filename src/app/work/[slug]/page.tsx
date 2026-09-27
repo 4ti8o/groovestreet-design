@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </li>
               ))}
             </ul>
-            <Button href="/book" variant="primary" className="mt-8">
+            <Button href="/contact" variant="primary" className="mt-8">
               Start your project
               <ArrowRightIcon size={18} />
             </Button>
@@ -99,7 +99,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <CtaBand
         eyebrow={project.client}
         title="Want results like these?"
-        lede="Tell us where you are and where you want to be. We'll map the fastest honest route between the two."
+        lede="Tell us where you are and where you want to be. We'll map the fastest route between the two."
       />
     </>
   );

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Marquee } from "@/components/ui/marquee";
 import { ContactTrio } from "@/components/marketing/contact-channels";
-import { ArrowRightIcon, CalendarIcon } from "@/components/ui/icons";
+import { ArrowRightIcon } from "@/components/ui/icons";
 
 export function HomeHero() {
   return (
@@ -18,19 +18,30 @@ export function HomeHero() {
             Website design studio · {site.location}
           </p>
           <h1 className="mt-5 max-w-[16ch] text-display font-bold">
-            Find your next client/customer online - Your Website does the Work.
+            <span className="sr-only">
+              Find your next client or customer online - Your Website does the Work.
+            </span>
+            <span aria-hidden="true">
+              Find your next{" "}
+              <span className="relative inline-grid">
+                <span className="col-start-1 row-start-1 motion-safe:animate-word-swap">client</span>
+                <span className="col-start-1 row-start-1 opacity-0 motion-safe:animate-word-swap-alt">
+                  customer
+                </span>
+              </span>{" "}
+              online - Your Website does the Work.
+            </span>
           </h1>
           <p className="mt-6 max-w-[52ch] text-lg text-muted">
             We craft clean, affordable, professional and intuitive websites to bring your business online.
             Get ranked by search engines, convert website traffic and grow. 
           </p>
           <p className="mt-4 max-w-[52ch] text-base font-medium text-ink">
-            Premium design and build at a price that fits your business — fixed in writing before we start.
+            Premium design and build at a price that fits your business — fixed before we start.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/book" variant="primary">
-              <CalendarIcon size={18} />
-              Book a free discovery call
+            <Button href="/contact" variant="primary">
+              Get in Touch
             </Button>
             <Button href="/work" variant="outline">
               See the work
