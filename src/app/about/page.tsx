@@ -2,6 +2,7 @@ import { pageMetadata } from "@/lib/seo";
 import { stats, partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { Marquee } from "@/components/ui/marquee";
 import { ContactChannels } from "@/components/marketing/contact-channels";
 import { PartnerCard } from "@/components/marketing/partner-card";
 import { CtaBand } from "@/components/marketing/cta-band";
@@ -112,7 +113,14 @@ export default function AboutPage() {
           title="Technology and people we trust"
           lede="The stack, services and community behind our builds — not logos we rented."
         />
-        <ul className="mt-12 grid gap-4 md:grid-cols-3">
+        <Marquee className="mt-10">
+          {partners.map((partner) => (
+            <span key={partner.name} className="font-display text-h4 font-semibold text-ink/70">
+              {partner.name}
+            </span>
+          ))}
+        </Marquee>
+        <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {partners.map((partner, index) => (
             <Reveal key={partner.name} delay={Math.min(index, 5) * 60}>
               <PartnerCard partner={partner} />
