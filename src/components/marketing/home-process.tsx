@@ -7,13 +7,13 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 
 export function HomeProcess() {
   return (
-    <Section tone="surface" ariaLabel="How working with us works">
+    <Section ariaLabel="How working with us works">
       <SectionHeading
         eyebrow="How it works"
         title="First call to launch in five steps"
         lede="No black boxes. You always know what happens next and when your site goes live."
       />
-      <ol className="mt-12 grid gap-4 lg:grid-cols-3">
+      <ol className="mt-10 grid gap-4 lg:grid-cols-3">
         {processSteps.slice(0, 3).map((step, index) => (
           <Reveal key={step.step} delay={index * 60}>
             <li className="card h-full">
@@ -32,7 +32,10 @@ export function HomeProcess() {
         </Button>
       </Reveal>
       <p className="mt-4 text-sm text-muted">
-        Steps 4 and 5? <Link href="/process" className="font-medium text-brand underline underline-offset-4">Build, launch and grow</Link>
+        Steps 4 and 5?{" "}
+        <Link href="/process" className="font-medium text-brand underline underline-offset-4">
+          Build, launch and grow
+        </Link>
       </p>
     </Section>
   );

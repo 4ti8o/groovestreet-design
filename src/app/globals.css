@@ -197,7 +197,9 @@
 
 /* §7.2 card */
 @utility card {
-  background-color: var(--color-surface);
+  /* --card-fill flips to paper on `surface` sections so white cards on a
+     white band stay visible (design.md §5 tone shift). */
+  background-color: var(--card-fill, var(--color-surface));
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
   padding: 24px;

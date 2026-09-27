@@ -19,7 +19,7 @@ export function HomeStats() {
         title="The numbers behind the work"
         lede="Timelines, launches and reviews — the counts we can stand behind, every one earned."
       />
-      <dl className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <dl className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((stat, index) => {
           const Icon = statIcons[index % statIcons.length];
           return (

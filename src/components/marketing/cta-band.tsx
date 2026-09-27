@@ -20,7 +20,7 @@ export function CtaBand({
   lede?: ReactNode;
 }) {
   return (
-    <section aria-label="Get in touch" className="bg-ink py-20 text-paper md:py-28">
+    <section aria-label="Get in touch" className="bg-ink py-16 text-paper md:py-20 lg:py-24">
       <Container>
         <Reveal className="mx-auto max-w-[72ch] text-center">
           <Eyebrow dark className="justify-center">

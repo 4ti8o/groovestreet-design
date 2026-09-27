@@ -57,7 +57,7 @@ export function HomeGuarantees() {
         title="Promises you can hold us to"
         lede="Adjectives are cheap. These three promises hold on every project we take on."
       />
-      <ul className="mt-12 max-w-[68ch] space-y-8">
+      <ul className="mt-10 max-w-[68ch] space-y-8">
         {guarantees.map((g, i) => (
           <Reveal key={g.title} delay={i * 60}>
             <li className="flex gap-4 border-t border-line pt-8">

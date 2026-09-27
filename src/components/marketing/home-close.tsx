@@ -12,7 +12,7 @@ export function HomePricing() {
   const featured = packages.find((p) => p.featured) ?? packages[0];
   if (!featured) return null;
   return (
-    <Section ariaLabel="Pricing">
+    <Section tone="surface" ariaLabel="Pricing">
       <div className="grid items-center gap-10 lg:grid-cols-2">
         <SectionHeading
           eyebrow="Pricing"

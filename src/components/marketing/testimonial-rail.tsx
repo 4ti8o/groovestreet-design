@@ -47,7 +47,7 @@ export function TestimonialRail({ testimonials }: { testimonials: Testimonial[] 
   };
 
   return (
-    <div className="mt-12">
+    <div className="mt-10">
       <ul
         ref={railRef}
         className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"

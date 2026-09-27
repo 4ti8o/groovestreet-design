@@ -2,7 +2,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { ArrowRightIcon, PaletteIcon, SearchIcon, ShieldIcon, TargetIcon } from "@/components/ui/icons";
+import {
+  ArrowRightIcon,
+  PaletteIcon,
+  SearchIcon,
+  ShieldIcon,
+  TargetIcon,
+} from "@/components/ui/icons";
 
 const painPoints = [
   {
@@ -35,7 +41,7 @@ export function HomePain() {
         title="Your website should win clients"
         lede="The four sentences we hear on almost every first call. Each has a fix smaller than you fear."
       />
-      <ul className="mt-12 grid gap-4 md:grid-cols-2">
+      <ul className="mt-10 grid gap-4 md:grid-cols-2">
         {painPoints.map((item, index) => (
           <Reveal key={item.pain} delay={Math.min(index, 3) * 60}>
             <li className="card h-full">

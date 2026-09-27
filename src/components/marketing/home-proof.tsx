@@ -17,7 +17,7 @@ export function HomeProof() {
         title="Work that pays for itself"
         lede="Real projects, real numbers. Measurable results from local businesses we have worked with."
       />
-      <Reveal className="mt-12">
+      <Reveal className="mt-10">
         <article className="overflow-hidden rounded-lg border border-line-invert bg-ink-2">
           <div className="grid gap-0 lg:grid-cols-2">
             <div className="p-8 md:p-10">

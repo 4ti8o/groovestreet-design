@@ -7,13 +7,13 @@ import { ArrowUpRightIcon } from "@/components/ui/icons";
 
 export function HomeServices() {
   return (
-    <Section ariaLabel="What we do">
+    <Section tone="surface" ariaLabel="What we do">
       <SectionHeading
         eyebrow="Services"
         title="Everything your website needs"
         lede="Strategy, words, design, build and growth. Hire one service or hand us the whole job."
       />
-      <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <Reveal key={service.slug} delay={Math.min(index, 5) * 60}>
             <li className="h-full">

@@ -6,13 +6,13 @@ import { ArrowUpRightIcon } from "@/components/ui/icons";
 
 export function HomeIndustries() {
   return (
-    <Section tone="surface" ariaLabel="Who we help">
+    <Section ariaLabel="Who we help">
       <SectionHeading
         eyebrow="Who we help"
         title="Built for the way your clients buy"
         lede="Eight sectors, one pattern: visitors who need to trust you fast."
       />
-      <ul className="mt-12 flex flex-wrap gap-3">
+      <ul className="mt-10 flex flex-wrap gap-3">
         {industries.map((industry, index) => (
           <Reveal key={industry.slug} delay={Math.min(index, 5) * 60}>
             <li>

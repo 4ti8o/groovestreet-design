@@ -65,7 +65,7 @@ export function HomeHero() {
 export function HomePartnerLogos() {
   const withLogos = partners.filter((partner) => partner.logo);
   return (
-    <section aria-label="Our partners" className="border-y border-line bg-surface py-10">
+    <section aria-label="Our partners" className="border-y border-line bg-surface py-14">
       <Container>
         <p className="eyebrow text-center text-muted">Organisations we build alongside</p>
         <Marquee className="mt-6">
