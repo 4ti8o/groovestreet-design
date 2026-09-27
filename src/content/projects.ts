@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "The lodge depended on booking platforms taking up to 20% per stay. Their own site showed tiny photos and a contact form nobody answered.",
       "We built a gallery-led site with room tours, seasonal rates, guest reviews and a WhatsApp-first booking path that the front desk can answer from a phone.",
     ],
-    services: ["Website Design & Build", "Brand Identity", "Copy & Messaging"],
+    services: ["Website Design & Build", "Graphic Design", "Copy & Messaging"],
     approach: [
       { step: "Clarify", detail: "Guest survey: photos, price and availability decide everything." },
       { step: "Design", detail: "Full-bleed imagery, simple rates table, instant WhatsApp booking." },

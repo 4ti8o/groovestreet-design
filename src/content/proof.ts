@@ -11,7 +11,7 @@ export type Testimonial = {
 /**
  * Client reviews from work we have delivered, published with each client's
  * permission. Never invent a review, and never edit one into something better
- * than what the client actually said (design.md §14).
+ * than what the client actually said.
  */
 export const testimonials: Testimonial[] = [
   {
@@ -117,7 +117,7 @@ export const processSteps = [
     step: "04",
     title: "Build & quality pass",
     detail:
-      "Development, speed optimization, SEO setup and a 60-point checklist: every link, form, phone number and WhatsApp button tested on real phones.",
+      "Development, speed optimization, SEO setup and a 60-point checklist: every link, form, phone number and WhatsApp button tested on real devices.",
     duration: "Weeks 2–5",
   },
   {
@@ -136,7 +136,7 @@ export const guarantees = [
   },
   {
     title: "A date, not a season",
-    detail: "Every project ships with a launch date in the agreement. If we miss it through our fault, the final 10% is on us.",
+    detail: "Every project ships with a launch date in writing. If we miss it through our fault, the final 10% is on us.",
   },
   {
     title: "You own everything",

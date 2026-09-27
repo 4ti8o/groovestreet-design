@@ -40,8 +40,8 @@ export default function ProcessPage() {
       <Section tone="surface" ariaLabel="What you can hold us to">
         <SectionHeading
           eyebrow="Guarantees"
-          title="In the agreement, not just on this page"
-          lede="Three terms that protect you on every project we sign."
+          title="In writing, not just on this page"
+          lede="Three promises that hold on every project we take on."
         />
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
           {guarantees.map((guarantee, index) => (

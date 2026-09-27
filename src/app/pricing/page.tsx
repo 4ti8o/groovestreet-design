@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export const metadata = pageMetadata({
   title: "Pricing",
   description:
-    "Fixed website pricing: Landing pages from UGX 200,000, Launchpad from $950, Signature from $1,900, Authority from $3,500, and care plans from $95/mo. The quote you approve is the price you pay.",
+    "Fixed website pricing: Landing pages from UGX 200,000, Launchpad from UGX 3,500,000, Signature from UGX 7,000,000, Authority from UGX 13,000,000, and care plans from UGX 350,000/mo. The quote you approve is the price you pay.",
   path: "/pricing",
 });
 
@@ -20,17 +20,17 @@ const pricingFaqs = [
   {
     question: "Can I pay in UGX or Mobile Money?",
     answer:
-      "Yes. We invoice in USD or UGX and accept bank transfer, Mobile Money (MTN/Airtel) and cards. Projects are typically 50% to start and 50% at launch.",
+      "Yes. We invoice in UGX and accept bank transfer, Mobile Money (MTN/Airtel) and cards. Projects are typically 50% to start and 50% at launch.",
   },
   {
     question: "What if I need more pages later?",
     answer:
-      "Extra pages are priced per page before work starts (typically $90–$150 depending on complexity). Care-plan hours can also cover new pages.",
+      "Extra pages are priced per page before work starts (typically UGX 350,000–550,000 depending on complexity). Care-plan hours can also cover new pages.",
   },
   {
     question: "Is hosting included?",
     answer:
-      "First-year hosting setup is included in every package — we configure fast, secure hosting in your name. Renewals (typically $60–$120/year) go directly to the host, never through us with a markup.",
+      "First-year hosting setup is included in every package — we configure fast, secure hosting in your name. Renewals (typically UGX 230,000–450,000/year) go directly to the host, never through us with a markup.",
   },
   {
     question: "Do you offer payment plans?",

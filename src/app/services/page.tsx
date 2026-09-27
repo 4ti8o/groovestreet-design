@@ -10,7 +10,8 @@ import { ArrowRightIcon, ClockIcon } from "@/components/ui/icons";
 export const metadata = pageMetadata({
   title: "Services",
   description:
-    "Web design, landing pages, brand identity, SEO, copywriting and care plans — fixed prices, launch dates in writing, support that answers.",
+    "Web design, landing pages, graphic design and flyers, SEO, copywriting and care plans — fixed prices, launch dates in writing, support that answers.",
+  keywords: ["graphic designer Kampala", "web design Uganda", "website designer Kampala"],
   path: "/services",
 });
 

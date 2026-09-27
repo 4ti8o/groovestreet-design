@@ -8,10 +8,12 @@ export function pageMetadata({
   title,
   description,
   path = "/",
+  keywords,
 }: {
   title?: string;
   description?: string;
   path?: string;
+  keywords?: string[];
 }): Metadata {
   const fullTitle = title ? `${title} — ${site.name}` : DEFAULT_TITLE;
   const metaDescription = description ?? site.description;
@@ -19,6 +21,7 @@ export function pageMetadata({
   return {
     title: fullTitle,
     description: metaDescription,
+    keywords,
     alternates: { canonical: url },
     openGraph: {
       title: fullTitle,
@@ -67,7 +70,7 @@ export function servicesJsonLd() {
     itemListElement: [
       "Website Design & Build",
       "Landing Pages & Campaign Pages",
-      "Brand Identity",
+      "Graphic Design",
       "SEO & Performance",
       "Copy & Messaging",
       "Care & Growth Plan",

@@ -17,9 +17,9 @@ export const site = {
   name: "GROOVESTREET DESIGN",
   legalName: "Groovestreet Design",
   shortName: "Groovestreet",
-  tagline: "Websites that get you found.",
+  tagline: "Digitizing Your Business.",
   description:
-    "GROOVESTREET DESIGN is a website design studio. Strategy, words, design, build and search setup — the whole job at one fixed price. Then SEO, updates and monthly care to keep it growing.",
+    "GROOVESTREET DESIGN is a website design studio based in Kampala, Uganda. We craft clean, affordable, professional and intuitive websites to bring your business online. Get ranked by search engines, convert website traffic and grow.",
   url: env("NEXT_PUBLIC_SITE_URL", "http://localhost:3000"),
   email: env("NEXT_PUBLIC_CONTACT_EMAIL", "groovestreetsoftware@gmail.com"),
   phoneE164: env("NEXT_PUBLIC_CONTACT_PHONE_E164", "256774778164"),
@@ -68,7 +68,7 @@ export const footerNav = [
     links: [
       { label: "Website design & build", href: "/services/website-design" },
       { label: "Landing pages", href: "/services/landing-pages" },
-      { label: "Brand identity", href: "/services/brand-identity" },
+      { label: "Graphic design", href: "/services/graphic-design" },
       { label: "SEO & performance", href: "/services/seo-performance" },
       { label: "Copy & messaging", href: "/services/copy-messaging" },
       { label: "Care plan", href: "/services/care-plan" },

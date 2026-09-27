@@ -8,14 +8,14 @@ import { CheckIcon } from "@/components/ui/icons";
 const services = [
   "Website Design & Build",
   "Landing page",
-  "Brand identity",
+  "Graphic design & flyers",
   "SEO & performance",
   "Copy & messaging",
   "Care plan",
   "Something else",
 ];
 
-const budgets = ["Under $500", "$500–$1,000", "$1,000–$2,500", "$2,500+", "Monthly plan"];
+const budgets = ["Under UGX 1,000,000", "UGX 1,000,000–4,000,000", "UGX 4,000,000–8,000,000", "UGX 8,000,000+", "Flyers or graphics only", "Monthly plan"];
 
 const inputCls =
   "min-h-[48px] w-full rounded-md border border-line bg-paper px-4 text-base text-ink placeholder:text-muted/70 focus:border-ink focus:outline-none";

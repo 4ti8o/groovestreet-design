@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return pageMetadata({
     title: service.name,
     description: `${service.tagline} ${service.priceFrom}, ${service.timeline}.`,
+    keywords: service.keywords,
     path: `/services/${service.slug}`,
   });
 }

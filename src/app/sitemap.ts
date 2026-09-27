@@ -5,7 +5,7 @@ import { projects } from "@/content/projects";
 import { industries } from "@/content/industries";
 import { posts } from "@/content/posts";
 
-/** Sitemap (design.md §15): every public route, canonical origin. */
+/** Sitemap (design.md §14): every public route, canonical origin. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",

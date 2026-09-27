@@ -18,7 +18,7 @@ reference sites' *structure*, never their logos, fonts, artwork or hex values.
 2. **One action per screen.** A single primary CTA per viewport, repeated down the page — never two competing primaries side by side.
 3. **Corporate trust, street energy.** Deep green + near-black for authority; one hot accent for momentum. Playful only in motion and micro-labels.
 4. **Small screens first, always.** Every section is designed at 360px first. If it needs horizontal scroll, it is wrong.
-5. **Earned proof only.** No invented client names, ratings or logos. Every review, partner and case study on the site is real, and published with the client's permission (§14).
+5. **Earned proof only.** No invented client names, ratings or logos. Every review, partner and case study on the site is real, and published with the client's permission.
 6. **Performance is a design decision.** The budget in §13 is a hard gate, not an aspiration.
 
 ---
@@ -260,7 +260,7 @@ Rules: server components by default, `"use client"` only where interaction requi
 `LazyMotion` + `m` from `motion` instead of full `motion` imports, no third-party script
 without a written performance note, no carousel that blocks reading.
 
-## 15. Token → file map
+## 14. Token → file map
 
 | Concern | File |
 | --- | --- |
@@ -272,7 +272,7 @@ without a written performance note, no carousel that blocks reading.
 | Services, work, proof, pricing data | `src/content/*.ts` |
 | SEO metadata, sitemap, JSON-LD | `src/lib/seo.ts`, `src/app/sitemap.ts`, `robots.ts` |
 
-## 16. Never list (instant rejection in review)
+## 15. Never list (instant rejection in review)
 
 - Inventing testimonials, client names, logos, awards or metrics. Every entry in `src/content/*` must describe work we actually delivered.
 - White-on-accent text, a third typeface, drop shadows on light cards, more than one primary CTA per section.

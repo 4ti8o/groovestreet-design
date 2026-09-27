@@ -1,4 +1,4 @@
-export type Faq = { question: string; answer: string };
+﻿export type Faq = { question: string; answer: string };
 
 export type Service = {
   slug: string;
@@ -12,6 +12,8 @@ export type Service = {
   outcomes: { value: string; label: string }[];
   timeline: string;
   priceFrom: string;
+  /** Search keywords passed to this service page metadata. */
+  keywords: string[];
   faqs: Faq[];
 };
 
@@ -21,7 +23,7 @@ export const services: Service[] = [
     name: "Website Design & Build",
     tagline: "A website that brings you calls and messages.",
     description: [
-      "Your website works for you day and night. It meets every customer before you do. We design simple, beautiful websites for service businesses that load fast on phones and show up on Google.",
+      "Your website works for you day and night. It meets every customer before you do. We design simple, beautiful websites for service businesses that load fast on devices and show up on Google.",
       "Every project starts with your message, not colours. We get clear on what you sell, who it is for, and what the visitor should do next — then design around that.",
     ],
     icon: "monitor",
@@ -36,11 +38,12 @@ export const services: Service[] = [
     forWho: ["Coaches & consultants", "Clinics & wellness studios", "Lawyers, accountants & agencies", "Safari & hotel brands"],
     outcomes: [
       { value: "3–6", label: "weeks from our first chat to launch" },
-      { value: "Fast", label: "loads quickly, even on slower phones" },
+      { value: "Fast", label: "loads quickly, even on slower devices" },
       { value: "2", label: "rounds of changes included" },
     ],
     timeline: "3–6 weeks",
-    priceFrom: "from $950",
+    priceFrom: "from UGX 3,500,000",
+    keywords: ["website designer Kampala", "website design Uganda", "business website design"],
     faqs: [
       {
         question: "Will I be able to update the site myself?",
@@ -78,6 +81,7 @@ export const services: Service[] = [
     ],
     timeline: "3–5 days",
     priceFrom: "from UGX 200,000",
+    keywords: ["landing page design Uganda", "campaign page design", "one page website Kampala"],
     faqs: [
       {
         question: "Can you match what my advert promises?",
@@ -92,34 +96,50 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "brand-identity",
-    name: "Brand Identity",
-    tagline: "Look like the business you are becoming.",
+    slug: "graphic-design",
+    name: "Graphic Design",
+    tagline: "Digital graphics — flyers, posters and social posts that sell your offer.",
     description: [
-      "Clients judge you in seconds. We create logo systems, color palettes, typography and usage rules that make a small studio look established — and keep every future designer honest.",
-      "You receive everything in editable files with a one-page brand sheet your whole team can follow.",
+      "Need a flyer for a launch, a poster for an event, or a set of graphics for your social media? We design digital graphics that look professional everywhere they land.",
+      "Send your text and your logo. We handle the layout, the colours and the sizes — a print-ready file for the printer, plus web versions for WhatsApp, Instagram and Facebook.",
     ],
     icon: "palette",
     deliverables: [
-      "Logo system (primary, mark, mono)",
-      "Color + typography system",
-      "One-page brand guidelines",
-      "Social profile kit",
-      "Editable source files",
+      "Flyer, poster or social graphic designed for you",
+      "Print-ready file plus web-size images",
+      "Sizes for WhatsApp, Instagram and Facebook",
+      "Your logo, colours and fonts used consistently",
+      "Files sent by WhatsApp, email or Google Drive",
     ],
-    forWho: ["New businesses", "Rebrands after growth", "Professionals going independent", "Product launches"],
+    forWho: [
+      "Launches and promotions",
+      "Events, church and school programs",
+      "Shops, salons and restaurants",
+      "Monthly social media posts",
+    ],
     outcomes: [
-      { value: "2–3", label: "weeks turnaround" },
-      { value: "3", label: "logo concepts to choose from" },
-      { value: "1", label: "guideline sheet for your team" },
+      { value: "48h", label: "typical turnaround per design" },
+      { value: "UGX 20,000", label: "per design" },
+      { value: "UGX 50,000", label: "for a pack of three" },
     ],
-    timeline: "2–3 weeks",
-    priceFrom: "from $650",
+    timeline: "48 hours per design",
+    priceFrom: "UGX 20,000 per design · three for UGX 50,000",
+    keywords: ["graphic designer Kampala", "graphic design Uganda", "flyer design Kampala", "poster design Uganda", "social media graphics"],
     faqs: [
       {
-        question: "Do I own the files?",
+        question: "How much does a flyer or poster cost?",
         answer:
-          "Completely. Editable source files plus exported assets, with full usage rights, are handed over at the end.",
+          "UGX 20,000 for one design, or UGX 50,000 for three. That includes two small revision rounds and the print-ready file plus web sizes. Printing is paid straight to your printer.",
+      },
+      {
+        question: "Can you design for print and social media from the same artwork?",
+        answer:
+          "Yes. One design is delivered as a print-ready PDF for the printer and as correctly sized images for WhatsApp, Instagram and Facebook.",
+      },
+      {
+        question: "I need a graphic designer for menus, banners or business cards too — can you help?",
+        answer:
+          "Send it through. Menus, banners, business cards and roll-up stands are priced the same way: UGX 20,000 per design, or UGX 50,000 for three.",
       },
     ],
   },
@@ -146,7 +166,8 @@ export const services: Service[] = [
       { value: "1", label: "search plan you can keep" },
     ],
     timeline: "Audit in 2 weeks · plans ongoing",
-    priceFrom: "audit from $300 · plans from $250/mo",
+    priceFrom: "audit from UGX 1,100,000 · plans from UGX 950,000/mo",
+    keywords: ["SEO Kampala", "SEO services Uganda", "Google Business Profile setup", "website speed optimization"],
     faqs: [
       {
         question: "How fast will I rank?",
@@ -177,7 +198,8 @@ export const services: Service[] = [
       { value: "1", label: "questionnaire — that is all we need" },
     ],
     timeline: "1–2 weeks",
-    priceFrom: "from $400",
+    priceFrom: "from UGX 1,500,000",
+    keywords: ["website copywriting Uganda", "website content writer Kampala", "landing page copy"],
     faqs: [
       {
         question: "What do you need from me?",
@@ -209,12 +231,13 @@ export const services: Service[] = [
       { value: "0", label: "surprise invoices — one flat fee" },
     ],
     timeline: "Starts the day your site launches",
-    priceFrom: "from $95/mo",
+    priceFrom: "from UGX 350,000/mo",
+    keywords: ["website maintenance Uganda", "website care plan", "website support Kampala"],
     faqs: [
       {
         question: "Can you maintain a site you did not build?",
         answer:
-          "Usually yes, after a one-time health audit ($150, credited toward your first quarter). If the site is beyond saving we will tell you straight.",
+          "Usually yes, after a one-time health audit (UGX 550,000, credited toward your first quarter). If the site is beyond saving we will tell you straight.",
       },
     ],
   },

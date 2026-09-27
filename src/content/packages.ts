@@ -16,7 +16,7 @@ export const packages: Package[] = [
     tagline: "A fast, single-page site focused on one goal: turning visitors into calls and messages.",
     features: [
       "One high-converting single page",
-      "Fast mobile loading for all phones",
+      "Fast mobile loading for all devices",
       "One-tap WhatsApp & phone buttons",
       "Google map and local search setup",
       "Full handover & ownership from day one",
@@ -25,12 +25,12 @@ export const packages: Package[] = [
   },
   {
     name: "Launchpad",
-    price: "$950",
+    price: "UGX 3,500,000",
     cadence: "fixed price · 2–3 weeks",
     tagline: "A sharp one-to-five page site for new businesses that need to look real, fast.",
     features: [
       "Custom design, up to 5 pages",
-      "Build + search setup, tested on real phones",
+      "Build + search setup, tested on real devices",
       "Clear, persuasive copywriting polish",
       "Form + WhatsApp integration",
       "Handover video + 2 weeks support",
@@ -39,7 +39,7 @@ export const packages: Package[] = [
   },
   {
     name: "Signature",
-    price: "$1,900",
+    price: "UGX 7,000,000",
     cadence: "fixed price · 3–6 weeks",
     tagline: "The full custom website: strategy, copy, design and build for growing businesses.",
     features: [
@@ -55,7 +55,7 @@ export const packages: Package[] = [
   },
   {
     name: "Authority",
-    price: "$3,500",
+    price: "UGX 13,000,000",
     cadence: "fixed price · 6–8 weeks",
     tagline: "Website plus the engine behind it: search growth, content plan and conversion tracking.",
     features: [
@@ -69,7 +69,7 @@ export const packages: Package[] = [
   },
   {
     name: "Care plan",
-    price: "$95/mo",
+    price: "UGX 350,000/mo",
     cadence: "monthly · cancel anytime",
     tagline: "Maintenance, backups, security and monthly design hours. Always improving.",
     features: [
@@ -88,12 +88,17 @@ export const homeFaqs: SiteFaq[] = [
   {
     question: "How much does a website cost?",
     answer:
-      "Landing pages start at UGX 200,000, multi-page Launchpad sites at $950, full custom Signature sites at $1,900, and Authority builds at $3,500. You get a fixed written quote before we start — the price never moves without your approval.",
+      "Landing pages start at UGX 200,000, multi-page Launchpad sites at UGX 3,500,000, full custom Signature sites at UGX 7,000,000, and Authority builds at UGX 13,000,000. You get a fixed written quote before we start — the price never moves without your approval.",
   },
   {
     question: "How long does it take?",
     answer:
-      "Landing pages ship in 3–5 days, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every agreement includes a launch date, not a season.",
+      "Landing pages ship in 3–5 days, Launchpad sites in 2–3 weeks, and full Signature websites in 3–6 weeks. Every project gets a launch date in writing, not a season.",
+  },
+  {
+    question: "Do you design flyers and posters?",
+    answer:
+      "Yes. Flyers, posters and social media graphics are UGX 20,000 each, or UGX 50,000 for three, usually delivered within 48 hours.",
   },
   {
     question: "Do you work with clients outside Uganda?",

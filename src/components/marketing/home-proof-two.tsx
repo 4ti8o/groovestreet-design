@@ -27,7 +27,7 @@ export function HomeGuarantees() {
       <SectionHeading
         eyebrow="Guarantees"
         title="Promises you can hold us to"
-        lede="Adjectives are cheap. These three terms sit in every agreement we sign."
+        lede="Adjectives are cheap. These three promises hold on every project we take on."
       />
       <ul className="mt-12 grid gap-4 md:grid-cols-3">
         {guarantees.map((g, i) => (

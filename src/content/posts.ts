@@ -4,7 +4,7 @@ export const contactFaqs: Faq[] = [
   {
     question: "Can I pay in UGX or Mobile Money?",
     answer:
-      "Absolutely. We invoice in USD or UGX, and accept bank transfer, Mobile Money (MTN/Airtel) and cards. Projects are typically 50% to start, 50% at launch.",
+      "Absolutely. We invoice in UGX, and accept bank transfer, Mobile Money (MTN/Airtel) and cards. Projects are typically 50% to start, 50% at launch.",
   },
   {
     question: "Will I be able to update the site myself?",

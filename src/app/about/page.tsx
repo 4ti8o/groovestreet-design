@@ -23,7 +23,7 @@ const values = [
   {
     title: "Fixed means fixed",
     detail:
-      "The price and the launch date go in the agreement. Scope changes are priced before work starts, never after.",
+      "The price and the launch date are fixed before we start. Scope changes are priced before work starts, never after.",
   },
   {
     title: "Built for the phone in your pocket",
