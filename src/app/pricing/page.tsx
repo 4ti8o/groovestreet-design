@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { packages, carePlans } from "@/content/packages";
 import { Section, SectionHeading } from "@/components/ui/section";
@@ -6,37 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { CtaBand } from "@/components/marketing/cta-band";
-import {
-  CheckIcon,
-  GaugeIcon,
-  MonitorIcon,
-  PaletteIcon,
-  RefreshIcon,
-  ShieldIcon,
-  SparkleIcon,
-  TargetIcon,
-} from "@/components/ui/icons";
+import { planIcon } from "@/components/marketing/plan-icon";
 import { CountUp } from "@/components/ui/count-up";
+import { CheckIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
-
-/** One icon chip per tier — flat stroke set on brand tint (design.md §9). */
-function packageIcon(name: string) {
-  const Icon =
-    name === "Landing Page"
-      ? MonitorIcon
-      : name === "Launchpad"
-        ? TargetIcon
-        : name === "Signature"
-          ? PaletteIcon
-          : name === "Authority"
-            ? GaugeIcon
-            : name === "Care · Launchpad"
-              ? ShieldIcon
-              : name === "Care · Signature"
-                ? RefreshIcon
-                : SparkleIcon;
-  return <Icon size={20} aria-hidden="true" />;
-}
 
 export const metadata = pageMetadata({
   title: "Pricing",
@@ -81,12 +55,15 @@ export default function PricingPage() {
           {packages.map((pkg, index) => (
             <Reveal key={pkg.name} delay={Math.min(index, 3) * 60}>
               <article
-                className={cn("card flex h-full flex-col", pkg.featured && "border-ink shadow-header")}
+                className={cn(
+                  "card flex h-full flex-col",
+                  pkg.featured && "border-ink shadow-header",
+                )}
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="flex items-center gap-3">
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
-                      {packageIcon(pkg.name)}
+                      {planIcon(pkg.name)}
                     </span>
                     <h3 className="text-h3 font-semibold">{pkg.name}</h3>
                   </span>
@@ -100,7 +77,11 @@ export default function PricingPage() {
                 <ul className="mt-6 space-y-2.5">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5 text-sm">
-                      <CheckIcon size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
+                      <CheckIcon
+                        size={16}
+                        aria-hidden="true"
+                        className="mt-0.5 shrink-0 text-success"
+                      />
                       {feature}
                     </li>
                   ))}
@@ -126,7 +107,7 @@ export default function PricingPage() {
               <Reveal key={plan.name} delay={Math.min(index, 3) * 60}>
                 <article className="card flex h-full flex-col">
                   <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
-                    {packageIcon(plan.name)}
+                    {planIcon(plan.name)}
                   </span>
                   <h3 className="mt-4 text-h3 font-semibold">{plan.name}</h3>
                   <p className="mt-2 text-sm text-muted">{plan.tagline}</p>
@@ -137,7 +118,11 @@ export default function PricingPage() {
                   <ul className="mt-6 space-y-2.5">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2.5 text-sm">
-                        <CheckIcon size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
+                        <CheckIcon
+                          size={16}
+                          aria-hidden="true"
+                          className="mt-0.5 shrink-0 text-success"
+                        />
                         {feature}
                       </li>
                     ))}
@@ -152,6 +137,17 @@ export default function PricingPage() {
             ))}
           </div>
         </div>
+
+        <Reveal className="mt-8">
+          <p className="text-sm text-muted">
+            Want the full care plan detail — what every tier includes, how the monthly rhythm works
+            and the FAQs?{" "}
+            <Link href="/care-plan" className="font-medium text-brand underline underline-offset-4">
+              Read the care plan page
+            </Link>
+            .
+          </p>
+        </Reveal>
 
         <Reveal className="mt-8">
           <p className="text-sm text-muted">

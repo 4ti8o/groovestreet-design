@@ -70,7 +70,7 @@ export const footerNav = [
       { label: "Landing pages", href: "/services/landing-pages" },
       { label: "Graphic design", href: "/services/graphic-design" },
       { label: "SEO & performance", href: "/services/seo-performance" },
-      { label: "Care plan", href: "/services/care-plan" },
+      { label: "Care plan", href: "/care-plan" },
     ],
   },
   {
