@@ -53,6 +53,38 @@ export function WhatsAppIcon(props: IconProps) {
   );
 }
 
+export function LinkedInIcon(props: IconProps) {
+  return (
+    <Stroke {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <path d="M8 10.5V16" />
+      <circle cx="8" cy="7.3" r="1.05" fill="currentColor" stroke="none" />
+      <path d="M11.5 10v6" />
+      <path d="M11.5 12.8a2.2 2.2 0 0 1 4.4 0V16" />
+    </Stroke>
+  );
+}
+
+export function InstagramIcon(props: IconProps) {
+  return (
+    <Stroke {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17" cy="7" r="1.05" fill="currentColor" stroke="none" />
+    </Stroke>
+  );
+}
+
+/** X (Twitter): the two-stroke mark, drawn to match the stroke icon set. */
+export function XIcon(props: IconProps) {
+  return (
+    <Stroke {...props}>
+      <path d="M5 5l14 14" />
+      <path d="M19 5 5 19" />
+    </Stroke>
+  );
+}
+
 export function ArrowUpRightIcon(props: IconProps) {
   return (
     <Stroke {...props}>
@@ -272,8 +304,10 @@ export function StarIcon({
       focusable="false"
       {...rest}
     >
-      <path suppressHydrationWarning d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.9L12 3.5Z" />
+      <path
+        suppressHydrationWarning
+        d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.9L12 3.5Z"
+      />
     </svg>
   );
 }
-

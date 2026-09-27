@@ -3,8 +3,24 @@ import { footerNav, site } from "@/lib/site";
 import { telHref } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/layout/logo";
-import { MailIcon, MapPinIcon, PhoneIcon, WhatsAppIcon } from "@/components/ui/icons";
+import {
+  InstagramIcon,
+  LinkedInIcon,
+  MailIcon,
+  MapPinIcon,
+  PhoneIcon,
+  WhatsAppIcon,
+  XIcon,
+} from "@/components/ui/icons";
 import { waHref } from "@/lib/utils";
+
+/** Footer social glyphs, keyed by site.socials[].icon. */
+const socialIcons = {
+  linkedin: LinkedInIcon,
+  instagram: InstagramIcon,
+  x: XIcon,
+  whatsapp: WhatsAppIcon,
+} as const;
 
 /** Ink footer per design.md §7.4: 4 columns → 1, contact trio, legal row. */
 export function SiteFooter() {
@@ -72,15 +88,24 @@ export function SiteFooter() {
           <p>
             © {year} {site.legalName}. All rights reserved.
           </p>
-          <ul className="flex items-center gap-5">
-            {site.socials.map((social) => (
-              <li key={social.label}>
-                <a href={social.href} target="_blank" rel="noopener" className="hover:text-accent">
-                  {social.label}
-                </a>
-              </li>
-            ))}
-            <li>
+          <ul className="flex items-center gap-2.5">
+            {site.socials.map((social) => {
+              const Icon = socialIcons[social.icon];
+              return (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={social.label}
+                    className="flex size-10 items-center justify-center rounded-full border border-line-invert text-paper/80 transition-colors duration-[var(--dur-fast)] hover:border-accent hover:text-accent"
+                  >
+                    <Icon size={18} aria-hidden="true" />
+                  </a>
+                </li>
+              );
+            })}
+            <li className="ml-2">
               <Link href="/privacy" className="hover:text-accent">
                 Privacy
               </Link>

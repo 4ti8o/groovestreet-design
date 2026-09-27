@@ -9,6 +9,9 @@ function env(name: string, fallback: string): string {
   return value && value.trim().length > 0 ? value.trim() : fallback;
 }
 
+/** Hoisted so the WhatsApp social link can reuse the same env override. */
+const whatsappE164 = env("NEXT_PUBLIC_WHATSAPP_E164", "256774778164");
+
 /**
  * Live contact data for the Kampala, Uganda studio.
  * Everything here can be overridden from .env.local — code never needs to change.
@@ -24,7 +27,7 @@ export const site = {
   email: env("NEXT_PUBLIC_CONTACT_EMAIL", "groovestreetsoftware@gmail.com"),
   phoneE164: env("NEXT_PUBLIC_CONTACT_PHONE_E164", "256774778164"),
   phoneDisplay: env("NEXT_PUBLIC_CONTACT_PHONE_DISPLAY", "+256 774 778 164"),
-  whatsappE164: env("NEXT_PUBLIC_WHATSAPP_E164", "256774778164"),
+  whatsappE164,
   whatsappDisplay: env("NEXT_PUBLIC_WHATSAPP_DISPLAY", "+256 774 778 164"),
   calendarUrl: env("NEXT_PUBLIC_CALENDAR_URL", ""),
   location: "Kampala, Uganda",
@@ -32,10 +35,20 @@ export const site = {
   coverage: "Based in Kampala, Uganda — serving clients across East Africa and worldwide",
   founded: "2026",
   analyticsDomain: env("NEXT_PUBLIC_ANALYTICS_DOMAIN", ""),
+  /** Rendered as icons in the footer, so each entry carries its glyph key. */
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/groovestreet-design" },
-    { label: "Instagram", href: "https://www.instagram.com/groovestreet.design" },
-    { label: "Dribbble", href: "https://dribbble.com/groovestreet" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/groovestreet-design",
+      icon: "linkedin",
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/groovestreet.design",
+      icon: "instagram",
+    },
+    { label: "X (Twitter)", href: "https://x.com/groovestreet", icon: "x" },
+    { label: "WhatsApp", href: `https://wa.me/${whatsappE164}`, icon: "whatsapp" },
   ],
   regions: [
     { name: "Uganda", cities: ["Kampala", "Entebbe", "Jinja", "Mbarara", "Gulu"] },

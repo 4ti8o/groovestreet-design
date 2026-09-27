@@ -26,14 +26,14 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(homeFaqs)) }}
       />
       <HomeHero />
+      <HomeServices />
       <HomeStats />
-      <HomePartnerLogos />
       <HomePain />
+      <HomePricing />
       <HomeProcess />
       <HomeProof />
-      <HomeServices />
-      <HomePricing />
       <HomeIndustries />
+      <HomePartnerLogos />
       <HomeTestimonials />
       <HomeGuarantees />
       <HomeFaq />
