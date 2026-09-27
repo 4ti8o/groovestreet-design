@@ -7,6 +7,8 @@ export type Service = {
   description: string[];
   /** Icon key — resolved by ServiceIcon; content files never import components. */
   icon: "monitor" | "target" | "palette" | "search" | "refresh";
+  /** Tile backdrop artwork (public path), shown black and white until hover. */
+  artwork: string;
   deliverables: string[];
   forWho: string[];
   outcomes: { value: string; label: string }[];
@@ -27,6 +29,7 @@ export const services: Service[] = [
       "Every project starts with your message, not colours. We get clear on what you sell, who it is for, and what the visitor should do next — then design around that.",
     ],
     icon: "monitor",
+    artwork: "/images/services/website-design.svg",
     deliverables: [
       "A made-for-you homepage plus inner pages",
       "Works beautifully on phones, tablets and computers",
@@ -36,7 +39,12 @@ export const services: Service[] = [
       "Mobile Money, bank or card payments wired up when you sell",
       "A plain-language guide showing you how to update things",
     ],
-    forWho: ["Coaches & consultants", "Clinics & wellness studios", "Lawyers, accountants & agencies", "Safari & hotel brands"],
+    forWho: [
+      "Coaches & consultants",
+      "Clinics & wellness studios",
+      "Lawyers, accountants & agencies",
+      "Safari & hotel brands",
+    ],
     outcomes: [
       { value: "3–6", label: "weeks from our first chat to launch" },
       { value: "Fast", label: "loads quickly, even on slower devices" },
@@ -67,6 +75,7 @@ export const services: Service[] = [
       "One page, live in three to five days, with headlines that match your message and a form or WhatsApp button wired to your phone.",
     ],
     icon: "target",
+    artwork: "/images/services/landing-pages.svg",
     deliverables: [
       "One page built to bring enquiries",
       "Headline and offer that match your advert",
@@ -105,6 +114,7 @@ export const services: Service[] = [
       "Send your text and your logo. We handle the layout, the colours and the sizes — a print-ready file for the printer, plus web versions for WhatsApp, Instagram and Facebook.",
     ],
     icon: "palette",
+    artwork: "/images/services/graphic-design.svg",
     deliverables: [
       "Flyer, poster or social graphic designed for you",
       "Print-ready file plus web-size images",
@@ -125,7 +135,13 @@ export const services: Service[] = [
     ],
     timeline: "48 hours per design",
     priceFrom: "UGX 20,000 per design · three for UGX 50,000",
-    keywords: ["graphic designer Kampala", "graphic design Uganda", "flyer design Kampala", "poster design Uganda", "social media graphics"],
+    keywords: [
+      "graphic designer Kampala",
+      "graphic design Uganda",
+      "flyer design Kampala",
+      "poster design Uganda",
+      "social media graphics",
+    ],
     faqs: [
       {
         question: "How much does a flyer or poster cost?",
@@ -138,7 +154,8 @@ export const services: Service[] = [
           "Yes. One design is delivered as a print-ready PDF for the printer and as correctly sized images for WhatsApp, Instagram and Facebook.",
       },
       {
-        question: "I need a graphic designer for menus, banners or business cards too — can you help?",
+        question:
+          "I need a graphic designer for menus, banners or business cards too — can you help?",
         answer:
           "Send it through. Menus, banners, business cards and roll-up stands are priced the same way: UGX 20,000 per design, or UGX 50,000 for three.",
       },
@@ -153,6 +170,7 @@ export const services: Service[] = [
       "Start with a one-time audit and fixes, or keep us on a monthly plan that compounds: content, visibility and a report you can read in five minutes.",
     ],
     icon: "search",
+    artwork: "/images/services/seo-performance.svg",
     deliverables: [
       "A plain-English report of what is holding your site back",
       "Speed fixes so pages open fast on phones",
@@ -160,7 +178,12 @@ export const services: Service[] = [
       "The words your clients actually search for, plus what to publish",
       "A monthly report you can read in five minutes",
     ],
-    forWho: ["Local service businesses", "Clinics & hospitality", "Online stores", "Anyone invisible on Google"],
+    forWho: [
+      "Local service businesses",
+      "Clinics & hospitality",
+      "Online stores",
+      "Anyone invisible on Google",
+    ],
     outcomes: [
       { value: "30", label: "days to first measurable movement" },
       { value: "5-min", label: "monthly report, zero jargon" },
@@ -168,7 +191,12 @@ export const services: Service[] = [
     ],
     timeline: "Audit in 2 weeks · plans ongoing",
     priceFrom: "audit from UGX 80,000 · plans from UGX 50,000/mo",
-    keywords: ["SEO Kampala", "SEO services Uganda", "Google Business Profile setup", "website speed optimization"],
+    keywords: [
+      "SEO Kampala",
+      "SEO services Uganda",
+      "Google Business Profile setup",
+      "website speed optimization",
+    ],
     faqs: [
       {
         question: "How fast will I rank?",
@@ -186,6 +214,7 @@ export const services: Service[] = [
       "One flat monthly fee. Pause or cancel with 30 days' notice.",
     ],
     icon: "refresh",
+    artwork: "/images/services/care-plan.svg",
     deliverables: [
       "Updates, backups & security monitoring",
       "Uptime checks with same-day response",
@@ -193,7 +222,12 @@ export const services: Service[] = [
       "Quarterly performance report",
       "Priority booking for bigger projects",
     ],
-    forWho: ["Sites we built", "Sites built by other studios", "Businesses without an in-house team", "Seasonal content needs"],
+    forWho: [
+      "Sites we built",
+      "Sites built by other studios",
+      "Businesses without an in-house team",
+      "Seasonal content needs",
+    ],
     outcomes: [
       { value: "24h", label: "response on urgent issues" },
       { value: "30-day", label: "cancel-anytime notice" },

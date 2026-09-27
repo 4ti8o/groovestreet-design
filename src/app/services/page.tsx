@@ -4,6 +4,7 @@ import { services } from "@/content/services";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ServiceIcon } from "@/components/marketing/service-icon";
+import { ServiceArtwork } from "@/components/marketing/service-artwork";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { ArrowRightIcon, ClockIcon } from "@/components/ui/icons";
 
@@ -30,12 +31,16 @@ export default function ServicesPage() {
               <li>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="card group grid gap-6 transition-colors duration-[var(--dur-fast)] hover:border-ink md:grid-cols-[auto_1fr_auto] md:items-center"
+                  className="card group relative grid gap-6 overflow-hidden transition-colors duration-[var(--dur-fast)] hover:border-ink md:grid-cols-[auto_1fr_auto] md:items-center"
                 >
-                  <span className="flex size-14 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
+                  <ServiceArtwork
+                    src={service.artwork}
+                    mask="linear-gradient(to left, #000 0%, #000 20%, transparent 58%)"
+                  />
+                  <span className="relative flex size-14 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
                     <ServiceIcon icon={service.icon} size={24} />
                   </span>
-                  <span>
+                  <span className="relative">
                     <span className="text-h3 font-semibold">{service.name}</span>
                     <span className="mt-1.5 block text-muted">{service.tagline}</span>
                     <span className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
@@ -46,7 +51,7 @@ export default function ServicesPage() {
                       <span className="font-semibold text-ink">{service.priceFrom}</span>
                     </span>
                   </span>
-                  <span className="inline-flex min-h-[48px] items-center gap-2 font-medium text-brand">
+                  <span className="relative inline-flex min-h-[48px] items-center gap-2 font-medium text-brand">
                     Explore
                     <ArrowRightIcon
                       size={18}

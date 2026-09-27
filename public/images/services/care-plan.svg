@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="A care cycle around a steady heartbeat line">
+  <g fill="none" stroke="#1b4d3e" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 116a210 210 0 0 1 210 210"/>
+    <path d="M582 300l28 26 26-28"/>
+    <path d="M610 484a210 210 0 0 1-210-210"/>
+    <path d="M428 300l-28-26-26 28"/>
+  </g>
+  <path d="M292 300h44l26-58 34 116 26-58h44" fill="none" stroke="#ff5a1f" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke="#143a2e" stroke-width="9" stroke-linejoin="round">
+    <path d="M470 168h58l44 26v58c0 44-36 76-73 88-37-12-73-44-73-88v-58z"/>
+  </g>
+  <path d="M484 252l22 22 34-40" fill="none" stroke="#143a2e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

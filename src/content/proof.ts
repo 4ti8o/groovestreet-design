@@ -155,9 +155,20 @@ export const partners: Partner[] = [
   },
 ];
 
-export const processSteps = [
+export type ProcessStep = {
+  step: string;
+  /** Icon key — resolved by ProcessIcon; content files never import components. */
+  icon: "call" | "plan" | "design" | "build" | "launch" | "grow";
+  title: string;
+  detail: string;
+  /** When this step happens on the calendar, e.g. "Days 1–3". */
+  duration: string;
+};
+
+export const processSteps: ProcessStep[] = [
   {
     step: "01",
+    icon: "call",
     title: "Discovery call",
     detail:
       "A 30-minute call or WhatsApp chat. We learn your business, your clients and your goal — and tell you if we are the right studio. Free, no pitch decks.",
@@ -165,6 +176,7 @@ export const processSteps = [
   },
   {
     step: "02",
+    icon: "plan",
     title: "Strategy & sitemap",
     detail:
       "You answer one structured questionnaire. We return a sitemap, message framework and fixed quote. You know the price, the pages and the timeline before we design a pixel.",
@@ -172,6 +184,7 @@ export const processSteps = [
   },
   {
     step: "03",
+    icon: "design",
     title: "Design, live with you",
     detail:
       "We design in short live sessions, not silent weeks. You see real pages early, comment directly, and approve two revision rounds — no big-reveal surprises.",
@@ -179,6 +192,7 @@ export const processSteps = [
   },
   {
     step: "04",
+    icon: "build",
     title: "Build & quality pass",
     detail:
       "Development, speed optimization, SEO setup and a 60-point checklist: every link, form, phone number and WhatsApp button tested on real devices.",
@@ -186,10 +200,19 @@ export const processSteps = [
   },
   {
     step: "05",
-    title: "Launch & grow",
+    icon: "launch",
+    title: "Launch day",
     detail:
-      "We handle domains, analytics and go-live, hand everything over to you, and stay for two weeks of free support. Then the care plan or SEO keeps you compounding.",
-    duration: "Week 6+",
+      "Domains, analytics, forms and payments verified on real devices, then everything handed over to you. Two weeks of free support start the moment you go live.",
+    duration: "Week 6",
+  },
+  {
+    step: "06",
+    icon: "grow",
+    title: "Grow from there",
+    detail:
+      "Then the work that compounds: a care plan for maintenance and reserved design hours, or SEO for search growth. You choose, and we report what it actually did.",
+    duration: "Month 2+",
   },
 ];
 

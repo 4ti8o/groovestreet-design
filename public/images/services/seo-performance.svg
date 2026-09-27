@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Rising search positions and a rising trend line">
+  <g fill="#1b4d3e">
+    <rect x="236" y="396" width="72" height="154" rx="12"/>
+    <rect x="334" y="322" width="72" height="228" rx="12"/>
+    <rect x="432" y="376" width="72" height="174" rx="12" opacity="0.65"/>
+  </g>
+  <rect x="530" y="236" width="72" height="314" rx="12" fill="#ff5a1f"/>
+  <path d="M236 372l122-92 98 42 98-136 124-74" fill="none" stroke="#143a2e" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M642 92l46 24-42 28z" fill="#143a2e"/>
+  <circle cx="646" cy="330" r="104" fill="none" stroke="#1b4d3e" stroke-width="10"/>
+  <path d="M714 398l58 58" stroke="#1b4d3e" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="646" cy="330" r="34" fill="#ff5a1f" opacity="0.22"/>
+</svg>
