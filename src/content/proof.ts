@@ -54,23 +54,11 @@ export const stats: Stat[] = [
 
 export type Partner = {
   name: string;
-  kind: "Technology" | "Services" | "Community";
+  kind: "Corporate" | "Services" | "Community";
   description: string;
 };
 
 export const partners: Partner[] = [
-  {
-    name: "Next.js & Vercel stack",
-    kind: "Technology",
-    description:
-      "We build on modern, fast infrastructure — your site loads in under two seconds on a mid-range phone, not eleven.",
-  },
-  {
-    name: "Mobile Money–ready checkout partners",
-    kind: "Technology",
-    description:
-      "For stores and booking sites: MTN MoMo and Airtel Money integrations alongside cards, tested on real Ugandan networks.",
-  },
   {
     name: "Photographers & videographers",
     kind: "Services",
@@ -124,7 +112,7 @@ export const processSteps = [
     step: "05",
     title: "Launch & grow",
     detail:
-      "We handle domains, analytics and go-live, hand over an editing video, and stay for two weeks of free support. Then the care plan or SEO keeps you compounding.",
+      "We handle domains, analytics and go-live, hand everything over to you, and stay for two weeks of free support. Then the care plan or SEO keeps you compounding.",
     duration: "Week 6+",
   },
 ];

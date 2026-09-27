@@ -33,7 +33,8 @@ export const services: Service[] = [
       "We polish the words on every page",
       "Set up so Google can find you (titles, map listing, sitemap)",
       "Contact form plus WhatsApp button",
-      "A simple video showing you how to update things",
+      "Mobile Money, bank or card payments wired up when you sell",
+      "A plain-language guide showing you how to update things",
     ],
     forWho: ["Coaches & consultants", "Clinics & wellness studios", "Lawyers, accountants & agencies", "Safari & hotel brands"],
     outcomes: [
@@ -48,7 +49,7 @@ export const services: Service[] = [
       {
         question: "Will I be able to update the site myself?",
         answer:
-          "Yes. You get a short video showing how, plus a simple setup anyone can use. And we stay close for two free weeks after launch for anything that confuses you.",
+          "Yes. You get a plain-English guide showing how, plus a setup anyone can use. And we stay close for two free weeks after launch for anything that confuses you.",
       },
       {
         question: "Do you write the words too?",
@@ -192,7 +193,7 @@ export const services: Service[] = [
       "Quarterly performance report",
       "Priority booking for bigger projects",
     ],
-    forWho: ["Sites we built", "WordPress & Next.js sites", "Businesses without an in-house team", "Seasonal content needs"],
+    forWho: ["Sites we built", "Sites built by other studios", "Businesses without an in-house team", "Seasonal content needs"],
     outcomes: [
       { value: "24h", label: "response on urgent issues" },
       { value: "30-day", label: "cancel-anytime notice" },

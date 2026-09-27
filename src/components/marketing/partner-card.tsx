@@ -3,7 +3,7 @@ import { GlobeIcon, PaletteIcon, UsersIcon } from "@/components/ui/icons";
 import type { Partner } from "@/content/proof";
 
 const kindIcons = {
-  Technology: GlobeIcon,
+  Corporate: GlobeIcon,
   Services: PaletteIcon,
   Community: UsersIcon,
 } as const;

@@ -55,7 +55,7 @@ export const projects: Project[] = [
     approach: [
       { step: "Clarify", detail: "Guest survey: photos, price and availability decide everything." },
       { step: "Design", detail: "Full-bleed imagery, simple rates table, instant WhatsApp booking." },
-      { step: "Launch", detail: "Staff training video so the lodge owns every update." },
+      { step: "Launch", detail: "Staff training so the lodge owns every update." },
     ],
     metrics: [
       { value: "40%", label: "of bookings now direct" },

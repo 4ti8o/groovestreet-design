@@ -2,6 +2,7 @@ import { pageMetadata } from "@/lib/seo";
 import { stats, partners } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { CountUp } from "@/components/ui/count-up";
 import { Marquee } from "@/components/ui/marquee";
 import { ContactChannels } from "@/components/marketing/contact-channels";
 import { PartnerCard } from "@/components/marketing/partner-card";
@@ -34,7 +35,7 @@ const values = [
   {
     title: "Premium standard on every budget",
     detail:
-      "A UGX 200,000 landing page gets the same senior designer and the same 60-point checklist as a UGX 13,000,000 build. We stay small on purpose, so the budget goes into your website.",
+      "A UGX 200,000 landing page gets the same senior designer and the same 60-point checklist as a UGX 3,000,000 build. We stay small on purpose, so the budget goes into your website.",
   },
   {
     title: "You own everything",
@@ -78,7 +79,9 @@ export default function AboutPage() {
             <dl className="grid grid-cols-2 gap-4">
               {stats.map((stat) => (
                 <div key={stat.label} className="card">
-                  <dd className="font-display text-h2 font-bold tabular">{stat.value}</dd>
+                  <dd className="font-display text-h2 font-bold tabular">
+                    <CountUp value={stat.value} />
+                  </dd>
                   <dt className="mt-2 text-sm text-muted">{stat.label}</dt>
                 </div>
               ))}
@@ -110,8 +113,8 @@ export default function AboutPage() {
       <Section ariaLabel="Partners we work with">
         <SectionHeading
           eyebrow="Partners"
-          title="Technology and people we trust"
-          lede="The stack, services and community behind our builds — not logos we rented."
+          title="The partners behind our work"
+          lede="Studios, creatives and organisations we build alongside — real relationships, not rented logos."
         />
         <Marquee className="mt-10">
           {partners.map((partner) => (

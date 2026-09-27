@@ -14,7 +14,7 @@ const services = [
   "Something else",
 ];
 
-const budgets = ["Under UGX 200,000", "UGX 200,000", "UGX 500,000", "UGX 500,000+", "Graphics", "Monthly (UGX 50,000)"];
+const budgets = ["Under UGX 200,000", "UGX 500,000", "UGX 1,300,000", "UGX 3,000,000+", "Graphics", "Care plan / monthly"];
 
 const inputCls =
   "min-h-[48px] w-full rounded-md border border-line bg-paper px-4 text-base text-ink placeholder:text-muted/70 focus:border-ink focus:outline-none";

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { packages, homeFaqs } from "@/content/packages";
 import { partners } from "@/content/proof";
+import { CountUp } from "@/components/ui/count-up";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Section, SectionHeading } from "@/components/ui/section";
@@ -27,7 +28,9 @@ export function HomePricing() {
               <Badge>Most popular</Badge>
             </div>
             <p className="mt-2 text-sm text-muted">{featured.tagline}</p>
-            <p className="mt-4 font-display text-h1 font-bold tabular">{featured.price}</p>
+            <p className="mt-4 font-display text-h1 font-bold tabular">
+              <CountUp value={featured.price} />
+            </p>
             <p className="eyebrow mt-1 text-muted">{featured.cadence}</p>
             <ul className="mt-6 space-y-2.5">
               {featured.features.map((f) => (
@@ -54,7 +57,7 @@ export function HomePartners() {
       <SectionHeading
         eyebrow="Partners"
         title="Stronger with the right people"
-        lede="Technology we trust, services we recommend, and a community we show up for."
+        lede="Studios, creatives and organisations we build alongside — real relationships, not rented logos."
       />
       <ul className="mt-12 grid gap-4 md:grid-cols-3">
         {partners.slice(0, 3).map((p, i) => (

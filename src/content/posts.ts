@@ -9,7 +9,7 @@ export const contactFaqs: Faq[] = [
   {
     question: "Will I be able to update the site myself?",
     answer:
-      "Yes. Every project ends with a handover video and an editing setup matched to your comfort level, plus two weeks of free support.",
+      "Yes. Every project ends with a full handover and an editing setup matched to your comfort level, plus two weeks of free support.",
   },
   {
     question: "What do you need from me to start?",

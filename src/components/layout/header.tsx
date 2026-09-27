@@ -53,56 +53,60 @@ export function SiteHeader() {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = previous;
     };
-  }, [open ]);
+  }, [open]);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur transition-shadow duration-[var(--dur-fast)]",
-        scrolled && "shadow-header",
-      )}
-    >
-      <Container>
-        <div className="flex h-[72px] items-center justify-between gap-6">
-          <Logo />
-          <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
-            {allNav.map((item) => {
-              const href = item.href as string;
-              const active =
-                href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "text-sm text-ink/80 underline-offset-4 transition-colors duration-[var(--dur-fast)] hover:text-ink hover:underline",
-                    active && "font-semibold text-ink underline decoration-accent decoration-2",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-          <div className="hidden lg:block">
-            <Button href="/contact" variant="primary" size="sm">
-              Get in Touch
-            </Button>
+    <>
+      <header
+        className={cn(
+          "sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur transition-shadow duration-[var(--dur-fast)]",
+          scrolled && "shadow-header",
+        )}
+      >
+        <Container>
+          <div className="flex h-[72px] items-center justify-between gap-6">
+            <Logo />
+            <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
+              {allNav.map((item) => {
+                const href = item.href as string;
+                const active =
+                  href === "/"
+                    ? pathname === "/"
+                    : pathname === href || pathname.startsWith(`${href}/`);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "text-sm text-ink/80 underline-offset-4 transition-colors duration-[var(--dur-fast)] hover:text-ink hover:underline",
+                      active && "font-semibold text-ink underline decoration-accent decoration-2",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="hidden lg:block">
+              <Button href="/contact" variant="primary" size="sm">
+                Get in Touch
+              </Button>
+            </div>
+            <button
+              ref={triggerRef}
+              type="button"
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((value) => !value)}
+              className="flex size-11 items-center justify-center rounded-md border border-line lg:hidden"
+            >
+              {open ? <CloseIcon size={22} /> : <MenuIcon size={22} />}
+            </button>
           </div>
-          <button
-            ref={triggerRef}
-            type="button"
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((value) => !value)}
-            className="flex size-11 items-center justify-center rounded-md border border-line lg:hidden"
-          >
-            {open ? <CloseIcon size={22} /> : <MenuIcon size={22} />}
-          </button>
-        </div>
-      </Container>
+        </Container>
+      </header>
 
       <AnimatePresence>
         {open ? (
@@ -140,6 +144,6 @@ export function SiteHeader() {
           </m.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

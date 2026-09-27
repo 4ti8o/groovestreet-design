@@ -1,6 +1,7 @@
 import { pageMetadata, faqJsonLd } from "@/lib/seo";
 import { homeFaqs } from "@/content/packages";
-import { HomeHero, HomeStack } from "@/components/marketing/home-hero";
+import { HomeHero, HomePartnerLogos } from "@/components/marketing/home-hero";
+import { HomeStats } from "@/components/marketing/home-stats";
 import { HomePain } from "@/components/marketing/home-pain";
 import { HomeProcess } from "@/components/marketing/home-process";
 import { HomeProof } from "@/components/marketing/home-proof";
@@ -25,7 +26,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(homeFaqs)) }}
       />
       <HomeHero />
-      <HomeStack />
+      <HomeStats />
+      <HomePartnerLogos />
       <HomePain />
       <HomeProcess />
       <HomeProof />

@@ -1,5 +1,5 @@
 import { site } from "@/lib/site";
-import { stats } from "@/content/proof";
+import { partners } from "@/content/proof";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -50,32 +50,32 @@ export function HomeHero() {
           </div>
           <ContactTrio className="mt-8" />
         </Reveal>
-        <Reveal delay={120}>
-          <dl className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="card">
-                <dd className="font-display text-h2 font-bold tabular">{stat.value}</dd>
-                <dt className="mt-2 text-sm text-muted">{stat.label}</dt>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
       </Container>
     </section>
   );
 }
 
-const stack = ["Next.js", "WordPress", "Google Business", "MTN MoMo", "Airtel Money", "Analytics"];
+function monogram(name: string): string {
+  const words = name.split(/\s+/).filter((word) => /^[a-z]/i.test(word));
+  return words.slice(0, 2).map((word) => word.charAt(0).toUpperCase()).join("") || "GS";
+}
 
-export function HomeStack() {
+/** Sliding partner logo wall: wordmark tiles on the seamless marquee loop. */
+export function HomePartnerLogos() {
   return (
-    <section aria-label="Technologies we build with" className="border-y border-line bg-surface py-10">
+    <section aria-label="Our partners" className="border-y border-line bg-surface py-10">
       <Container>
-        <p className="eyebrow text-center text-muted">Built on technology that lasts</p>
+        <p className="eyebrow text-center text-muted">Organisations we build alongside</p>
         <Marquee className="mt-6">
-          {stack.map((name) => (
-            <span key={name} className="font-display text-h4 font-semibold text-ink/70">
-              {name}
+          {partners.map((partner) => (
+            <span key={partner.name} className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="flex size-9 items-center justify-center rounded-md border border-line bg-paper font-mono text-xs font-bold text-ink"
+              >
+                {monogram(partner.name)}
+              </span>
+              <span className="font-display text-h4 font-semibold text-ink/70">{partner.name}</span>
             </span>
           ))}
         </Marquee>

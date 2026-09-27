@@ -1,10 +1,20 @@
 import { testimonials, guarantees } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { CountUp } from "@/components/ui/count-up";
 import { TestimonialCard } from "@/components/marketing/testimonial-card";
-import { CheckIcon } from "@/components/ui/icons";
+import { CheckIcon, StarIcon } from "@/components/ui/icons";
+
+const ratingEntries = testimonials.flatMap((t) => [
+  t.ratings.quality,
+  t.ratings.schedule,
+  t.ratings.cost,
+  t.ratings.referral,
+]);
+const averageRating = ratingEntries.reduce((sum, value) => sum + value, 0) / ratingEntries.length;
 
 export function HomeTestimonials() {
+  const rounded = Math.round(averageRating);
   return (
     <Section ariaLabel="What clients say">
       <SectionHeading
@@ -12,6 +22,22 @@ export function HomeTestimonials() {
         title="Rated on what actually matters"
         lede="Quality, schedule, cost and willingness to refer. Here is what business owners have to say."
       />
+      <Reveal className="mt-10">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border border-line bg-surface px-6 py-5">
+          <span className="flex items-center gap-1" role="img" aria-label={`${averageRating.toFixed(1)} out of 5 overall`}>
+            {[0, 1, 2, 3, 4].map((index) => (
+              <StarIcon key={index} size={18} filled={index < rounded} />
+            ))}
+          </span>
+          <p className="text-sm">
+            <span className="font-display text-h4 font-bold tabular">
+              <CountUp value={averageRating.toFixed(1)} />
+            </span>{" "}
+            out of 5 · {ratingEntries.length} ratings across {testimonials.length} reviews
+          </p>
+          <p className="text-sm text-muted sm:ml-auto">Published with each client&apos;s permission</p>
+        </div>
+      </Reveal>
       <div className="mt-12 grid gap-4 lg:grid-cols-3">
         {testimonials.map((t, i) => (
           <TestimonialCard key={t.company} testimonial={t} delay={i * 60} />

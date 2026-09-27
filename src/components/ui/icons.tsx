@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import { suppressSubtree } from "@/lib/hydration";
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 
@@ -6,6 +7,7 @@ type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 function Stroke({ size = 24, children, ...rest }: IconProps) {
   return (
     <svg
+      suppressHydrationWarning
       width={size}
       height={size}
       viewBox="0 0 24 24"
@@ -18,7 +20,7 @@ function Stroke({ size = 24, children, ...rest }: IconProps) {
       focusable="false"
       {...rest}
     >
-      {children}
+      {suppressSubtree(children)}
     </svg>
   );
 }
@@ -240,6 +242,16 @@ export function SparkleIcon(props: IconProps) {
   );
 }
 
+/** Price tag for price tiles on service pages and pricing cards. */
+export function TagIcon(props: IconProps) {
+  return (
+    <Stroke {...props}>
+      <path d="M3.5 12.7V4.5a1 1 0 0 1 1-1h8.2a1 1 0 0 1 .7.3l7 7a1 1 0 0 1 0 1.4l-8.2 8.2a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1-.3-.7Z" />
+      <circle cx="8" cy="8" r="1.5" />
+    </Stroke>
+  );
+}
+
 export function StarIcon({
   filled = false,
   size = 24,
@@ -247,6 +259,7 @@ export function StarIcon({
 }: Omit<IconProps, "size"> & { size?: number; filled?: boolean }) {
   return (
     <svg
+      suppressHydrationWarning
       width={size}
       height={size}
       viewBox="0 0 24 24"
@@ -259,7 +272,7 @@ export function StarIcon({
       focusable="false"
       {...rest}
     >
-      <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.9L12 3.5Z" />
+      <path suppressHydrationWarning d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.9L12 3.5Z" />
     </svg>
   );
 }

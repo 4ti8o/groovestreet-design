@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
+import { CountUp } from "@/components/ui/count-up";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
 export function HomeProof() {
@@ -29,7 +30,7 @@ export function HomeProof() {
                 {featured.metrics.map((metric) => (
                   <li key={metric.label} className="flex items-baseline gap-3">
                     <span className="font-display text-h3 font-bold tabular text-accent">
-                      {metric.value}
+                      <CountUp value={metric.value} />
                     </span>
                     <span className="text-sm text-muted-invert">{metric.label}</span>
                   </li>
