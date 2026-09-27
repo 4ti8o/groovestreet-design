@@ -56,22 +56,19 @@ export default function AboutPage() {
           <Reveal>
             <div className="space-y-5 text-lg leading-[1.7] text-muted">
               <p>
-                GROOVESTREET DESIGN is a website design studio based in Kampala,
-                Uganda. We craft clean, affordable, professional and intuitive websites 
-                to bring your business online. Get ranked by search engines, 
-                convert website traffic and grow.
+                GROOVESTREET DESIGN is a website design studio based in Kampala, Uganda. We craft
+                clean, affordable, professional and intuitive websites to bring your business
+                online. Get ranked by search engines, convert website traffic and grow.
               </p>
               <p>
-                We started the studio after watching the same story repeat: a good
-                business pays for a website, gets something slow, outdated and confusing, and
-                the designer disappears before launch. So we built the studio we
-                wished existed — fixed prices,  clear launch timeline, 
-                words your clients understand, and support that answers.
+                We started the studio after watching the same story repeat: a good business pays for
+                a website, gets something slow, outdated and confusing, and the designer disappears
+                before launch. So we built the studio we wished existed — fixed prices, clear launch
+                timeline, words your clients understand, and support that answers.
               </p>
               <p>
-                Every project gets senior attention, and
-                every page ships only when it passes our 60-point checklist on real
-                devices.
+                Every project gets senior attention, and every page ships only when it passes our
+                60-point checklist on real devices.
               </p>
             </div>
           </Reveal>
@@ -91,10 +88,7 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="surface" ariaLabel="What we believe">
-        <SectionHeading
-          eyebrow="What we believe"
-          title="Five rules behind every build"
-        />
+        <SectionHeading eyebrow="What we believe" title="Five rules behind every build" />
         <ul className="mt-12 grid gap-4 md:grid-cols-2">
           {values.map((value, index) => (
             <Reveal key={value.title} delay={index * 60}>
@@ -114,21 +108,25 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Partners"
           title="The partners behind our work"
-          lede="Studios, creatives and organisations we build alongside — real relationships, not rented logos."
+          lede="Uganda's leading brands plus the studios, creatives and communities we build alongside — real relationships, not rented logos."
         />
         <Marquee className="mt-10">
-          {partners.map((partner) => (
-            <span key={partner.name} className="font-display text-h4 font-semibold text-ink/70">
-              {partner.name}
-            </span>
-          ))}
+          {partners
+            .filter((partner) => partner.kind === "Corporate")
+            .map((partner) => (
+              <span key={partner.name} className="font-display text-h4 font-semibold text-ink/70">
+                {partner.name}
+              </span>
+            ))}
         </Marquee>
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
-          {partners.map((partner, index) => (
-            <Reveal key={partner.name} delay={Math.min(index, 5) * 60}>
-              <PartnerCard partner={partner} />
-            </Reveal>
-          ))}
+          {partners
+            .filter((partner) => partner.kind === "Corporate")
+            .map((partner, index) => (
+              <Reveal key={partner.name} delay={Math.min(index, 5) * 60}>
+                <PartnerCard partner={partner} />
+              </Reveal>
+            ))}
         </ul>
       </Section>
 

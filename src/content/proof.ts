@@ -56,9 +56,85 @@ export type Partner = {
   name: string;
   kind: "Corporate" | "Services" | "Community";
   description: string;
+  /** Optional brand logo with intrinsic dimensions for next/image. */
+  logo?: { src: string; width: number; height: number };
 };
 
+/**
+ * Partner logos are trademarks of their respective owners, shown here to depict
+ * working relationships. Assets were sourced from Wikimedia Commons (public
+ * domain), seeklogo and the companies' own sites — swap in partner-supplied
+ * files before launch.
+ */
 export const partners: Partner[] = [
+  {
+    name: "MTN Uganda",
+    kind: "Corporate",
+    description:
+      "Uganda's largest mobile network — voice, data and MoMo money services across the country.",
+    logo: { src: "/images/partners/mtn.png", width: 960, height: 480 },
+  },
+  {
+    name: "Airtel Uganda",
+    kind: "Corporate",
+    description:
+      "National mobile network and Airtel Money provider, connecting millions of Ugandans.",
+    logo: { src: "/images/partners/airtel.png", width: 960, height: 966 },
+  },
+  {
+    name: "Stanbic Bank Uganda",
+    kind: "Corporate",
+    description:
+      "One of Uganda's largest commercial banks, serving individuals, SMEs and corporates nationwide.",
+    logo: { src: "/images/partners/stanbic.png", width: 320, height: 320 },
+  },
+  {
+    name: "Uganda Airlines",
+    kind: "Corporate",
+    description:
+      "The national carrier, flying from Entebbe to destinations across Africa and beyond.",
+    logo: { src: "/images/partners/uganda-airlines.png", width: 960, height: 224 },
+  },
+  {
+    name: "Uganda Breweries",
+    kind: "Corporate",
+    description: "A leading beverages producer and part of the East African Breweries group.",
+    logo: { src: "/images/partners/uganda-breweries.png", width: 129, height: 39 },
+  },
+  {
+    name: "Coca-Cola Beverages Uganda",
+    kind: "Corporate",
+    description:
+      "Bottler of Coca-Cola and a wide range of sparkling and still brands for the Ugandan market.",
+    logo: { src: "/images/partners/coca-cola.png", width: 600, height: 600 },
+  },
+  {
+    name: "Roofings Group",
+    kind: "Corporate",
+    description:
+      "Uganda's leading steel and building-materials manufacturer, rolling products for construction across East Africa.",
+    logo: { src: "/images/partners/roofings.png", width: 180, height: 180 },
+  },
+  {
+    name: "Umeme",
+    kind: "Corporate",
+    description: "A Ugandan power company with two decades of keeping the central grid lit.",
+    logo: { src: "/images/partners/umeme.png", width: 320, height: 320 },
+  },
+  {
+    name: "SafeBoda",
+    kind: "Corporate",
+    description:
+      "Uganda's leading boda-boda mobility platform, moving riders and passengers safely across cities.",
+    logo: { src: "/images/partners/safeboda.png", width: 842, height: 170 },
+  },
+  {
+    name: "Movit Products",
+    kind: "Corporate",
+    description:
+      "A Ugandan manufacturer of adhesives, paints and home-care products, made for East African homes.",
+    logo: { src: "/images/partners/movit.png", width: 960, height: 232 },
+  },
   {
     name: "Photographers & videographers",
     kind: "Services",
@@ -120,14 +196,17 @@ export const processSteps = [
 export const guarantees = [
   {
     title: "Premium quality at a price you can trust",
-    detail: "The quote you approve is the price you pay. Scope changes are priced before work starts — never after.",
+    detail:
+      "The quote you approve is the price you pay. Scope changes are priced before work starts — never after.",
   },
   {
     title: "A date, not a season",
-    detail: "Every project ships with a launch date. If we miss it through our fault, the final 10% is on us.",
+    detail:
+      "Every project ships with a launch date. If we miss it through our fault, the final 10% is on us.",
   },
   {
     title: "You own everything",
-    detail: "Files, logins, domains, content — all transferred to you at launch. No hostage situations, ever.",
+    detail:
+      "Files, logins, domains, content — all transferred to you at launch. No hostage situations, ever.",
   },
 ];

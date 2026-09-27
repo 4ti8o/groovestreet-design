@@ -35,14 +35,22 @@ export function HomePricing() {
             <ul className="mt-6 space-y-2.5">
               {featured.features.map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm">
-                  <CheckIcon size={16} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
+                  <CheckIcon
+                    size={16}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-success"
+                  />
                   {f}
                 </li>
               ))}
             </ul>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Button href="/pricing" variant="primary">See all pricing</Button>
-              <Button href="/contact" variant="outline">Get a fixed quote</Button>
+              <Button href="/pricing" variant="primary">
+                See all pricing
+              </Button>
+              <Button href="/contact" variant="outline">
+                Get a fixed quote
+              </Button>
             </div>
           </article>
         </Reveal>
@@ -57,7 +65,7 @@ export function HomePartners() {
       <SectionHeading
         eyebrow="Partners"
         title="Stronger with the right people"
-        lede="Studios, creatives and organisations we build alongside — real relationships, not rented logos."
+        lede="Uganda's leading brands plus the studios, creatives and communities we build alongside — real relationships, not rented logos."
       />
       <ul className="mt-12 grid gap-4 md:grid-cols-3">
         {partners.slice(0, 3).map((p, i) => (

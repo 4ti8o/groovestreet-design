@@ -8,9 +8,15 @@ import { CtaBand } from "@/components/marketing/cta-band";
 export const metadata = pageMetadata({
   title: "Partners",
   description:
-    "The studios, creatives and organisations GROOVESTREET DESIGN partners with in Kampala: white-label production, photography, agency partnerships and community work — not rented logos.",
+    "Corporate partners, white-label production and community work: the Ugandan brands, studios and organisations GROOVESTREET DESIGN builds alongside — real relationships, not rented logos.",
   path: "/partners",
 });
+
+const groupLabels = {
+  Corporate: "Corporate partners",
+  Services: "Services",
+  Community: "Community",
+} as const;
 
 export default function PartnersPage() {
   const groups = (["Corporate", "Services", "Community"] as const)
@@ -25,11 +31,11 @@ export default function PartnersPage() {
         <SectionHeading
           eyebrow="Partners"
           title="Stronger with the right people"
-          lede="Studios, creatives and organisations we build alongside — real relationships, not rented logos."
+          lede="Uganda's leading brands plus the studios, creatives and communities we build alongside — real relationships, not rented logos."
         />
         {groups.map((group) => (
           <div key={group.kind} className="mt-12">
-            <h2 className="text-h3 font-semibold">{group.kind}</h2>
+            <h2 className="text-h3 font-semibold">{groupLabels[group.kind]}</h2>
             <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {group.items.map((partner, index) => (
                 <Reveal key={partner.name} delay={Math.min(index, 3) * 60}>
