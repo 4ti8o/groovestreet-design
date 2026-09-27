@@ -44,11 +44,25 @@ export type ButtonProps = Common &
 
 /** Strict button shell per design.md §7.1. Pass `href` to render a link. */
 export function Button(props: ButtonProps) {
-  const { variant = "primary", size = "md", fullWidth = false, className, children } = props;
+  const { variant = "primary", size = "md", fullWidth = false, className } = props;
   const cls = cn("btn-shell", variants[variant], sizes[size], fullWidth && "w-full", className);
 
   if (props.href) {
-    const { href, onClick, target, rel, style, ...rest } = props;
+    // Strip the component-only props so they never reach the DOM element
+    // (React warns on unknown camelCase attributes like `fullWidth`).
+    const {
+      href,
+      onClick,
+      target,
+      rel,
+      style,
+      variant: _variant,
+      size: _size,
+      fullWidth: _fullWidth,
+      className: _className,
+      children,
+      ...rest
+    } = props;
     const external = !isInternal(href);
     if (external) {
       return (
@@ -66,7 +80,7 @@ export function Button(props: ButtonProps) {
       );
     }
     return (
-      <Link href={href} onClick={onClick} className={cls} {...rest}>
+      <Link href={href} onClick={onClick} style={style as CSSProperties} className={cls} {...rest}>
         {children}
       </Link>
     );
@@ -74,7 +88,15 @@ export function Button(props: ButtonProps) {
 
   const buttonProps = props as Common &
     Omit<React.ComponentPropsWithoutRef<"button">, "className" | "href">;
-  const { type = "button", ...rest } = buttonProps;
+  const {
+    type = "button",
+    variant: _variant,
+    size: _size,
+    fullWidth: _fullWidth,
+    className: _className,
+    children,
+    ...rest
+  } = buttonProps;
   return (
     <button type={type} className={cn(cls, "disabled:cursor-not-allowed disabled:opacity-40")} {...rest}>
       {children}
