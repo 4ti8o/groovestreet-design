@@ -1,25 +1,71 @@
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { projects } from "@/content/projects";
-import { Section, SectionHeading } from "@/components/ui/section";
+import { getLiveSample } from "@/content/samples";
+import { Section, SectionHeading, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
+import { LiveSiteFrame } from "@/components/marketing/live-site-frame";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { ArrowUpRightIcon } from "@/components/ui/icons";
 
 export const metadata = pageMetadata({
   title: "Work & Case Studies",
   description:
-    "Case studies from Kampala and beyond: bookings tripled, direct stays up 40%, discovery calls doubled.",
+    "A live website build you can scroll, plus client case studies from Kampala and beyond: bookings tripled, direct stays up 40%, discovery calls doubled.",
   path: "/work",
 });
 
 export default function WorkPage() {
+  const live = getLiveSample();
   return (
     <>
-      <Section ariaLabel="Case studies">
+      <Section ariaLabel="Live website build and case studies">
+        {/* Page hero. This page had no h1 until now — it opened straight on a
+            section heading, which skipped a level (design.md §11). Same hero
+            shape as services/[slug] and industries/[slug]. */}
+        <Eyebrow>Work</Eyebrow>
+        <h1 className="mt-4 max-w-[20ch] text-display font-bold">
+          A real site you can scroll, and the numbers behind it
+        </h1>
+        <p className="mt-5 max-w-[56ch] text-xl text-muted">
+          Start with a live build running on a real host. Then the client work, stated as the
+          problem, what we did, and the number that moved.
+        </p>
+
+        {/* The live sample, on the 3/6 featured split from design.md §9. */}
+        <Reveal className="mt-12">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="flex flex-col gap-4 lg:col-span-4">
+              <p className="eyebrow text-muted">Live sample</p>
+              <h2 className="text-h2 font-bold">{live.name}</h2>
+              <p className="text-muted">{live.summary}</p>
+              <ul className="space-y-2.5">
+                {live.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2.5 text-sm text-muted">
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 inline-block size-2 shrink-0 bg-accent"
+                    />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:col-span-8">
+              <LiveSiteFrame
+                url={live.url}
+                title={`${live.name} — live website sample`}
+                className="w-full"
+              />
+            </div>
+          </div>
+        </Reveal>
+      </Section>
+
+      <Section tone="surface" ariaLabel="Case studies">
         <SectionHeading
-          eyebrow="Work"
+          eyebrow="Case studies"
           title="Results, not screenshots"
           lede="Every case study states the problem, what we did, and the number that moved."
         />
@@ -57,6 +103,7 @@ export default function WorkPage() {
           ))}
         </div>
       </Section>
+
       <CtaBand
         eyebrow="Your project here"
         title="Become our next case study"

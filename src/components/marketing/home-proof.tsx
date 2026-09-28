@@ -1,13 +1,16 @@
 import { projects } from "@/content/projects";
+import { getLiveSample } from "@/content/samples";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
+import { LiveSiteFrame } from "@/components/marketing/live-site-frame";
 import { CountUp } from "@/components/ui/count-up";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
 export function HomeProof() {
   const featured = projects[0];
+  const live = getLiveSample();
   if (!featured) return null;
   return (
     <Section tone="ink" ariaLabel="Results our clients get">
@@ -44,6 +47,25 @@ export function HomeProof() {
             <ProjectThumb project={featured} className="h-full min-h-[280px] w-full" />
           </div>
         </article>
+      </Reveal>
+
+      {/* The live build, rendered beside the numbers it has to live up to. */}
+      <Reveal className="mt-6">
+        <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
+          <div className="flex flex-col gap-3 lg:col-span-4">
+            <p className="eyebrow text-accent">Live sample</p>
+            <h3 className="text-h3 font-semibold">{live.name}</h3>
+            <p className="text-sm text-muted-invert">{live.summary}</p>
+          </div>
+          <div className="lg:col-span-8">
+            <LiveSiteFrame
+              url={live.url}
+              title={`${live.name} — live website sample`}
+              tone="dark"
+              className="w-full"
+            />
+          </div>
+        </div>
       </Reveal>
     </Section>
   );
