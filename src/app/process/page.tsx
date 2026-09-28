@@ -33,14 +33,12 @@ export default function ProcessPage() {
         />
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
           {guarantees.map((guarantee, index) => (
-            <Reveal key={guarantee.title} delay={index * 60}>
-              <li className="card h-full">
-                <span className="flex size-11 items-center justify-center rounded-full bg-success-tint text-success">
-                  <CheckIcon size={20} />
-                </span>
-                <h3 className="mt-4 text-h4 font-semibold">{guarantee.title}</h3>
-                <p className="mt-2 text-sm text-muted">{guarantee.detail}</p>
-              </li>
+            <Reveal as="li" key={guarantee.title} delay={index * 60} className="card h-full">
+              <span className="flex size-11 items-center justify-center rounded-full bg-success-tint text-success">
+                <CheckIcon size={20} />
+              </span>
+              <h3 className="mt-4 text-h4 font-semibold">{guarantee.title}</h3>
+              <p className="mt-2 text-sm text-muted">{guarantee.detail}</p>
             </Reveal>
           ))}
         </ul>

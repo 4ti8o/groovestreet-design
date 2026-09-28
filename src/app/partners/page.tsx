@@ -49,7 +49,7 @@ export default function PartnersPage() {
             <h2 className="text-h3 font-semibold">{groupLabels[group.kind]}</h2>
             <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {group.items.map((partner, index) => (
-                <Reveal key={partner.name} delay={Math.min(index, 3) * 60}>
+                <Reveal as="li" key={partner.name} delay={Math.min(index, 3) * 60}>
                   <PartnerCard partner={partner} />
                 </Reveal>
               ))}

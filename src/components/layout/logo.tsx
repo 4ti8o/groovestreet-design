@@ -12,7 +12,7 @@ export function Logo({
   return (
     <Link
       href="/"
-      aria-label="GROOVESTREET DESIGN - home"
+      aria-label="GROOVESTREETDESIGN — home"
       className={cn(
         "font-display text-[1.25rem] font-bold leading-none tracking-[-0.02em]",
         className,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -12,22 +12,34 @@ import { cn } from "@/lib/utils";
  * Only transform and opacity are animated: both composite off the main thread,
  * so scrolling stays smooth. Do not add filter or blur here — that animates
  * pixels on the main thread and Lighthouse flags it as non-composited.
+ *
+ * Pass `as="li"` whenever this sits directly inside a <ul>/<ol>. The default
+ * <div> wrapper would leave the <li> as a grandchild, so the list reports no
+ * items to assistive tech (WCAG 1.3.1 — Lighthouse "list" and "listitem").
  */
 export function Reveal({
+  as: Tag = "div",
   children,
   delay = 0,
   className,
 }: {
+  as?: "div" | "li";
   children: ReactNode;
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement | null>(null);
   // No IntersectionObserver (very old browser): render the final state immediately.
   // Lazy initializer keeps this out of the effect entirely.
   const [shown, setShown] = useState(
     () => typeof window !== "undefined" && !("IntersectionObserver" in window),
   );
+
+  // Callback ref rather than useRef<HTMLDivElement>: the element is sometimes an
+  // <li>, and a callback widens to HTMLElement without a cast at every call site.
+  const setRef = useCallback((node: HTMLElement | null) => {
+    ref.current = node;
+  }, []);
 
   useEffect(() => {
     if (shown) return;
@@ -47,8 +59,8 @@ export function Reveal({
   }, [shown]);
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={setRef}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
         // Transform and opacity only: both are composited, so the reveal animates
@@ -60,6 +72,6 @@ export function Reveal({
       )}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

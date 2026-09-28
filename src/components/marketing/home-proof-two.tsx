@@ -59,16 +59,14 @@ export function HomeGuarantees() {
       />
       <ul className="mt-10 max-w-[68ch] space-y-8">
         {guarantees.map((g, i) => (
-          <Reveal key={g.title} delay={i * 60}>
-            <li className="flex gap-4 border-t border-line pt-8">
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-success-tint text-success">
-                <CheckIcon size={18} aria-hidden="true" />
-              </span>
-              <div>
-                <h3 className="text-h4 font-semibold">{g.title}</h3>
-                <p className="mt-2 text-sm text-muted">{g.detail}</p>
-              </div>
-            </li>
+          <Reveal as="li" key={g.title} delay={i * 60} className="flex gap-4 border-t border-line pt-8">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-success-tint text-success">
+              <CheckIcon size={18} aria-hidden="true" />
+            </span>
+            <div>
+              <h3 className="text-h4 font-semibold">{g.title}</h3>
+              <p className="mt-2 text-sm text-muted">{g.detail}</p>
+            </div>
           </Reveal>
         ))}
       </ul>

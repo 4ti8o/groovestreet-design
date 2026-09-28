@@ -24,22 +24,20 @@ export default function IndustriesPage() {
         />
         <ul className="mt-12 space-y-4">
           {industries.map((industry, index) => (
-            <Reveal key={industry.slug} delay={Math.min(index, 4) * 60}>
-              <li>
-                <Link
-                  href={`/industries/${industry.slug}`}
-                  className="card group grid gap-4 transition-colors duration-[var(--dur-fast)] hover:border-ink md:grid-cols-[1fr_auto] md:items-center"
-                >
-                  <span>
-                    <span className="text-h3 font-semibold">{industry.name}</span>
-                    <span className="mt-1.5 block text-muted">{industry.headline}</span>
-                  </span>
-                  <span className="inline-flex min-h-[48px] items-center gap-2 font-medium text-brand">
-                    {industry.cta}
-                    <ArrowRightIcon size={18} aria-hidden="true" className="transition-transform duration-[var(--dur-fast)] group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              </li>
+            <Reveal as="li" key={industry.slug} delay={Math.min(index, 4) * 60}>
+              <Link
+                href={`/industries/${industry.slug}`}
+                className="card group grid gap-4 transition-colors duration-[var(--dur-fast)] hover:border-ink md:grid-cols-[1fr_auto] md:items-center"
+              >
+                <span>
+                  <span className="text-h3 font-semibold">{industry.name}</span>
+                  <span className="mt-1.5 block text-muted">{industry.headline}</span>
+                </span>
+                <span className="inline-flex min-h-[48px] items-center gap-2 font-medium text-brand">
+                  {industry.cta}
+                  <ArrowRightIcon size={18} aria-hidden="true" className="transition-transform duration-[var(--dur-fast)] group-hover:translate-x-1" />
+                </span>
+              </Link>
             </Reveal>
           ))}
         </ul>

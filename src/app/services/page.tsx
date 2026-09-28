@@ -27,40 +27,38 @@ export default function ServicesPage() {
         />
         <ul className="mt-12 space-y-4">
           {services.map((service, index) => (
-            <Reveal key={service.slug} delay={Math.min(index, 4) * 60}>
-              <li>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="card group relative grid gap-6 overflow-hidden transition-colors duration-[var(--dur-fast)] hover:border-ink md:grid-cols-[auto_1fr_auto] md:items-center"
-                >
-                  <ServiceArtwork
-                    src={service.artwork}
-                    mask="linear-gradient(to left, black 0%, black 20%, transparent 58%)"
-                  />
-                  <span className="relative flex size-14 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
-                    <ServiceIcon icon={service.icon} size={24} />
-                  </span>
-                  <span className="relative">
-                    <span className="text-h3 font-semibold">{service.name}</span>
-                    <span className="mt-1.5 block text-muted">{service.tagline}</span>
-                    <span className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
-                      <span className="inline-flex items-center gap-1.5">
-                        <ClockIcon size={15} aria-hidden="true" />
-                        {service.timeline}
-                      </span>
-                      <span className="font-semibold text-ink">{service.priceFrom}</span>
+            <Reveal as="li" key={service.slug} delay={Math.min(index, 4) * 60}>
+              <Link
+                href={`/services/${service.slug}`}
+                className="card group relative grid gap-6 overflow-hidden transition-colors duration-[var(--dur-fast)] hover:border-ink md:grid-cols-[auto_1fr_auto] md:items-center"
+              >
+                <ServiceArtwork
+                  src={service.artwork}
+                  mask="linear-gradient(to left, black 0%, black 20%, transparent 58%)"
+                />
+                <span className="relative flex size-14 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
+                  <ServiceIcon icon={service.icon} size={24} />
+                </span>
+                <span className="relative">
+                  <span className="text-h3 font-semibold">{service.name}</span>
+                  <span className="mt-1.5 block text-muted">{service.tagline}</span>
+                  <span className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
+                    <span className="inline-flex items-center gap-1.5">
+                      <ClockIcon size={15} aria-hidden="true" />
+                      {service.timeline}
                     </span>
+                    <span className="font-semibold text-ink">{service.priceFrom}</span>
                   </span>
-                  <span className="relative inline-flex min-h-[48px] items-center gap-2 font-medium text-brand">
-                    Explore
-                    <ArrowRightIcon
-                      size={18}
-                      aria-hidden="true"
-                      className="transition-transform duration-[var(--dur-fast)] group-hover:translate-x-1"
-                    />
-                  </span>
-                </Link>
-              </li>
+                </span>
+                <span className="relative inline-flex min-h-[48px] items-center gap-2 font-medium text-brand">
+                  Explore
+                  <ArrowRightIcon
+                    size={18}
+                    aria-hidden="true"
+                    className="transition-transform duration-[var(--dur-fast)] group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
             </Reveal>
           ))}
         </ul>

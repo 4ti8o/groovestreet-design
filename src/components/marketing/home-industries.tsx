@@ -14,16 +14,14 @@ export function HomeIndustries() {
       />
       <ul className="mt-10 flex flex-wrap gap-3">
         {industries.map((industry, index) => (
-          <Reveal key={industry.slug} delay={Math.min(index, 5) * 60}>
-            <li>
-              <Link
-                href={`/industries/${industry.slug}`}
-                className="inline-flex min-h-[44px] items-center gap-2 rounded-pill border border-line bg-paper px-5 text-sm font-medium transition-colors duration-[var(--dur-fast)] hover:border-ink"
-              >
-                {industry.name}
-                <ArrowUpRightIcon size={16} aria-hidden="true" />
-              </Link>
-            </li>
+          <Reveal as="li" key={industry.slug} delay={Math.min(index, 5) * 60}>
+            <Link
+              href={`/industries/${industry.slug}`}
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-pill border border-line bg-paper px-5 text-sm font-medium transition-colors duration-[var(--dur-fast)] hover:border-ink"
+            >
+              {industry.name}
+              <ArrowUpRightIcon size={16} aria-hidden="true" />
+            </Link>
           </Reveal>
         ))}
       </ul>

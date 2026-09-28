@@ -45,13 +45,11 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <SectionHeading eyebrow="Typical projects" title={`What ${industry.name.toLowerCase()} usually need`} />
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {industry.typicalProjects.map((project, index) => (
-            <Reveal key={project} delay={index * 60}>
-              <li className="card flex h-full items-start gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-success-tint text-success">
-                  <CheckIcon size={18} />
-                </span>
-                <span className="font-semibold">{project}</span>
-              </li>
+            <Reveal as="li" key={project} delay={index * 60} className="card flex h-full items-start gap-3">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-success-tint text-success">
+                <CheckIcon size={18} />
+              </span>
+              <span className="font-semibold">{project}</span>
             </Reveal>
           ))}
         </ul>

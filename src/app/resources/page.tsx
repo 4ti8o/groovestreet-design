@@ -26,28 +26,26 @@ export default function ResourcesPage() {
         />
         <ul className="mt-12 grid gap-4 md:grid-cols-2">
           {posts.map((post, index) => (
-            <Reveal key={post.slug} delay={Math.min(index, 3) * 60}>
-              <li className="h-full">
-                <Link
-                  href={`/resources/${post.slug}`}
-                  className="card group flex h-full flex-col gap-3 transition-colors duration-[var(--dur-fast)] hover:border-ink"
-                >
-                  <div className="flex items-center gap-2">
-                    <Badge tone="accent">{post.category}</Badge>
-                    <span className="text-sm text-muted">{post.readingMinutes}-min read</span>
-                  </div>
-                  <h3 className="text-h3 font-semibold">{post.title}</h3>
-                  <p className="text-sm text-muted">{post.excerpt}</p>
-                  <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-brand">
-                    Read the guide
-                    <ArrowUpRightIcon
-                      size={16}
-                      aria-hidden="true"
-                      className="transition-transform duration-[var(--dur-fast)] group-hover:-translate-y-1 group-hover:translate-x-1"
-                    />
-                  </span>
-                </Link>
-              </li>
+            <Reveal as="li" key={post.slug} delay={Math.min(index, 3) * 60} className="h-full">
+              <Link
+                href={`/resources/${post.slug}`}
+                className="card group flex h-full flex-col gap-3 transition-colors duration-[var(--dur-fast)] hover:border-ink"
+              >
+                <div className="flex items-center gap-2">
+                  <Badge tone="accent">{post.category}</Badge>
+                  <span className="text-sm text-muted">{post.readingMinutes}-min read</span>
+                </div>
+                <h3 className="text-h3 font-semibold">{post.title}</h3>
+                <p className="text-sm text-muted">{post.excerpt}</p>
+                <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-medium text-brand">
+                  Read the guide
+                  <ArrowUpRightIcon
+                    size={16}
+                    aria-hidden="true"
+                    className="transition-transform duration-[var(--dur-fast)] group-hover:-translate-y-1 group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
             </Reveal>
           ))}
         </ul>

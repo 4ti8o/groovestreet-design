@@ -9,11 +9,17 @@ const kindIcons = {
   Community: UsersIcon,
 } as const;
 
-/** Shared partner card (home, about, partners): flat icon chip + kind + text. */
+/**
+ * Shared partner card (about, partners): flat icon chip + kind + text.
+ *
+ * Renders a <div> because every call site wraps it in <Reveal as="li">: the
+ * reveal element is the list item, so a nested <li> here would break the
+ * <ul>/<ol> structure (WCAG 1.3.1).
+ */
 export function PartnerCard({ partner }: { partner: Partner }) {
   const Icon = kindIcons[partner.kind];
   return (
-    <li className="card h-full">
+    <div className="card h-full">
       <span className="flex h-11 items-center">
         {partner.logo ? (
           <Image
@@ -34,6 +40,6 @@ export function PartnerCard({ partner }: { partner: Partner }) {
       </div>
       <h3 className="mt-3 text-h4 font-semibold">{partner.name}</h3>
       <p className="mt-2 text-sm text-muted">{partner.description}</p>
-    </li>
+    </div>
   );
 }

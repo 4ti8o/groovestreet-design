@@ -43,14 +43,12 @@ export function HomePain() {
       />
       <ul className="mt-10 grid gap-4 md:grid-cols-2">
         {painPoints.map((item, index) => (
-          <Reveal key={item.pain} delay={Math.min(index, 3) * 60}>
-            <li className="card h-full">
-              <span className="flex size-11 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
-                <item.Icon size={20} />
-              </span>
-              <p className="mt-4 font-display text-h3 font-semibold">{item.pain}</p>
-              <p className="mt-3 text-muted">{item.fix}</p>
-            </li>
+          <Reveal as="li" key={item.pain} delay={Math.min(index, 3) * 60} className="card h-full">
+            <span className="flex size-11 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
+              <item.Icon size={20} />
+            </span>
+            <p className="mt-4 font-display text-h3 font-semibold">{item.pain}</p>
+            <p className="mt-3 text-muted">{item.fix}</p>
           </Reveal>
         ))}
       </ul>

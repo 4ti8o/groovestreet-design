@@ -168,14 +168,12 @@ export default function CarePlanPage() {
           />
           <ul className="grid gap-4 sm:grid-cols-2">
             {inEveryPlan.map((item, index) => (
-              <Reveal key={item.title} delay={Math.min(index, 5) * 60}>
-                <li className="card h-full">
-                  <span className="flex size-10 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
-                    <item.icon size={18} aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-3 font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{item.detail}</p>
-                </li>
+              <Reveal as="li" key={item.title} delay={Math.min(index, 5) * 60} className="card h-full">
+                <span className="flex size-10 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
+                  <item.icon size={18} aria-hidden="true" />
+                </span>
+                <h3 className="mt-3 font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted">{item.detail}</p>
               </Reveal>
             ))}
           </ul>
@@ -209,12 +207,10 @@ export default function CarePlanPage() {
                 "A five-minute monthly report goes out every month, plus a quarterly growth review on Authority. Pause or cancel with 30 days' notice and everything stays yours.",
             },
           ].map((item, index) => (
-            <Reveal key={item.step} delay={index * 60}>
-              <li className="card h-full">
-                <span className="font-mono text-sm text-muted">{item.step}</span>
-                <h3 className="mt-3 text-h4 font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted">{item.detail}</p>
-              </li>
+            <Reveal as="li" key={item.step} delay={index * 60} className="card h-full">
+              <span className="font-mono text-sm text-muted">{item.step}</span>
+              <h3 className="mt-3 text-h4 font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted">{item.detail}</p>
             </Reveal>
           ))}
         </ol>

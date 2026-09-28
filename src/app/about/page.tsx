@@ -91,14 +91,12 @@ export default function AboutPage() {
         <SectionHeading eyebrow="What we believe" title="Five rules behind every build" />
         <ul className="mt-12 grid gap-4 md:grid-cols-2">
           {values.map((value, index) => (
-            <Reveal key={value.title} delay={index * 60}>
-              <li className="card h-full">
-                <span className="flex size-11 items-center justify-center rounded-full bg-success-tint text-success">
-                  <CheckIcon size={20} />
-                </span>
-                <h3 className="mt-4 text-h4 font-semibold">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted">{value.detail}</p>
-              </li>
+            <Reveal as="li" key={value.title} delay={index * 60} className="card h-full">
+              <span className="flex size-11 items-center justify-center rounded-full bg-success-tint text-success">
+                <CheckIcon size={20} />
+              </span>
+              <h3 className="mt-4 text-h4 font-semibold">{value.title}</h3>
+              <p className="mt-2 text-sm text-muted">{value.detail}</p>
             </Reveal>
           ))}
         </ul>
@@ -123,7 +121,7 @@ export default function AboutPage() {
           {partners
             .filter((partner) => partner.kind === "Corporate")
             .map((partner, index) => (
-              <Reveal key={partner.name} delay={Math.min(index, 5) * 60}>
+              <Reveal as="li" key={partner.name} delay={Math.min(index, 5) * 60}>
                 <PartnerCard partner={partner} />
               </Reveal>
             ))}

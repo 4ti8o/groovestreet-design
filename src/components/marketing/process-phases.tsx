@@ -19,25 +19,23 @@ export function ProcessPhases() {
   return (
     <ol className="mt-10 grid grid-cols-1 gap-x-14 gap-y-12 md:grid-cols-3">
       {processPhases.map((phase, index) => (
-        <Reveal key={phase.step} delay={index * 60}>
-          <li className="relative min-h-[170px]">
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-2.5 top-[45px] select-none font-display text-[72px] font-bold leading-none text-accent/25"
-            >
-              {phase.step}
-            </span>
-            <span className="relative z-10 flex size-11 items-center justify-center">
-              <ProcessIcon icon={phase.icon} />
-            </span>
-            <div className="relative z-10 mt-4">
-              <h3 className="text-h4 font-semibold">{phase.title}</h3>
-              <p className="mt-2 text-sm text-muted">{phase.summary}</p>
-              <p className="eyebrow mt-3 text-muted">
-                {phase.covers} · {phase.duration}
-              </p>
-            </div>
-          </li>
+        <Reveal as="li" key={phase.step} delay={index * 60} className="relative min-h-[170px]">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-2.5 top-[45px] select-none font-display text-[72px] font-bold leading-none text-accent/25"
+          >
+            {phase.step}
+          </span>
+          <span className="relative z-10 flex size-11 items-center justify-center">
+            <ProcessIcon icon={phase.icon} />
+          </span>
+          <div className="relative z-10 mt-4">
+            <h3 className="text-h4 font-semibold">{phase.title}</h3>
+            <p className="mt-2 text-sm text-muted">{phase.summary}</p>
+            <p className="eyebrow mt-3 text-muted">
+              {phase.covers} · {phase.duration}
+            </p>
+          </div>
         </Reveal>
       ))}
     </ol>

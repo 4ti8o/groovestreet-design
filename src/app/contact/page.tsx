@@ -71,16 +71,14 @@ export default function ContactPage() {
             />
             <ol className="mt-8 space-y-4">
               {bookingSteps.map((item, index) => (
-                <Reveal key={item.step} delay={index * 60}>
-                  <li className="card flex items-start gap-4">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-tint font-display text-sm font-bold text-brand-dark">
-                      {item.step}
-                    </span>
-                    <span>
-                      <span className="block font-semibold">{item.title}</span>
-                      <span className="mt-1 block text-sm text-muted">{item.detail}</span>
-                    </span>
-                  </li>
+                <Reveal as="li" key={item.step} delay={index * 60} className="card flex items-start gap-4">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-tint font-display text-sm font-bold text-brand-dark">
+                    {item.step}
+                  </span>
+                  <span>
+                    <span className="block font-semibold">{item.title}</span>
+                    <span className="mt-1 block text-sm text-muted">{item.detail}</span>
+                  </span>
                 </Reveal>
               ))}
             </ol>
