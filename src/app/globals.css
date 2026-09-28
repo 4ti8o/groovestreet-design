@@ -122,6 +122,12 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    /* The design system is intentionally light (design.md §3.1: paper base,
+       ink for text and dark bands). Declaring the scheme stops the browser
+       repainting native UI — scrollbars, form controls, the canvas behind the
+       page — with the OS dark theme on a dark-mode device, which otherwise
+       leaves dark scrollbars sitting on a cream page. */
+    color-scheme: light;
   }
 
   body {

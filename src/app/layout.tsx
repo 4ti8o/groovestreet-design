@@ -43,10 +43,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  // Next's Viewport type requires a literal colour string, so the token cannot
-  // be referenced here; the value is --color-ink from globals.css §3.1.
-  // eslint-disable-next-line no-restricted-syntax
-  themeColor: "#0e1113",
+  // Next's Viewport type requires literal colour strings, so the tokens cannot
+  // be referenced here; these mirror --color-paper and --color-ink from
+  // globals.css §3.1. Two media entries so the browser chrome follows the
+  // device theme: blending into the page in light, dark ink on a dark device.
+  /* eslint-disable no-restricted-syntax */
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e1113" },
+  ],
+  /* eslint-enable no-restricted-syntax */
   width: "device-width",
   initialScale: 1,
 };
