@@ -9,11 +9,11 @@ import { Reveal } from "@/components/ui/reveal";
  * three across rather than six, and each carries the stages it folds together.
  *
  * Palette: strictly three tokens — brand for the icon (via ProcessIcon),
- * accent/15 for the ghost numeral, muted for supporting text. Raw hex is a
+ * accent/25 for the ghost numeral, muted for supporting text. Raw hex is a
  * lint error (eslint.config.mjs, design.md §3.1), so this section cannot drift
  * off-palette. Colour comes from the token with an alpha modifier rather than
- * a new hex: the numeral is a watermark, and orange at 15% over paper lands on
- * the same visual weight as the pale green it replaces, without shouting.
+ * a new hex: 25% keeps the numeral clearly legible as a number while still
+ * reading as a watermark behind the title rather than competing with it.
  */
 export function ProcessPhases() {
   return (
@@ -23,7 +23,7 @@ export function ProcessPhases() {
           <li className="relative min-h-[170px]">
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -left-2.5 top-[45px] select-none font-display text-[72px] font-bold leading-none text-accent/15"
+              className="pointer-events-none absolute -left-2.5 top-[45px] select-none font-display text-[72px] font-bold leading-none text-accent/25"
             >
               {phase.step}
             </span>
