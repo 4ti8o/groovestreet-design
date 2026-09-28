@@ -7,7 +7,10 @@ export type Service = {
   description: string[];
   /** Icon key — resolved by ServiceIcon; content files never import components. */
   icon: "monitor" | "target" | "palette" | "search" | "refresh";
-  /** Tile backdrop artwork (public path), shown black and white until hover. */
+  /**
+   * Tile backdrop artwork (public path), shown black and white until hover.
+   * Files live in public/images/services.
+   */
   artwork: string;
   deliverables: string[];
   forWho: string[];
@@ -19,6 +22,17 @@ export type Service = {
   faqs: Faq[];
 };
 
+/**
+ * Service catalogue.
+ *
+ * Tile artwork provenance — all supplied by the studio, rights held. Keep a
+ * note of the source when swapping any of these:
+ *   landing-pages    cdn-media-1.freecodecamp.org
+ *   graphic-design   encrypted-tbn0.gstatic.com (Google thumbnail cache)
+ *   seo-performance  sitechecker.pro
+ *   care-plan        redbeam.com (HubSpot CDN)
+ *   website-design   original SVG, standing in until a photo is supplied
+ */
 export const services: Service[] = [
   {
     slug: "website-design",
@@ -75,7 +89,7 @@ export const services: Service[] = [
       "One page, live in three to five days, with headlines that match your message and a form or WhatsApp button wired to your phone.",
     ],
     icon: "target",
-    artwork: "/images/services/landing-pages.svg",
+    artwork: "/images/services/landing-pages.jpg",
     deliverables: [
       "One page built to bring enquiries",
       "Headline and offer that match your advert",
@@ -114,7 +128,7 @@ export const services: Service[] = [
       "Send your text and your logo. We handle the layout, the colours and the sizes — a print-ready file for the printer, plus web versions for WhatsApp, Instagram and Facebook.",
     ],
     icon: "palette",
-    artwork: "/images/services/graphic-design.svg",
+    artwork: "/images/services/graphic-design.jpg",
     deliverables: [
       "Flyer, poster or social graphic designed for you",
       "Print-ready file plus web-size images",
@@ -170,7 +184,7 @@ export const services: Service[] = [
       "Start with a one-time audit and fixes, or keep us on a monthly plan that compounds: content, visibility and a report you can read in five minutes.",
     ],
     icon: "search",
-    artwork: "/images/services/seo-performance.svg",
+    artwork: "/images/services/seo-performance.jpg",
     deliverables: [
       "A plain-English report of what is holding your site back",
       "Speed fixes so pages open fast on phones",
@@ -214,7 +228,7 @@ export const services: Service[] = [
       "One flat monthly fee. Pause or cancel with 30 days' notice.",
     ],
     icon: "refresh",
-    artwork: "/images/services/care-plan.svg",
+    artwork: "/images/services/care-plan.jpg",
     deliverables: [
       "Updates, backups & security monitoring",
       "Uptime checks with same-day response",

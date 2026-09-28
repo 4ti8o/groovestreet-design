@@ -19,7 +19,10 @@ export function ServiceArtwork({
     <span
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.16] grayscale transition-[opacity,filter] duration-500 ease-[var(--ease-groove)] group-hover:opacity-[0.7] group-hover:grayscale-0 motion-reduce:transition-none",
+        // bg-right: the mask reveals the right edge, so the subject lands where
+        // the artwork is actually visible — matters on the wide /services rows,
+        // where bg-cover of a photo would otherwise show a thin central slice.
+        "pointer-events-none absolute inset-0 bg-cover bg-right opacity-[0.16] grayscale transition-[opacity,filter] duration-500 ease-[var(--ease-groove)] group-hover:opacity-[0.7] group-hover:grayscale-0 motion-reduce:transition-none",
         className,
       )}
       style={{ backgroundImage: `url(${src})`, WebkitMaskImage: mask, maskImage: mask }}
