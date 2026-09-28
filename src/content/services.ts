@@ -31,7 +31,7 @@ export type Service = {
  *   graphic-design   encrypted-tbn0.gstatic.com (Google thumbnail cache)
  *   seo-performance  sitechecker.pro
  *   care-plan        redbeam.com (HubSpot CDN)
- *   website-design   original SVG, standing in until a photo is supplied
+ *   website-design   cdn.dribbble.com (1200px downscale of the 4200px original)
  */
 export const services: Service[] = [
   {
@@ -43,7 +43,7 @@ export const services: Service[] = [
       "Every project starts with your message, not colours. We get clear on what you sell, who it is for, and what the visitor should do next — then design around that.",
     ],
     icon: "monitor",
-    artwork: "/images/services/website-design.svg",
+    artwork: "/images/services/website-design.jpg",
     deliverables: [
       "A made-for-you homepage plus inner pages",
       "Works beautifully on phones, tablets and computers",
