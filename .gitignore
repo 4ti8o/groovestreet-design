@@ -29,3 +29,8 @@ yarn-error.log*
 
 # typescript
 /types
+
+# design template reference mirror — extracted into src/app/fonts and
+# public/{icons,images/duck}. Never commit the raw mirror.
+/duck.design
+/.kilo

@@ -143,9 +143,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   href={`/services/${other.slug}`}
                   className="card group flex h-full items-center gap-4 transition-colors duration-[var(--dur-fast)] hover:border-ink"
                 >
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-tint text-brand-dark">
-                    <ServiceIcon icon={other.icon} size={20} />
-                  </span>
+                  <ServiceIcon icon={other.icon} size={40} />
                   <span>
                     <span className="font-semibold">{other.name}</span>
                     <span className="mt-0.5 block text-sm text-muted">{other.priceFrom}</span>

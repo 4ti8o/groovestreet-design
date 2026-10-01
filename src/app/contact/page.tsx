@@ -45,20 +45,33 @@ const bookingSteps = [
 export default function ContactPage() {
   return (
     <>
-      <Section id="contact-form" ariaLabel="Contact GROOVESTREET DESIGN">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Talk to a human, not a ticket queue"
-          lede="Call, WhatsApp, email — or send the form below."
+      {/* duck.design `contact-bg.jpg` — the paper backdrop behind the whole
+          contact page, held at low opacity so the form stays the focus. */}
+      <Section
+        id="contact-form"
+        ariaLabel="Contact GROOVESTREET DESIGN"
+        className="relative overflow-hidden"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-60"
+          style={{ backgroundImage: "url(/images/duck/contact-bg.jpg)" }}
         />
-        <ContactChannels className="mt-10" />
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-          <Reveal>
-            <ContactForm />
-          </Reveal>
-          <Reveal delay={120}>
-            <Accordion items={contactFaqs} />
-          </Reveal>
+        <div className="relative">
+          <SectionHeading
+            eyebrow="Contact"
+            title="Talk to a human, not a ticket queue"
+            lede="Call, WhatsApp, email — or send the form below."
+          />
+          <ContactChannels className="mt-10" />
+          <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <Reveal>
+              <ContactForm />
+            </Reveal>
+            <Reveal delay={120}>
+              <Accordion items={contactFaqs} />
+            </Reveal>
+          </div>
         </div>
       </Section>
       <Section id="book" tone="surface" ariaLabel="Book a call">

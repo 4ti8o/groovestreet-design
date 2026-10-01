@@ -12,6 +12,12 @@ export type Project = {
   /** Accent keyword for the generated thumbnail artwork. */
   palette: "green" | "orange" | "sand" | "ink";
   year: string;
+  /**
+   * Public URL, set only for work that is genuinely live and cleared to publish.
+   * A case study without one is a write-up; one with it is something the visitor
+   * can open. The link is never the place a promise is made — it has to hold up.
+   */
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -28,7 +34,10 @@ export const projects: Project[] = [
     ],
     services: ["Website Design & Build", "SEO & Performance"],
     approach: [
-      { step: "Clarify", detail: "Patient interviews + search data → one booking-focused sitemap." },
+      {
+        step: "Clarify",
+        detail: "Patient interviews + search data → one booking-focused sitemap.",
+      },
       { step: "Design", detail: "Calm, clinical look with big tap targets and readable type." },
       { step: "Launch", detail: "Speed rebuild, local listings and a review engine for Google." },
     ],
@@ -41,29 +50,43 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
-    slug: "safari-lodge-bookings",
-    client: "Kidepo Trails Lodge",
-    industry: "Safari, Hotels & Hospitality",
-    location: "Kidepo Valley, Uganda",
-    title: "Direct bookings that bypass the middlemen",
-    outcome: "40% of bookings now come direct, commission-free.",
+    slug: "hotel-groovestreet",
+    client: "Hotel GrooveStreet",
+    industry: "Hotels & Hospitality",
+    location: "Los Angeles, CA",
+    title: "A six-page hotel site, live on a real host",
+    outcome: "Every page, room type and rate is live and reachable right now.",
     description: [
-      "The lodge depended on booking platforms taking up to 20% per stay. Their own site showed tiny photos and a contact form nobody answered.",
-      "We built a gallery-led site with room tours, seasonal rates, guest reviews and a WhatsApp-first booking path that the front desk can answer from a phone.",
+      "Hotel GrooveStreet needed more than a landing page. The brief was a full site — home, about, services, rooms, news and contact — that could sell the rooms and take a reservation without the guest picking up a phone.",
+      "We built and deployed all six pages with a booking flow that takes check-in and check-out dates, adults and children, plus published nightly rates on three room types so a guest can price and reserve without leaving the page.",
     ],
-    services: ["Website Design & Build", "Graphic Design"],
+    services: ["Website Design & Build"],
     approach: [
-      { step: "Clarify", detail: "Guest survey: photos, price and availability decide everything." },
-      { step: "Design", detail: "Full-bleed imagery, simple rates table, instant WhatsApp booking." },
-      { step: "Launch", detail: "Staff training so the lodge owns every update." },
+      {
+        step: "Clarify",
+        detail: "Six pages and one booking path. Structure agreed before a pixel was designed.",
+      },
+      {
+        step: "Design",
+        detail:
+          "Editorial hotel layout — full-bleed imagery, room cards with rates, amenities grid.",
+      },
+      {
+        step: "Launch",
+        detail: "Built, deployed and verified on a live host. Every page loads from the real URL.",
+      },
     ],
+    // Verifiable facts about the build, not business results. There is no
+    // traffic, conversion or revenue data behind this site yet, so the numbers
+    // here count what a visitor can go and check (design.md §1.5, §15).
     metrics: [
-      { value: "40%", label: "of bookings now direct" },
-      { value: "2.1×", label: "average session duration" },
-      { value: "0", label: "commission paid on direct stays" },
+      { value: "6", label: "pages live, from home to contact" },
+      { value: "3", label: "room types, each with a published rate" },
+      { value: "1", label: "booking flow taking dates and guest counts" },
     ],
     palette: "orange",
     year: "2026",
+    liveUrl: "https://hotel-groovestreet.netlify.app/",
   },
 ];
 

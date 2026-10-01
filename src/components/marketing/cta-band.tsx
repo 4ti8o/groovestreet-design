@@ -7,8 +7,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { ContactTrio } from "@/components/marketing/contact-channels";
 
 /**
- * Closing conversion band (design.md §10): every page ends with a CTA,
- * never with a footer-adjacent dead end.
+ * Closing conversion band (design.md §10): every page ends with a CTA, never
+ * with a footer-adjacent dead end. Set as a full-bleed ink panel with the
+ * duck.design CTA artwork behind it and the yellow primary button.
  */
 export function CtaBand({
   eyebrow = "Let's work together",
@@ -20,17 +21,23 @@ export function CtaBand({
   lede?: ReactNode;
 }) {
   return (
-    <section aria-label="Get in touch" className="bg-ink py-16 text-paper md:py-20 lg:py-24">
-      <Container>
+    <section aria-label="Get in touch" className="relative overflow-hidden bg-ink py-20 text-paper md:py-24">
+      {/* duck.design CTA backdrop, dimmed so the copy keeps 15:1 contrast. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-15"
+        style={{ backgroundImage: "url(/images/duck/cta-bg.png)" }}
+      />
+      <Container className="relative">
         <Reveal className="mx-auto max-w-[72ch] text-center">
           <Eyebrow dark className="justify-center">
             {eyebrow}
           </Eyebrow>
-          <h2 className="mt-4 text-h1 font-bold">{title}</h2>
+          <h2 className="mt-6 text-h1 font-medium">{title}</h2>
           <p className="mx-auto mt-5 max-w-[52ch] text-lg text-muted-invert">{lede}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/contact" variant="accent">
-              Get in Touch
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="/contact" variant="primary">
+              Book a Call
             </Button>
           </div>
           <ContactTrio dark className="mt-8 justify-center" />

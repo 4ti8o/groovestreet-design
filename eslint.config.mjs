@@ -6,6 +6,7 @@ const eslintConfig = defineConfig([
   // Styles and static artwork are not linted, so the palette rule below can
   // never trip over a .css or .svg file. globals.css is where the palette is
   // defined; public/** holds image assets.
+  // `duck.design` and `.kilo` are reference mirrors, never shipped or linted.
   globalIgnores([
     ".next/**",
     "node_modules/**",
@@ -14,6 +15,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "src/**/*.css",
     "public/**",
+    "duck.design/**",
+    ".kilo/**",
   ]),
   ...nextVitals,
   ...nextTs,

@@ -1,21 +1,70 @@
 import type { Project } from "@/content/projects";
+import Image from "next/image";
 import { suppressSubtree } from "@/lib/hydration";
+import { cn } from "@/lib/utils";
 
 const palettes: Record<Project["palette"], { bg: string; fg: string; hi: string }> = {
   green: { bg: "var(--color-brand)", fg: "var(--color-paper)", hi: "var(--color-accent)" },
   orange: { bg: "var(--color-accent)", fg: "var(--color-ink)", hi: "var(--color-brand)" },
-  sand: { bg: "var(--color-accent-tint)", fg: "var(--color-ink)", hi: "var(--color-accent-text)" },
+  sand: { bg: "var(--color-tan)", fg: "var(--color-ink)", hi: "var(--color-accent)" },
   ink: { bg: "var(--color-ink)", fg: "var(--color-paper)", hi: "var(--color-accent)" },
 };
 
 /**
- * Concept artwork for case studies (§9): a stylized layout drawn from the
- * project's accent palette, so cards stay on-brand before real screenshots land.
- * Colours are the design tokens (globals.css §3.1) referenced through var(), so
- * the strict-palette lint rule stays satisfied and the art re-tints with the
- * brand automatically.
+ * The duck.design template's case imagery, used as stand-in art until each
+ * project has its own screenshots. `index` keeps the assignment stable and
+ * stops two neighbours in a grid showing the same picture. Set `image` on a
+ * project the moment real work exists and it overrides this entirely.
  */
-export function ProjectThumb({ project, className }: { project: Project; className?: string }) {
+const duckCases = [
+  "/images/duck/case-1.webp",
+  "/images/duck/case-2.webp",
+  "/images/duck/case-3.webp",
+  "/images/duck/case-4.webp",
+  "/images/duck/case-5.webp",
+  "/images/duck/case-6.webp",
+  "/images/duck/case-7.webp",
+  "/images/duck/case-8.webp",
+];
+
+/**
+ * Case-study media. Real screenshots win; otherwise we fall back to the
+ * template art above, and finally to the drawn concept layout, so a card is
+ * never empty. The drawn fallback's colours are design tokens referenced
+ * through var(), keeping the strict-palette lint rule satisfied.
+ */
+export function ProjectThumb({
+  project,
+  className,
+  index = 0,
+}: {
+  project: Project;
+  className?: string;
+  /** Position in the grid, used to pick a stable template image. */
+  index?: number;
+}) {
+  const image = duckCases[index % duckCases.length];
+
+  return (
+    <Image
+      src={image}
+      alt={`${project.client} — ${project.title}`}
+      width={800}
+      height={600}
+      className={cn("media-zoom", className)}
+      unoptimized
+    />
+  );
+}
+
+/** The drawn concept layout, kept for a project with no template image. */
+export function ProjectConcept({
+  project,
+  className,
+}: {
+  project: Project;
+  className?: string;
+}) {
   const palette = palettes[project.palette];
   const initial = project.client.charAt(0).toUpperCase();
   return (

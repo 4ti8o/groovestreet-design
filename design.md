@@ -1,14 +1,33 @@
 # GROOVESTREET DESIGN — Design System & Strict Guidelines
 
-**Version 1.0 · Binding for every page, component and future contributor.**
-Structure/interaction patterns are derived from `duck.design` (design template).
-Information architecture and marketing copy logic are derived from `knapsackcreative.com`
-(content source of inspiration). Brand tokens below are **original** — we mirror the
-reference sites' *structure*, never their logos, fonts, artwork or hex values.
+**Version 1.1 · Binding for every page, component and future contributor.**
+Structure, type scale, component shapes and **graphics** are taken from `duck.design`
+(design template). Information architecture and marketing copy logic are derived from
+`knapsackcreative.com` (content source of inspiration). The **colour palette is
+GROOVESTREET's own** — deep green, hot orange, warm paper. We borrow the template's
+craft and artwork; we never borrow its brand colour.
 
 > Every token here exists in code as a CSS custom property inside the `@theme` block of
 > `src/app/globals.css`. **If a value is not in that block, it does not exist.** Never
 > hard-code a hex, font-size or duration in a component.
+
+### What came from `duck.design`
+
+| Area | Adopted |
+| --- | --- |
+| Type | `Sentient` display serif (regular/italic) + `Inter` UI, self-hosted in `src/app/fonts` |
+| Scale | 64/48px display steps, `-1.92px` tracking, 13px uppercase eyebrows |
+| Shape | `20px` cards, `100px` pill buttons, `2px` button borders |
+| Structure | Pill nav, eyebrow with trailing rule, dashed rules between list rows and stat columns, warm corner-glow on cards, ring-on-hover buttons |
+| Graphics | Hero / CTA / contact / pricing backdrops, case imagery, audience illustrations, two-tone icon set, quote mark — all in `public/images/duck` and `public/icons` |
+
+### What is GROOVESTREET
+
+- The whole palette (§3.1) — green `#1B4D3E`, orange `#FF5A1F`, paper `#F6F4EF`.
+- The wordmark, voice, page copy and all proof/claims (§2, §12).
+- The process steps treatment — oversized ghost numeral behind each icon (§10).
+- The hero `client` ⇄ `customer` word-swap animation.
+- The sticky call · WhatsApp · email bar under 768px (§5).
 
 ---
 
@@ -27,7 +46,7 @@ reference sites' *structure*, never their logos, fonts, artwork or hex values.
 
 | Item | Rule |
 | --- | --- |
-| Wordmark | `GROOVESTREET` in display face, weight 700, `letter-spacing: -0.02em`, with `DESIGN` as an accent-colored mono suffix. Always uppercase. |
+| Wordmark | `GROOVESTREET` in the display serif at weight 500, with `design` as a lowercase italic accent suffix. |
 | Written name | `GROOVESTREET DESIGN` (all caps) in headlines; `Groovestreet Design` in legal/prose. Never `GrooveStreet`, `groovestreet`, or `GSD` on first mention. |
 | Minimum clear space | Clear space = height of the `G` on all sides. |
 | Forbidden | Arbitrary recolor, drop shadows, outlines, rotation, gradient fills, re-typesetting in Inter. |
@@ -88,23 +107,24 @@ game-changer, world-class, cutting-edge.
 
 ## 4. Typography
 
-**Two families, permanently.** `Space Grotesk` (display: headings, wordmark, numerals) and
-`Inter` (body, UI, forms), self-hosted through `next/font` — no CDN font requests, no third
+**Two families, permanently.** `Sentient` (display serif: headings, wordmark, numerals —
+and the italic `italic-accent` run inside a heading) and `Inter` (body, UI, forms, eyebrows),
+self-hosted through `next/font/local` from `src/app/fonts` — no CDN font requests, no third
 family without a written amendment. Mono micro-labels use the system mono stack.
 
 ### 4.1 Scale (fluid `clamp()` — no breakpoint jumps)
 
 | Token | Size | Line-height | Weight | Tracking | Use |
 | --- | --- | --- | --- | --- | --- |
-| `text-display` | `clamp(2.9rem, 1.9rem + 5.6vw, 6rem)` | 0.95 | 700 | `-0.03em` | Max one per page (home hero) |
-| `text-h1` | `clamp(2.4rem, 1.5rem + 4.2vw, 4.5rem)` | 1.02 | 700 | `-0.025em` | Page hero |
-| `text-h2` | `clamp(1.9rem, 1.2rem + 2.6vw, 2.75rem)` | 1.1 | 700 | `-0.02em` | Section title |
-| `text-h3` | `1.625rem` | 1.2 | 600 | `-0.015em` | Card / case-study title |
-| `text-h4` | `1.375rem` | 1.3 | 600 | `-0.01em` | Sub-section |
-| `text-lg` | `1.125rem` | 1.6 | 400 | 0 | Lede paragraph |
-| `text-base` | `1rem` | 1.65 | 400 | 0 | Default body |
+| `text-display` | `clamp(2.75rem, 1.6rem + 5.4vw, 4rem)` | 1.125 | 500 | `-0.03em` | Max one per page (home hero) |
+| `text-h1` | `clamp(2.25rem, 1.4rem + 3.8vw, 3rem)` | 1.167 | 500 | `-0.04em` | Page hero |
+| `text-h2` | `clamp(1.75rem, 1.15rem + 2.4vw, 2.8rem)` | 1.167 | 500 | `-0.04em` | Section title |
+| `text-h3` | `1.625rem` | 1.2 | 500 | `-0.04em` | Card / case-study title |
+| `text-h4` | `1.3125rem` | 1.3 | 500 | `-0.02em` | Sub-section |
+| `text-lg` | `1.125rem` | 1.5 | 400 | 0 | Lede paragraph |
+| `text-base` | `1rem` | 1.5 | 400 | 0 | Default body |
 | `text-sm` | `0.875rem` | 1.5 | 400 | 0 | Meta, card copy |
-| `text-label` | `0.6875rem` | 1.4 | 500 | `+0.12em`, UPPERCASE | Eyebrows, table heads, badges |
+| `text-label` | `0.8125rem` | 1.2 | 700 | `+0.04em`, UPPERCASE | Eyebrows, table heads, badges |
 
 ### 4.2 Rules
 
@@ -121,7 +141,7 @@ family without a written amendment. Mono micro-labels use the system mono stack.
 ## 5. Space, grid, layout
 
 - **Base unit 4px.** Tailwind scale, permitted steps only (`4,8,12,16,20,24,32,40,48,64,80,96,128,144`).
-- **Container:** max-width `1200px`, padding-inline `20px` → `32px` at ≥640px (`<Container />`).
+- **Container:** max-width `1240px`, padding-inline `24px` → `32px` at ≥640px (`<Container />`).
 - **Strict palette:** components paint only with the `@theme` tokens above. Raw hex or `rgb()/hsl()/oklch()` in `src/**` is a lint **error** (`no-restricted-syntax` in `eslint.config.mjs`), whether written as a literal, inside a Tailwind arbitrary value (`text-[#ff5a1f]`) or as a colour string. `globals.css` and `public/**` are exempt (palette definition and assets); the one sanctioned exception is an inline `eslint-disable-next-line` carrying a reason, e.g. `viewport.themeColor`, which Next requires as a literal.
 - **Section rhythm:** `64px` mobile → `80px` ≥768px → `96px` ≥1024px (`<Section />`). Light bands alternate `paper` ↔ `surface` with `ink` as the dark punctuation; never stack two sections with the same background without a hairline or tone shift. On a `surface` band, `.card` takes the `paper` fill (`--card-fill`) so white cards never disappear into the background.
 - **Grid:** 12 columns ≥1024px, gutter 24px (32px for portfolio grids). Mobile: single column, gutter 20px, no negative margins.
@@ -153,17 +173,18 @@ family without a written amendment. Mono micro-labels use the system mono stack.
 
 ### 7.1 Buttons
 
-Height `48px` (touch target ≥44px), padding-inline `24px`, `0.9375rem`/500 with tracking
-`+0.01em`, gap `8px`, `rounded-pill`.
+Height `48px` (touch target ≥44px), padding `14px 24px`, `0.875rem`/700 UPPERCASE with
+tracking `+0.09em`, gap `11px`, `rounded-pill`, `2px` border. Hover is a soft **ring**
+(`--shadow-ring-*`), never a colour shift on a filled style; `:active` presses `1px`.
 
 | Variant | Background | Text | Border | Hover |
 | --- | --- | --- | --- | --- |
-| `primary` | `ink` | `paper` | none | `brand` |
-| `accent` | `accent` | `ink` | none | 8% darker |
-| `brand` | `brand` | `paper` | none | `brand-dark` |
-| `outline` | transparent | `ink` | `line` | border `ink` |
+| `primary` | `ink` | `paper` | none | `shadow-ring-ink` |
+| `dark` | `ink` | `paper` | none | `shadow-ring-ink` |
+| `accent` | `accent` | `ink` | none | `accent-text` |
+| `outline` | transparent | `ink` | `ink` | `shadow-ring-soft` |
 | `ghost` | transparent | `brand` | none | underline |
-| `invert` | `paper` | `ink` | none | `accent` |
+| `invert` | `paper` | `ink` | none | `shadow-ring-light` |
 
 - Transitions `150ms`, background/color/transform only. Disabled: `opacity 40%` +
   `cursor-not-allowed`, never hidden.
@@ -267,7 +288,8 @@ without a written performance note, no carousel that blocks reading.
 | Concern | File |
 | --- | --- |
 | Colors, type, radius, motion tokens | `src/app/globals.css` (`@theme`) |
-| Fonts | `src/app/layout.tsx` (`next/font/google`) |
+| Fonts | `src/app/layout.tsx` (`next/font/local`), files in `src/app/fonts` |
+| Template graphics | `public/images/duck/*`, `public/icons/*` |
 | Buttons, cards, section chrome | `src/components/ui/*` |
 | Header, footer, mobile action bar | `src/components/layout/*` |
 | Brand, contact, nav, copy constants | `src/lib/site.ts` |
@@ -278,6 +300,8 @@ without a written performance note, no carousel that blocks reading.
 
 - Inventing testimonials, client names, logos, awards or metrics. Every entry in `src/content/*` must describe work we actually delivered.
 - White-on-accent text, a third typeface, drop shadows on light cards, more than one primary CTA per section.
+- Recolouring a `duck.design` graphic, or shipping a service tile backed by stock imagery — the tile carries a
+  template illustration (`public/icons`) on a brand-tint chip, never a photo.
 - `!important`, inline hex codes, arbitrary `text-[11px]`, Tailwind color utilities straight from the default palette (`bg-blue-500`).
 - Copy in the banned-words list (§2), or a sentence over 30 words in a hero/CTA.
 - Any page without a visible way to call, email or WhatsApp within one scroll.

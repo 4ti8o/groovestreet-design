@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { pageMetadata } from "@/lib/seo";
 import { industries } from "@/content/industries";
 import { Section, SectionHeading } from "@/components/ui/section";
@@ -13,6 +14,18 @@ export const metadata = pageMetadata({
   path: "/industries",
 });
 
+/**
+ * duck.design's audience illustrations, reused for the "who we help" band.
+ * They are the template's own artwork and the main thing that stops this
+ * section reading as a plain list of links.
+ */
+const audienceArt = [
+  "/images/duck/who-smb.webp",
+  "/images/duck/who-marketing.webp",
+  "/images/duck/who-agencies.webp",
+  "/images/duck/who-enterprise.webp",
+];
+
 export default function IndustriesPage() {
   return (
     <>
@@ -22,7 +35,23 @@ export default function IndustriesPage() {
           title="Built for the way your clients buy"
           lede="Eight sectors, one pattern: visitors who need to trust you fast, on a phone, before they call."
         />
-        <ul className="mt-12 space-y-4">
+        {/* The template's audience strip: four illustrations in a quiet row. */}
+        <ul className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {audienceArt.map((src, index) => (
+            <Reveal as="li" key={src} delay={index * 60}>
+              <Image
+                src={src}
+                alt=""
+                aria-hidden="true"
+                width={640}
+                height={420}
+                className="w-full rounded-lg border border-line object-cover"
+                unoptimized
+              />
+            </Reveal>
+          ))}
+        </ul>
+        <ul className="mt-8 space-y-4">
           {industries.map((industry, index) => (
             <Reveal as="li" key={industry.slug} delay={Math.min(index, 4) * 60}>
               <Link

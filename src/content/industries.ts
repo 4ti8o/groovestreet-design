@@ -1,3 +1,65 @@
+import type { Graphic } from "@/components/ui/graphic-marquee";
+
+/**
+ * The hero image strip.
+ *
+ * This reproduces the duck.design `.hero__examples` block — a full-bleed row
+ * of artwork that fades out at both edges and drifts slowly.
+ *
+ * ⚠ PLACEHOLDER IMAGERY — REPLACE BEFORE LAUNCH.
+ * These are files lifted from the duck.design mirror at
+ * `public/images/duck/hero/`. They are that agency's work, not ours, and some
+ * carry third-party marks (a bank billboard, a UNHCR-co-branded print piece, a
+ * bar menu, a BNB Smart Chain site). They are wired in so the layout reads
+ * correctly while real work is being shot.
+ *
+ * The labels below are deliberately GENERIC ("Design example 01"). They do not
+ * name a client or claim delivery, so nothing on the page asserts a false
+ * attribution while these are in place. When real project shots land, replace
+ * each `src` and give each entry a truthful label.
+ */
+export const heroShowcase: Graphic[] = [
+  { src: "/images/duck/hero/hero-c139b6.webp", label: "Design example 01" },
+  { src: "/images/duck/hero/hero-c239b6.webp", label: "Design example 02" },
+  { src: "/images/duck/hero/hero-c339b6.webp", label: "Design example 03" },
+  { src: "/images/duck/hero/hero-c439b6.webp", label: "Design example 04" },
+  { src: "/images/duck/hero/hero-c539b6.webp", label: "Design example 05" },
+  { src: "/images/duck/case-1.webp", label: "Design example 06" },
+  { src: "/images/duck/case-2.webp", label: "Design example 07" },
+  { src: "/images/duck/case-3.webp", label: "Design example 08" },
+];
+
+/**
+ * The graphic-design strip.
+ *
+ * ⚠ PLACEHOLDER IMAGERY — REPLACE BEFORE LAUNCH. Same caveat as `heroShowcase`
+ * above: these are duck.design template files standing in for real design work.
+ * The eight `gfx/` pieces are the template's own graphic-design examples; the
+ * `hero-new-` files are its campaign and collateral photography. Together they
+ * give the strip enough variety to read as a real body of work.
+ *
+ * Replace each entry with a design the studio actually produced — a flyer, a
+ * brand mark, a social pack — and the strip re-labels itself automatically.
+ */
+export const graphics: Graphic[] = [
+  { src: "/images/gfx/01-referral-banner.webp", label: "Design example 01" },
+  { src: "/images/duck/hero/hero-new-139b6.webp", label: "Design example 02" },
+  { src: "/images/gfx/02-social-mockups.webp", label: "Design example 03" },
+  { src: "/images/duck/hero/hero-new-639b6.webp", label: "Design example 04" },
+  { src: "/images/gfx/03-lottery-mascot.webp", label: "Design example 05" },
+  { src: "/images/duck/hero/hero-new-1639b6.webp", label: "Design example 06" },
+  { src: "/images/gfx/04-banking-diagram.webp", label: "Design example 07" },
+  { src: "/images/duck/hero/hero-new-239b6.webp", label: "Design example 08" },
+  { src: "/images/gfx/05-brand-mockup-flatlay.webp", label: "Design example 09" },
+  { src: "/images/duck/hero/hero-new-439b6.webp", label: "Design example 10" },
+  { src: "/images/gfx/06-aerial-brand.webp", label: "Design example 11" },
+  { src: "/images/duck/hero/hero-new-539b6.webp", label: "Design example 12" },
+  { src: "/images/gfx/07-affiliate-infographic.webp", label: "Design example 13" },
+  { src: "/images/duck/hero/hero-new-739b6.webp", label: "Design example 14" },
+  { src: "/images/gfx/08-ai-stat-card.webp", label: "Design example 15" },
+  { src: "/images/duck/hero/hero-new-839b6.webp", label: "Design example 16" },
+];
+
 export type Industry = {
   slug: string;
   name: string;

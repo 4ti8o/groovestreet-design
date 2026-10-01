@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { projects } from "@/content/projects";
+import { graphics } from "@/content/industries";
 import { getLiveSample } from "@/content/samples";
 import { Section, SectionHeading, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
 import { LiveSiteFrame } from "@/components/marketing/live-site-frame";
+import { GraphicMarquee } from "@/components/ui/graphic-marquee";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { ArrowUpRightIcon } from "@/components/ui/icons";
 
@@ -63,6 +65,21 @@ export default function WorkPage() {
         </Reveal>
       </Section>
 
+      {/* duck.design's graphic-design strip. Full-bleed so the edge mask has
+          room to dissolve the artwork, exactly as their hero does. */}
+      <Section ariaLabel="Graphic design work" className="py-16 md:py-20 lg:py-24">
+        <SectionHeading
+          eyebrow="Graphic design"
+          title="Logos, flyers and the work around the website"
+          lede="Most clients need more than a site. These are the brand marks, campaign pieces and printed designs that go out alongside the build."
+          align="center"
+        />
+        <GraphicMarquee graphics={graphics} className="mt-12" />
+        <p className="mt-8 text-center text-sm text-muted">
+          Logos · Brand marks · Flyers and posters · Social packs · Print-ready artwork
+        </p>
+      </Section>
+
       <Section tone="surface" ariaLabel="Case studies">
         <SectionHeading
           eyebrow="Case studies"
@@ -78,7 +95,11 @@ export default function WorkPage() {
                   aria-label={`Read the ${project.client} case study`}
                   className="block"
                 >
-                  <ProjectThumb project={project} className="aspect-[4/3] w-full" />
+                  <ProjectThumb
+                    project={project}
+                    index={index}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
                 </Link>
                 <div className="flex flex-1 flex-col gap-3 p-6 md:p-8">
                   <p className="eyebrow text-muted">

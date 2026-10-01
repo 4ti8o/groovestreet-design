@@ -2,44 +2,62 @@ import { stats } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
-import { ClockIcon, GlobeIcon, SparkleIcon, StarIcon } from "@/components/ui/icons";
+import { DuckIcon, type DuckIconName } from "@/components/marketing/duck-icon";
 
-const statIcons = [ClockIcon, GlobeIcon, StarIcon, SparkleIcon];
+/** duck.design illustrations, cycled across the stat columns. */
+const statIcons: DuckIconName[] = ["realtime", "trello", "senior", "graph"];
+const statTones = ["brand", "accent", "tan", "brand"] as const;
 
 /**
- * Stat wall (stats template, reworked for this site): display-face numbers on
- * dark cards with count-up animation, one icon chip per stat.
+ * Stat wall.
+ *
+ * The restrained Groovestreet treatment: the numbers sit on the cream band with
+ * duck.design's dashed vertical rules between columns, rather than in coloured
+ * slabs. An earlier pass made each stat a full-bleed block of green / orange /
+ * tan / ink — the palette was ours, but the weight of it was not, so it was
+ * reverted. The duck.design illustrations and the italic serif numerals stay.
  */
 export function HomeStats() {
   return (
-    <Section tone="ink" ariaLabel="Studio numbers">
+    <Section ariaLabel="Studio numbers">
       <SectionHeading
-        dark
         eyebrow="By the numbers"
         title="The numbers behind the work"
         lede="Timelines, launches and reviews — the counts we can stand behind, every one earned."
       />
-      <dl className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <dl className="mt-14 grid grid-cols-2 gap-y-12 lg:grid-cols-4">
         {stats.map((stat, index) => {
-          const Icon = statIcons[index % statIcons.length];
           return (
             <Reveal
               key={stat.label}
               delay={Math.min(index, 3) * 60}
-              className="flex h-full flex-col rounded-lg border border-line-invert bg-ink-2 p-6 md:p-8"
+              className="relative flex flex-col items-center gap-4 px-4 text-center"
             >
-              <dd>
+              {/* duck.design `.stats__item + .stats__item::before` — a dashed
+                  vertical rule between columns, hidden on the 2-up mobile grid
+                  where the items stack. */}
+              {index > 0 ? (
                 <span
                   aria-hidden="true"
-                  className="flex size-11 items-center justify-center rounded-full bg-accent/15 text-accent"
-                >
-                  <Icon size={20} />
-                </span>
-                <span className="mt-6 block font-display text-h1 font-bold tabular text-paper">
+                  className="absolute -left-px top-1 hidden h-[calc(100%-0.5rem)] border-l border-dashed border-line lg:block"
+                />
+              ) : null}
+              <dd>
+                <DuckIcon
+                  name={statIcons[index % statIcons.length]}
+                  tone={statTones[index % statTones.length]}
+                  size="lg"
+                />
+                {/* The numerals stay in the italic serif. duck.design's own
+                    stat wall sets its figures this way, and it is the one place
+                    the serif still carries meaning rather than decoration —
+                    so it is pinned to --font-serif explicitly rather than
+                    inheriting the now-Inter --font-display. */}
+                <span className="mt-5 block font-serif text-h1 italic tabular">
                   <CountUp value={stat.value} />
                 </span>
               </dd>
-              <dt className="mt-2 text-sm text-muted-invert">{stat.label}</dt>
+              <dt className="text-sm text-muted">{stat.label}</dt>
             </Reveal>
           );
         })}

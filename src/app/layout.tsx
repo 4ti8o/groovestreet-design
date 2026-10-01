@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { site } from "@/lib/site";
 import { organizationJsonLd, servicesJsonLd } from "@/lib/seo";
@@ -9,17 +9,39 @@ import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { MotionProvider } from "@/components/ui/motion-provider";
 import "./globals.css";
 
-/** Two families, permanently (design.md §4): Space Grotesk + Inter, latin subset. */
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space",
+/**
+ * Two families, permanently (design.md §4), self-hosted from src/app/fonts.
+ * The woff2 files are the duck.design template's own faces, copied into this
+ * repo so the design is not broken by a network font request:
+ *   - Sentient — the display serif. Headings run in it, and emphasised
+ *     phrases inside a heading run in it italic (the `italic-accent` look).
+ *   - Inter — the UI face. Body copy, nav, buttons, forms and micro-labels.
+ * `display: swap` + a metric-matched fallback keeps CLS at 0 on a slow phone.
+ */
+const sentient = localFont({
+  src: [
+    { path: "./fonts/Sentient-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Sentient-Italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/Sentient-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Sentient-Bold.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/Sentient-BoldItalic.woff2", weight: "700", style: "italic" },
+  ],
+  variable: "--font-sentient",
   display: "swap",
+  fallback: ["Georgia", "Times New Roman", "serif"],
+  preload: true,
 });
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: [
+    { path: "./fonts/Inter-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Inter-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Inter-Bold.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-inter",
   display: "swap",
+  fallback: ["system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -49,8 +71,8 @@ export const viewport: Viewport = {
   // device theme: blending into the page in light, dark ink on a dark device.
   /* eslint-disable no-restricted-syntax */
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e1113" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f3ed" },
+    { media: "(prefers-color-scheme: dark)", color: "#161b26" },
   ],
   /* eslint-enable no-restricted-syntax */
   width: "device-width",
@@ -74,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${sentient.variable} ${inter.variable}`}
     >
       <body suppressHydrationWarning>
         <a

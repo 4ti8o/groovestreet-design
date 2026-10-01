@@ -3,8 +3,12 @@ import { guarantees } from "@/content/proof";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ProcessGrid } from "@/components/marketing/process-grid";
+import { DuckIcon, type DuckIconName } from "@/components/marketing/duck-icon";
 import { CtaBand } from "@/components/marketing/cta-band";
-import { CheckIcon } from "@/components/ui/icons";
+
+/** duck.design illustrations for the three guarantees. */
+const guaranteeIcons: DuckIconName[] = ["moneyback", "revisions", "coin"];
+const guaranteeTones = ["brand", "accent", "tan"] as const;
 
 export const metadata = pageMetadata({
   title: "Our Process",
@@ -34,9 +38,11 @@ export default function ProcessPage() {
         <ul className="mt-12 grid gap-4 md:grid-cols-3">
           {guarantees.map((guarantee, index) => (
             <Reveal as="li" key={guarantee.title} delay={index * 60} className="card h-full">
-              <span className="flex size-11 items-center justify-center rounded-full bg-success-tint text-success">
-                <CheckIcon size={20} />
-              </span>
+              <DuckIcon
+                name={guaranteeIcons[index % guaranteeIcons.length]}
+                tone={guaranteeTones[index % guaranteeTones.length]}
+                size="lg"
+              />
               <h3 className="mt-4 text-h4 font-semibold">{guarantee.title}</h3>
               <p className="mt-2 text-sm text-muted">{guarantee.detail}</p>
             </Reveal>

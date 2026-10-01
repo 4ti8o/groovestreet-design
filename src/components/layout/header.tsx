@@ -59,14 +59,23 @@ export function SiteHeader() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur transition-shadow duration-[var(--dur-fast)]",
-          scrolled && "shadow-header",
+          // duck.design `.header` — transparent over the hero, then a solid
+          // cream sheet with a soft warm shadow once you scroll. The template
+          // uses `position: fixed`; sticky is kept here because every page
+          // already reserves its own top spacing, and switching to fixed would
+          // need that padding re-tuned on all fifteen routes.
+          "sticky top-0 z-50 border-b border-transparent transition-[background-color,box-shadow,border-color] duration-300 ease-out",
+          scrolled && "border-line bg-paper shadow-header",
         )}
       >
         <Container>
-          <div className="flex h-[72px] items-center justify-between gap-6">
+          <div className="flex h-[72px] items-center justify-between gap-6 lg:py-2">
             <Logo />
-            <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
+            {/* duck.design `.main__menu` — a flex row with a tight 0.8rem gap
+                and plain 14px links. The template does not pill its nav items;
+                the active page is marked by weight and colour, not a filled
+                chip, so that treatment is dropped here too. */}
+            <nav aria-label="Primary" className="hidden items-center gap-[0.8rem] lg:flex">
               {allNav.map((item) => {
                 const href = item.href as string;
                 const active =
@@ -79,8 +88,8 @@ export function SiteHeader() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "text-sm text-ink/80 underline-offset-4 transition-colors duration-[var(--dur-fast)] hover:text-ink hover:underline",
-                      active && "font-semibold text-ink underline decoration-accent decoration-2",
+                      "px-2 py-2.5 text-sm text-muted transition-colors duration-[var(--dur-fast)] hover:text-ink",
+                      active && "font-bold text-ink",
                     )}
                   >
                     {item.label}
@@ -90,7 +99,7 @@ export function SiteHeader() {
             </nav>
             <div className="hidden lg:block">
               <Button href="/contact" variant="primary" size="sm">
-                Get in Touch
+                Book a Call
               </Button>
             </div>
             <button
@@ -136,8 +145,8 @@ export function SiteHeader() {
                 ))}
               </nav>
               <div className="border-t border-line pt-6 pb-[calc(76px+24px)]">
-                <Button href="/contact" variant="accent" fullWidth>
-                  Get in Touch
+                <Button href="/contact" variant="primary" fullWidth>
+                  Book a Call
                 </Button>
               </div>
             </Container>

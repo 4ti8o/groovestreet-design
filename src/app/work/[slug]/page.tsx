@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { ProjectThumb } from "@/components/marketing/project-thumb";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon } from "@/components/ui/icons";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -40,8 +40,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {project.client} — {project.location}
         </p>
         <p className="mt-2 text-lg font-semibold">{project.outcome}</p>
+        {project.liveUrl ? (
+          <Button
+            href={project.liveUrl}
+            variant="outline"
+            className="mt-6"
+            target="_blank"
+            rel="noopener"
+          >
+            Visit the live site
+            <ArrowUpRightIcon size={18} />
+          </Button>
+        ) : null}
         <Reveal className="mt-10">
-          <ProjectThumb project={project} className="aspect-[16/10] w-full rounded-lg border border-line" />
+          <ProjectThumb
+            project={project}
+            index={0}
+            className="aspect-[16/10] w-full rounded-lg border border-line object-cover"
+          />
         </Reveal>
         <div className="mt-10 space-y-5 text-lg leading-[1.7] text-muted">
           {project.description.map((paragraph) => (
@@ -76,7 +92,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <ul className="mt-8 space-y-2.5">
               {project.services.map((name) => (
                 <li key={name} className="flex items-start gap-2.5">
-                  <CheckIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
+                  <CheckIcon
+                    size={18}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-success"
+                  />
                   {name}
                 </li>
               ))}

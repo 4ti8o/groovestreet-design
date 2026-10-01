@@ -1,10 +1,8 @@
 export type Sample = {
   slug: string;
   /**
-   * Public URL of the real, deployed site. Empty until it is configured, in
-   * which case the embed renders its setup state instead of an iframe. The
-   * URL is read from NEXT_PUBLIC_LIVE_SAMPLE_URL so swapping in a different
-   * build never means touching a component.
+   * Public URL of the real, deployed site. The env var overrides the default so
+   * swapping in a different build never means touching a component.
    */
   url: string;
   /** Short label for the eyebrow and the card heading. */
@@ -14,25 +12,27 @@ export type Sample = {
   features: string[];
 };
 
+const DEFAULT_LIVE_URL = "https://hotel-groovestreet.netlify.app/";
+
 /**
- * The live build rendered on /work and in the home proof block.
+ * The live build rendered on /work and in the home proof block. It is also the
+ * `liveUrl` of the matching case study in `projects.ts` — one site, one source.
  *
  * design.md §15 bans inventing client names, metrics or awards, so this entry
- * describes only the build itself — never a claim about who it was made for or
- * what it achieved. Put the real project's details here once they are cleared
- * for publication.
+ * describes only what a visitor can go and open and check. No performance
+ * figures are claimed, because none have been measured.
  */
 export const samples: Sample[] = [
   {
-    slug: "live-build",
-    url: process.env.NEXT_PUBLIC_LIVE_SAMPLE_URL ?? "",
-    name: "This site, live",
+    slug: "hotel-groovestreet",
+    url: process.env.NEXT_PUBLIC_LIVE_SAMPLE_URL || DEFAULT_LIVE_URL,
+    name: "Hotel GrooveStreet",
     summary:
-      "The page you are reading, running on a real host. Scroll it, open the menu, resize the window.",
+      "A live six-page hotel site on a public host. Scroll it, open the menu, walk the room pages.",
     features: [
       "Real deployed build, not a mockup",
-      "Every breakpoint from 360px up",
-      "Same tokens and components as this page",
+      "Six pages plus a booking flow",
+      "Published rates on every room type",
     ],
   },
 ];

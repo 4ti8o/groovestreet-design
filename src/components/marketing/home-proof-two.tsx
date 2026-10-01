@@ -25,7 +25,7 @@ export function HomeTestimonials() {
       <Reveal className="mt-10">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-lg border border-line bg-surface px-6 py-5">
           <span
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 text-accent-text"
             role="img"
             aria-label={`${averageRating.toFixed(1)} out of 5 overall`}
           >
@@ -34,7 +34,7 @@ export function HomeTestimonials() {
             ))}
           </span>
           <p className="text-sm">
-            <span className="font-display text-h4 font-bold tabular">
+            <span className="font-display text-h4 font-medium italic tabular">
               <CountUp value={averageRating.toFixed(1)} />
             </span>{" "}
             out of 5 · {ratingEntries.length} ratings across {testimonials.length} reviews

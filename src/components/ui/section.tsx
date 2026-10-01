@@ -9,6 +9,10 @@ type Tone = "paper" | "surface" | "ink" | "brand";
  * cards inside it stay legible (white-on-white would be invisible).
  * design.md §5: never stack two sections on the same background without a
  * tone shift — alternate paper/surface for light bands, punctuate with ink.
+ *
+ * Kept deliberately to four. An earlier pass added `tan` and `accent` bands to
+ * break up the cream; the colours were on-brand but the page then read as a
+ * patchwork rather than a studio, so they were removed again.
  */
 const tones: Record<Tone, string> = {
   paper: "bg-paper text-ink",
@@ -42,7 +46,11 @@ export function Section({
   );
 }
 
-/** Uppercase mono micro-label with accent marker (design.md §4.1). */
+/**
+ * Uppercase micro-label with the duck.design trailing rule (`.eyebrow__line`).
+ * duck.design leaves this line grey and lets the title carry the emphasis, so
+ * the default is muted rather than brand-coloured. `dark` lifts it on dark bands.
+ */
 export function Eyebrow({
   children,
   dark = false,
@@ -55,18 +63,20 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "eyebrow flex items-center gap-2",
-        dark ? "text-accent" : "text-accent-text",
+        "eyebrow flex items-center gap-4",
+        dark ? "text-paper" : undefined,
         className,
       )}
     >
-      <span aria-hidden="true" className="inline-block size-2 bg-accent" />
       {children}
+      <span aria-hidden="true" className="eyebrow-line" />
     </p>
   );
 }
 
-/** Standard h2 block: eyebrow + title + optional lede. Every page uses one per section. */
+/** Standard h2 block: pretitle + title + optional lede, per duck.design
+ *  `.section-pretitle` / `.section-title` / `.section-txt`. The lede is capped at
+ *  the template's 57rem measure so long copy still sets in a readable column. */
 export function SectionHeading({
   eyebrow,
   title,
@@ -83,13 +93,29 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={cn("max-w-[62ch]", align === "center" && "mx-auto text-center", className)}>
-      <Eyebrow dark={dark} className={align === "center" ? "justify-center" : undefined}>
+    <div
+      className={cn(
+        "max-w-[62ch]",
+        align === "center" && "mx-auto text-center",
+        className,
+      )}
+    >
+      <Eyebrow
+        dark={dark}
+        className={align === "center" ? "justify-center" : undefined}
+      >
         {eyebrow}
       </Eyebrow>
-      <h2 className="mt-4 text-h2 font-bold">{title}</h2>
+      <h2 className="mt-4 text-h2">{title}</h2>
       {lede ? (
-        <p className={cn("mt-5 text-lg", dark ? "text-muted-invert" : "text-muted")}>{lede}</p>
+        <p
+          className={cn(
+            "mt-4 max-w-[57rem] text-lg",
+            dark ? "text-muted-invert" : "text-muted",
+          )}
+        >
+          {lede}
+        </p>
       ) : null}
     </div>
   );

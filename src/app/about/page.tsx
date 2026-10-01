@@ -1,11 +1,13 @@
 import { pageMetadata } from "@/lib/seo";
 import { stats, partners } from "@/content/proof";
+import { team } from "@/content/team";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
 import { Marquee } from "@/components/ui/marquee";
 import { ContactChannels } from "@/components/marketing/contact-channels";
 import { PartnerCard } from "@/components/marketing/partner-card";
+import { TeamCard } from "@/components/marketing/team-card";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { CheckIcon } from "@/components/ui/icons";
 
@@ -87,7 +89,22 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="surface" ariaLabel="What we believe">
+      <Section tone="surface" ariaLabel="The people behind the studio">
+        <SectionHeading
+          eyebrow="The team"
+          title="The people who will actually do the work"
+          lede="No account managers, no hand-offs to a freelancer you never met. These are the people on your project, and you talk to them directly."
+        />
+        <ul className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {team.map((member, index) => (
+            <Reveal as="li" key={member.id} delay={Math.min(index, 3) * 60} className="h-full">
+              <TeamCard member={member} />
+            </Reveal>
+          ))}
+        </ul>
+      </Section>
+
+      <Section ariaLabel="What we believe">
         <SectionHeading eyebrow="What we believe" title="Five rules behind every build" />
         <ul className="mt-12 grid gap-4 md:grid-cols-2">
           {values.map((value, index) => (

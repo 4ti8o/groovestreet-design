@@ -52,7 +52,10 @@ export function Reveal({
           io.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      // Fires as soon as any sliver of the element clears the fold. The old
+      // 0.15 / -8% pair could leave a tall element waiting for a lot of scroll
+      // before it moved, which read as "there is no animation on this page".
+      { threshold: 0, rootMargin: "0px 0px -4% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -66,8 +69,17 @@ export function Reveal({
         // Transform and opacity only: both are composited, so the reveal animates
         // off the main thread. An earlier version also transitioned a blur filter,
         // which Lighthouse rightly flags as a non-composited animation.
-        "transition-[opacity,transform] duration-[var(--dur-reveal)] ease-[var(--ease-groove)] motion-reduce:transition-none",
-        shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
+        //
+        // Duration and easing are duck.design's own: a 700ms settle on
+        // cubic-bezier(.16,.84,.44,1). That curve holds the movement back for
+        // longer at the start and releases it late, which is why their sections
+        // feel unhurried. Swapping it back to --ease-groove is visible.
+        //
+        // The travel is 40px and settles with a slight scale so the motion is
+        // legible on a phone. At 24px on a small screen the whole thing read as
+        // a page that simply loaded, with no animation at all.
+        "transition-[opacity,transform] duration-[var(--dur-reveal)] ease-[var(--ease-duck)] motion-reduce:transition-none",
+        shown ? "translate-y-0 scale-100 opacity-100" : "translate-y-10 scale-[0.97] opacity-0",
         className,
       )}
     >
